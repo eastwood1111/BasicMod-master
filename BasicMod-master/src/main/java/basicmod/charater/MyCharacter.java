@@ -31,7 +31,7 @@ import static basicmod.BasicMod.makeID;
 public class MyCharacter extends CustomPlayer {
     //Stats
     public static final int ENERGY_PER_TURN = 3;
-    public static final int MAX_HP = 70;
+    public static final int MAX_HP = 72;
     public static final int STARTING_GOLD = 99;
     public static final int CARD_DRAW = 5;
     public static final int ORB_SLOTS = 0;
@@ -47,9 +47,9 @@ public class MyCharacter extends CustomPlayer {
         //Library color is basically the same as card color, but you need both because that's how the game was made.
         @SpireEnum
         public static PlayerClass renshen;
-        @SpireEnum(name = "GREEN") // These two MUST match. Change it to something unique for your character.
+        @SpireEnum(name = "CHARACTER_GRAY_COLOR") // These two MUST match. Change it to something unique for your character.
         public static AbstractCard.CardColor CARD_COLOR;
-        @SpireEnum(name = "GREEN") @SuppressWarnings("unused")
+        @SpireEnum(name = "CHARACTER_GRAY_COLOR") @SuppressWarnings("unused")
         public static CardLibrary.LibraryType LIBRARY_COLOR;
 
         //Character select images

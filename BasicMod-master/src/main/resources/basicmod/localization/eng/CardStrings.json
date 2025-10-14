@@ -1,12 +1,51 @@
 {
-  "${modID}:ExampleCard": {
-    "NAME": "Name",
-    "DESCRIPTION": "Description. NL Second line.",
-    "UPGRADE_DESCRIPTION": "This will automatically be used if the card is upgraded. Remove it if unneeded.",
+  "basicmod:Strike": {
+    "NAME": "打击",
+    "DESCRIPTION": "造成 !D! 点伤害.",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害.",
     "EXTENDED_DESCRIPTION": [
-      "You can put more text in here.",
-      "If you need to use it for stuff.",
-      "Blizzard is a good example for this."
+      "Starter attack card.",
+      "Good for attacking enemies early in combat."
+    ]
+  },
+  "basicmod:Defend": {
+    "NAME": "防御",
+    "DESCRIPTION": "获得 !B! 点格挡.",
+    "UPGRADE_DESCRIPTION": "获得 !B! 点格挡.",
+    "EXTENDED_DESCRIPTION": [
+      "Starter skill card.",
+      "Use to block incoming damage."
+    ]
+  },
+  "basicmod:Guiyi": {
+    "NAME": "Guiyi",
+    "DESCRIPTION": "Deal damage equal to 3 × your hand size.",
+    "UPGRADE_DESCRIPTION": "Deal damage equal to 5 × your hand size.",
+    "EXTENDED_DESCRIPTION": [
+      "The more cards in your hand, the stronger this attack.",
+      "Costs 2 energy.",
+      "Rare attack card."
+    ]
+  },
+  "basicmod:DiscardDrawFive": {
+    "NAME": "Discard & Draw",
+    "DESCRIPTION": "Discard 5 cards. Draw 5 cards. Exhaust.",
+    "UPGRADE_DESCRIPTION": "Discard 5 cards. Draw 5 cards.",
+    "EXTENDED_DESCRIPTION": [
+      "A swingy tactical card — can refill your hand after a big discard.",
+      "Costs 0 energy. Upgrading removes Exhaust.",
+      "Use with discard synergies."
+    ]
+  },
+  "basicmod:Fireball": {
+    "NAME": "Fireball",
+    "DESCRIPTION": "Deal !D! damage to ALL enemies. Exhaust.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage to ALL enemies. Exhaust.",
+    "EXTENDED_DESCRIPTION": [
+      "Unleash a burst of fiery magic at all foes.",
+      "Blue uncommon attack card.",
+      "Upgraded damage: 20."
     ]
   }
 }
+
