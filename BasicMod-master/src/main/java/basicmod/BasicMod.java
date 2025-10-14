@@ -1,7 +1,9 @@
 package basicmod;
 
+import basemod.AutoAdd;
 import basemod.BaseMod;
 import basemod.interfaces.*;
+import basicmod.cards.BaseCard;
 import basicmod.charater.MyCharacter;
 import basicmod.util.GeneralUtils;
 import basicmod.util.KeywordInfo;
@@ -31,6 +33,7 @@ import java.util.*;
 
 @SpireInitializer
 public class BasicMod implements
+        EditCardsSubscriber,
         EditCharactersSubscriber,
         EditStringsSubscriber,
         EditKeywordsSubscriber,
@@ -51,6 +54,8 @@ public class BasicMod implements
     //This will be called by ModTheSpire because of the @SpireInitializer annotation at the top of the class.
     public static void initialize() {
         new BasicMod();
+        MyCharacter.Meta.registerColor();
+
     }
 
     public BasicMod() {
@@ -274,5 +279,14 @@ public class BasicMod implements
     @Override
     public void receiveEditCharacters() {
         MyCharacter.Meta.registerCharacter();
+
+    }
+
+    @Override
+    public void receiveEditCards() {
+        new AutoAdd(modID) //Loads files from this mod
+                .packageFilter(BaseCard.class) //In the same package as this class
+                .setDefaultSeen(true) //And marks them as seen in the compendium
+                .cards(); //Adds the cards
     }
 }
