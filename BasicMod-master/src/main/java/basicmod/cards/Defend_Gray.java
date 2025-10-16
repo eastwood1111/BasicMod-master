@@ -6,10 +6,9 @@ import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 
-public class Defend extends BaseCard {
-    public static final String ID = makeID(Defend.class.getSimpleName());
+public class Defend_Gray extends BaseCard {
+    public static final String ID = makeID(Defend_Gray.class.getSimpleName());
 
     private static final CardStats info = new CardStats(
             MyCharacter.Meta.CARD_COLOR, // 角色卡牌颜色
@@ -22,7 +21,7 @@ public class Defend extends BaseCard {
     private static final int BLOCK = 5;
     private static final int UPG_BLOCK = 3;
 
-    public Defend() {
+    public Defend_Gray() {
         super(ID, info);
 
         setBlock(BLOCK, UPG_BLOCK); // 设置格挡数及升级增加值
@@ -39,7 +38,7 @@ public class Defend extends BaseCard {
 
     @Override
     public AbstractCard makeCopy() {
-        return new Defend();
+        return new Defend_Gray();
     }
 }
 

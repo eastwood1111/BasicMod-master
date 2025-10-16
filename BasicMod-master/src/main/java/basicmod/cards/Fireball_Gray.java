@@ -5,14 +5,13 @@ import basicmod.util.CardStats;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 
-public class Fireball extends BaseCard {
-    public static final String ID = makeID(Fireball.class.getSimpleName());
+public class Fireball_Gray extends BaseCard {
+    public static final String ID = makeID(Fireball_Gray.class.getSimpleName());
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
     private static final CardStats info = new CardStats(
@@ -26,7 +25,7 @@ public class Fireball extends BaseCard {
     private static final int DAMAGE = 16;
     private static final int UPG_DAMAGE = 4; // 升级后总共20（16+4）
 
-    public Fireball() {
+    public Fireball_Gray() {
         super(ID, info);
 
         setDamage(DAMAGE, UPG_DAMAGE);
@@ -56,7 +55,7 @@ public class Fireball extends BaseCard {
 
     @Override
     public AbstractCard makeCopy() {
-        return new Fireball();
+        return new Fireball_Gray();
     }
 }
 

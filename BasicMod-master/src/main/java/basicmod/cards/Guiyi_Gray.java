@@ -9,8 +9,8 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class Guiyi extends BaseCard {
-    public static final String ID = makeID(Guiyi.class.getSimpleName());
+public class Guiyi_Gray extends BaseCard {
+    public static final String ID = makeID(Guiyi_Gray.class.getSimpleName());
 
     private static final CardStats info = new CardStats(
             MyCharacter.Meta.CARD_COLOR,
@@ -23,7 +23,7 @@ public class Guiyi extends BaseCard {
     private static final int MULTIPLIER = 3;
     private static final int UPG_MULTIPLIER = 5;
 
-    public Guiyi() {
+    public Guiyi_Gray() {
         super(ID, info);
 
         baseDamage = 0; // 实际伤害在 use 时计算
@@ -52,7 +52,7 @@ public class Guiyi extends BaseCard {
 
     @Override
     public AbstractCard makeCopy() {
-        return new Guiyi();
+        return new Guiyi_Gray();
     }
 }
 

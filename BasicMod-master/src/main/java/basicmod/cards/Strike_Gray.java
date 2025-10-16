@@ -9,8 +9,8 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class Strike extends BaseCard {
-    public static final String ID = makeID(Strike.class.getSimpleName());
+public class Strike_Gray extends BaseCard {
+    public static final String ID = makeID(Strike_Gray.class.getSimpleName());
     private static final CardStats info = new CardStats(
             MyCharacter.Meta.CARD_COLOR,
             CardType.ATTACK,
@@ -22,7 +22,7 @@ public class Strike extends BaseCard {
     private static final int DAMAGE = 6;
     private static final int UPG_DAMAGE = 3;
 
-    public Strike() {
+    public Strike_Gray() {
         super(ID, info);
 
         setDamage(DAMAGE, UPG_DAMAGE); //Sets the card's damage and how much it changes when upgraded.
@@ -43,6 +43,6 @@ public class Strike extends BaseCard {
 
     @Override
     public AbstractCard makeCopy() { //Optional
-        return new Strike();
+        return new Strike_Gray();
     }
 }

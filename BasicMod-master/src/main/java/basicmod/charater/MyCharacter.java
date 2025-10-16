@@ -4,6 +4,8 @@ import basemod.BaseMod;
 import basemod.abstracts.CustomEnergyOrb;
 import basemod.abstracts.CustomPlayer;
 import basemod.animations.SpriterAnimation;
+import basicmod.cards.Defend_Gray;
+import basicmod.cards.Strike_Gray;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.math.MathUtils;
@@ -137,16 +139,26 @@ public class MyCharacter extends CustomPlayer {
     @Override
     public ArrayList<String> getStartingDeck() {
         ArrayList<String> retVal = new ArrayList<>();
-        //List of IDs of cards for your starting deck.
-        //If you want multiple of the same card, you have to add it multiple times.
-        retVal.add(Strike_Red.ID);
-        retVal.add(Strike_Red.ID);
-        retVal.add(Defend_Blue.ID);
-        retVal.add(Defend_Blue.ID);
-        retVal.add(Neutralize.ID);
+
+        for (int i = 0; i < 5; i++) {
+            retVal.add(Strike_Gray.ID);
+            retVal.add(Defend_Gray.ID);
+        }
 
         return retVal;
     }
+
+    public ArrayList<String> getMyCardPool() {
+        ArrayList<String> tmpPool = new ArrayList<>();
+        for (AbstractCard card : CardLibrary.getAllCards()) {
+            if (card.color == MyCharacter.Meta.CARD_COLOR) {
+                tmpPool.add(card.cardID);
+            }
+        }
+        return tmpPool;
+    }
+
+
 
     @Override
     public ArrayList<String> getStartingRelics() {
@@ -161,7 +173,7 @@ public class MyCharacter extends CustomPlayer {
     public AbstractCard getStartCardForEvent() {
         //This card is used for the Gremlin card matching game.
         //It should be a non-strike non-defend starter card, but it doesn't have to be.
-        return new Strike_Red();
+        return new Strike_Gray();
     }
 
     /*- Below this is methods that you should *probably* adjust, but don't have to. -*/

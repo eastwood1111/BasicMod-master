@@ -19,8 +19,8 @@
   },
   "basicmod:Guiyi": {
     "NAME": "Guiyi",
-    "DESCRIPTION": "Deal damage equal to 3 × your hand size.",
-    "UPGRADE_DESCRIPTION": "Deal damage equal to 5 × your hand size.",
+    "DESCRIPTION": "deal damage equal to 3 × your hand size.",
+    "UPGRADE_DESCRIPTION": "deal damage equal to 5 × your hand size.",
     "EXTENDED_DESCRIPTION": [
       "The more cards in your hand, the stronger this attack.",
       "Costs 2 energy.",
@@ -29,8 +29,8 @@
   },
   "basicmod:DiscardDrawFive": {
     "NAME": "Discard & Draw",
-    "DESCRIPTION": "Discard 5 cards. Draw 5 cards. Exhaust.",
-    "UPGRADE_DESCRIPTION": "Discard 5 cards. Draw 5 cards.",
+    "DESCRIPTION": "discard 5 cards. Draw 5 cards. Exhaust.",
+    "UPGRADE_DESCRIPTION": "discard 5 cards. Draw 5 cards.",
     "EXTENDED_DESCRIPTION": [
       "A swingy tactical card — can refill your hand after a big discard.",
       "Costs 0 energy. Upgrading removes Exhaust.",
@@ -39,13 +39,50 @@
   },
   "basicmod:Fireball": {
     "NAME": "Fireball",
-    "DESCRIPTION": "Deal !D! damage to ALL enemies. Exhaust.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage to ALL enemies. Exhaust.",
+    "DESCRIPTION": "deal !D! damage to ALL enemies. Exhaust.",
+    "UPGRADE_DESCRIPTION": "deal !D! damage to ALL enemies. Exhaust.",
     "EXTENDED_DESCRIPTION": [
       "Unleash a burst of fiery magic at all foes.",
       "Blue uncommon attack card.",
       "Upgraded damage: 20."
     ]
+  },
+  "basicmod:DefenseConversion": {
+    "NAME": "Defense Conversion",
+    "DESCRIPTION": "Discard all Skill cards in your hand. Gain !B! Block for each card discarded. Exhaust.",
+    "UPGRADE_DESCRIPTION": "Discard all Skill cards in your hand. Gain !B! Block for each card discarded. Exhaust.",
+    "EXTENDED_DESCRIPTION": [
+      "Turn unused tactics into defense.",
+      "Blue uncommon skill card.",
+      "Upgraded: 4 Block per Skill discarded."
+    ]
+  },
+  "basicmod:TacticalReorder": {
+    "NAME": "Tactical Reorder",
+    "DESCRIPTION": "Discard half of your hand (rounded down). Draw !M! cards.",
+    "UPGRADE_DESCRIPTION": "Discard half of your hand (rounded down). Draw !M! cards.",
+    "EXTENDED_DESCRIPTION": [
+      "Plan ahead by cycling your hand efficiently.",
+      "White rare skill card.",
+      "Upgraded: Draw 4 cards."
+    ]
+  },
+  "basicmod:ReactiveGuard": {
+    "NAME": "Reactive Guard",
+    "DESCRIPTION": "Gain !B! Block. If you played an Exhaust card this turn, gain 5 additional Block.",
+    "UPGRADE_DESCRIPTION": "Gain !B! Block. If you played an Exhaust card this turn, gain 5 additional Block."
+  },
+  "basicmod:DrawPenaltyPowerCard": {
+    "NAME": "Power Surge",
+    "DESCRIPTION": "Each turn, draw 1 less card. Gain 3 Strength and 3 Dexterity. Upgrade: 4 Strength and 4 Dexterity."
+  },
+  "basicmod:EndOfTurnAOECard": {
+    "NAME": "Inferno Burst",
+    "DESCRIPTION": "At the end of each turn for 3 turns, deal 10 damage to all enemies. Upgrade: 4 turns."
+  },
+  "basicmod:HeavyStrike": {
+    "NAME": "重击",
+    "DESCRIPTION": "造成32点伤害。升级：42点伤害。"
   }
 }
 

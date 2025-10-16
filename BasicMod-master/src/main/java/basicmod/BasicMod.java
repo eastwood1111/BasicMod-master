@@ -4,6 +4,7 @@ import basemod.AutoAdd;
 import basemod.BaseMod;
 import basemod.interfaces.*;
 import basicmod.cards.BaseCard;
+import basicmod.cards.Guiyi_Gray;
 import basicmod.charater.MyCharacter;
 import basicmod.util.GeneralUtils;
 import basicmod.util.KeywordInfo;
@@ -20,7 +21,9 @@ import com.evacipated.cardcrawl.modthespire.ModInfo;
 import com.evacipated.cardcrawl.modthespire.Patcher;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.localization.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -278,6 +281,7 @@ public class BasicMod implements
 
     @Override
     public void receiveEditCharacters() {
+        MyCharacter.Meta.registerColor();
         MyCharacter.Meta.registerCharacter();
 
     }
@@ -288,5 +292,7 @@ public class BasicMod implements
                 .packageFilter(BaseCard.class) //In the same package as this class
                 .setDefaultSeen(true) //And marks them as seen in the compendium
                 .cards(); //Adds the cards
+
+        }
     }
 }
