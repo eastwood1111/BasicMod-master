@@ -10,8 +10,8 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 
-public class Fireball_Gray extends BaseCard {
-    public static final String ID = makeID(Fireball_Gray.class.getSimpleName());
+public class Fireball extends BaseCard {
+    public static final String ID = makeID(Fireball.class.getSimpleName());
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
     private static final CardStats info = new CardStats(
@@ -25,7 +25,7 @@ public class Fireball_Gray extends BaseCard {
     private static final int DAMAGE = 16;
     private static final int UPG_DAMAGE = 4; // 升级后总共20（16+4）
 
-    public Fireball_Gray() {
+    public Fireball() {
         super(ID, info);
 
         setDamage(DAMAGE, UPG_DAMAGE);
@@ -55,7 +55,7 @@ public class Fireball_Gray extends BaseCard {
 
     @Override
     public AbstractCard makeCopy() {
-        return new Fireball_Gray();
+        return new Fireball();
     }
 }
 

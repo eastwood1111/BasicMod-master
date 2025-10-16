@@ -9,8 +9,8 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import java.util.ArrayList;
 
-public class DefenseConversion_Gray extends BaseCard {
-    public static final String ID = makeID(DefenseConversion_Gray.class.getSimpleName());
+public class DefenseConversion extends BaseCard {
+    public static final String ID = makeID(DefenseConversion.class.getSimpleName());
 
     private static final CardStats info = new CardStats(
             MyCharacter.Meta.CARD_COLOR, // 蓝色角色
@@ -23,7 +23,7 @@ public class DefenseConversion_Gray extends BaseCard {
     private static final int BLOCK_PER = 3;
     private static final int UPG_BLOCK_PER = 4;
 
-    public DefenseConversion_Gray() {
+    public DefenseConversion() {
         super(ID, info);
 
         baseBlock = BLOCK_PER;
@@ -66,7 +66,7 @@ public class DefenseConversion_Gray extends BaseCard {
 
     @Override
     public AbstractCard makeCopy() {
-        return new DefenseConversion_Gray();
+        return new DefenseConversion();
     }
 }
 

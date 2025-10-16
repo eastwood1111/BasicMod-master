@@ -10,8 +10,8 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 
-public class DiscardDrawFive_Gray extends BaseCard {
-    public static final String ID = makeID(DiscardDrawFive_Gray.class.getSimpleName());
+public class DiscardDrawFive extends BaseCard {
+    public static final String ID = makeID(DiscardDrawFive.class.getSimpleName());
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
     private static final CardStats info = new CardStats(
@@ -25,7 +25,7 @@ public class DiscardDrawFive_Gray extends BaseCard {
     private static final int DISCARD = 5;
     private static final int DRAW = 5;
 
-    public DiscardDrawFive_Gray() {
+    public DiscardDrawFive() {
         super(ID, info);
 
         // 这张牌会在使用后消耗（exhaust），默认行为
@@ -60,6 +60,6 @@ public class DiscardDrawFive_Gray extends BaseCard {
 
     @Override
     public AbstractCard makeCopy() {
-        return new DiscardDrawFive_Gray();
+        return new DiscardDrawFive();
     }
 }

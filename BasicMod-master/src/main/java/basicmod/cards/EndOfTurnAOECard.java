@@ -2,14 +2,14 @@ package basicmod.cards;
 
 import basicmod.charater.MyCharacter;
 import basicmod.util.CardStats;
-import basicmod.powers.EndOfTurnAOEPower_Gray;
+import basicmod.powers.EndOfTurnAOEPower;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 
-public class EndOfTurnAOECard_Gray extends BaseCard {
-    public static final String ID = makeID(EndOfTurnAOECard_Gray.class.getSimpleName());
+public class EndOfTurnAOECard extends BaseCard {
+    public static final String ID = makeID(EndOfTurnAOECard.class.getSimpleName());
 
     private static final CardStats info = new CardStats(
             MyCharacter.Meta.CARD_COLOR,
@@ -22,14 +22,14 @@ public class EndOfTurnAOECard_Gray extends BaseCard {
     private static final int DAMAGE = 10;
     private static final int TURNS = 3;
 
-    public EndOfTurnAOECard_Gray() {
+    public EndOfTurnAOECard() {
         super(ID, info);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         int turns = upgraded ? 4 : TURNS;
-        addToBot(new ApplyPowerAction(p, p, new EndOfTurnAOEPower_Gray(p, DAMAGE, turns)));
+        addToBot(new ApplyPowerAction(p, p, new EndOfTurnAOEPower(p, DAMAGE, turns)));
     }
 
     @Override
@@ -42,6 +42,6 @@ public class EndOfTurnAOECard_Gray extends BaseCard {
 
     @Override
     public AbstractCard makeCopy() {
-        return new EndOfTurnAOECard_Gray();
+        return new EndOfTurnAOECard();
     }
 }

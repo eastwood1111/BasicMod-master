@@ -4,17 +4,15 @@ import basemod.BaseMod;
 import basemod.abstracts.CustomEnergyOrb;
 import basemod.abstracts.CustomPlayer;
 import basemod.animations.SpriterAnimation;
-import basicmod.cards.Defend_Gray;
-import basicmod.cards.Strike_Gray;
+import basicmod.cards.Defend;
+import basicmod.cards.Guiyi;
+import basicmod.cards.Strike;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.math.MathUtils;
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.blue.Defend_Blue;
-import com.megacrit.cardcrawl.cards.green.Neutralize;
-import com.megacrit.cardcrawl.cards.red.Strike_Red;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.EnergyManager;
@@ -141,10 +139,10 @@ public class MyCharacter extends CustomPlayer {
         ArrayList<String> retVal = new ArrayList<>();
 
         for (int i = 0; i < 5; i++) {
-            retVal.add(Strike_Gray.ID);
-            retVal.add(Defend_Gray.ID);
+            retVal.add(Strike.ID);
+            retVal.add(Defend.ID);
         }
-
+        retVal.add(Guiyi.ID);
         return retVal;
     }
 
@@ -173,7 +171,7 @@ public class MyCharacter extends CustomPlayer {
     public AbstractCard getStartCardForEvent() {
         //This card is used for the Gremlin card matching game.
         //It should be a non-strike non-defend starter card, but it doesn't have to be.
-        return new Strike_Gray();
+        return new Strike();
     }
 
     /*- Below this is methods that you should *probably* adjust, but don't have to. -*/

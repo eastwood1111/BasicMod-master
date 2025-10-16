@@ -9,36 +9,30 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class Guiyi_Gray extends BaseCard {
-    public static final String ID = makeID(Guiyi_Gray.class.getSimpleName());
+public class SimpleStrike extends BaseCard {
+    public static final String ID = makeID(SimpleStrike.class.getSimpleName());
 
     private static final CardStats info = new CardStats(
             MyCharacter.Meta.CARD_COLOR,
             CardType.ATTACK,
-            CardRarity.BASIC,
+            CardRarity.COMMON, // 白色普通卡
             CardTarget.ENEMY,
-            2 // 能量消耗
+            1 // 费用
     );
 
-    private static final int MULTIPLIER = 3;
-    private static final int UPG_MULTIPLIER = 5;
+    private static final int DAMAGE = 10;
 
-    public Guiyi_Gray() {
+    public SimpleStrike() {
         super(ID, info);
-
-        baseDamage = 0; // 实际伤害在 use 时计算
-        this.magicNumber = this.baseMagicNumber = MULTIPLIER; // 保存倍数
+        setDamage(DAMAGE, 0); // 普通攻击没有升级增加
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        int handCount = p.hand.size(); // 当前手牌数量
-        int damageAmount = handCount * this.magicNumber;
-
         addToBot(new DamageAction(
                 m,
-                new DamageInfo(p, damageAmount, DamageInfo.DamageType.NORMAL),
-                AbstractGameAction.AttackEffect.SLASH_HEAVY
+                new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL),
+                AbstractGameAction.AttackEffect.SLASH_HORIZONTAL
         ));
     }
 
@@ -46,13 +40,13 @@ public class Guiyi_Gray extends BaseCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(UPG_MULTIPLIER - MULTIPLIER);
+            initializeDescription(); // 白卡可不增加伤害
         }
     }
 
     @Override
     public AbstractCard makeCopy() {
-        return new Guiyi_Gray();
+        return new SimpleStrike();
     }
 }
 

@@ -1,4 +1,4 @@
-package basicmod.powers;
+package basicmod.cards;
 
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.powers.AbstractPower;
@@ -7,13 +7,13 @@ import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.powers.DexterityPower;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
-public class PowerPenaltyDrawPower_Gray extends AbstractPower {
+public class PowerPenaltyDrawPower extends AbstractPower {
     public static final String POWER_ID = "basicmod:PowerPenaltyDrawPower";
 
     private int strengthAmount;
     private int dexAmount;
 
-    public PowerPenaltyDrawPower_Gray(AbstractCreature owner, int strength, int dex) {
+    public PowerPenaltyDrawPower(AbstractCreature owner, int strength, int dex) {
         this.name = "Power Surge with Draw Penalty";
         this.ID = POWER_ID;
         this.owner = owner;

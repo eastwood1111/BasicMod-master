@@ -83,6 +83,14 @@
   "basicmod:HeavyStrike": {
     "NAME": "重击",
     "DESCRIPTION": "造成32点伤害。升级：42点伤害。"
+  },
+  "basicmod:StrengthBoostCard": {
+    "NAME": "Strength Boost",
+    "DESCRIPTION": "At the start of your turn, gain 2 Strength. Upgrade: 3 Strength."
+  },
+  "basicmod:TacticalInsightCard": {
+    "NAME": "Tactical Insight",
+    "DESCRIPTION": "At the start of your turn, draw 1 card. If you played a Skill this turn, gain 1 Block. Upgrade: Draw 2 cards."
   }
 }
 
