@@ -4,6 +4,8 @@ import basemod.AutoAdd;
 import basemod.BaseMod;
 import basemod.interfaces.*;
 import basicmod.cards.BaseCard;
+import basicmod.cards.attack.*;
+import basicmod.cards.skill.Defend;
 import basicmod.charater.MyCharacter;
 import basicmod.util.GeneralUtils;
 import basicmod.util.KeywordInfo;
@@ -282,14 +284,12 @@ public class BasicMod implements
 
     }
 
-    @Override
     public void receiveEditCards() {
+        // 手动注册自定义卡牌
         new AutoAdd(modID) //Loads files from this mod
                 .packageFilter(BaseCard.class) //In the same package as this class
                 .setDefaultSeen(true) //And marks them as seen in the compendium
                 .cards(); //Adds the cards
-
-
     }
 
 }

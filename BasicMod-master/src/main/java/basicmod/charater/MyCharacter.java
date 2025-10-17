@@ -146,15 +146,7 @@ public class MyCharacter extends CustomPlayer {
         return retVal;
     }
 
-    public ArrayList<String> getMyCardPool() {
-        ArrayList<String> tmpPool = new ArrayList<>();
-        for (AbstractCard card : CardLibrary.getAllCards()) {
-            if (card.color == MyCharacter.Meta.CARD_COLOR) {
-                tmpPool.add(card.cardID);
-            }
-        }
-        return tmpPool;
-    }
+
 
 
 
