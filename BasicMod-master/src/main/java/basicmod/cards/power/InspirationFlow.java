@@ -1,35 +1,34 @@
-package basicmod.cards;
+package basicmod.cards.power;
 
+import basicmod.cards.BaseCard;
 import basicmod.charater.MyCharacter;
 import basicmod.util.CardStats;
-import basicmod.powers.EndOfTurnAOEPower;
+import basicmod.powers.InspirationFlowPower;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 
-public class EndOfTurnAOECard extends BaseCard {
-    public static final String ID = makeID(EndOfTurnAOECard.class.getSimpleName());
+public class InspirationFlow extends BaseCard {
+    public static final String ID = makeID(InspirationFlow.class.getSimpleName());
 
     private static final CardStats info = new CardStats(
             MyCharacter.Meta.CARD_COLOR,
             CardType.POWER,
             CardRarity.RARE,
             CardTarget.SELF,
-            2 // 初始费用
+            1
     );
 
-    private static final int DAMAGE = 10;
-    private static final int TURNS = 3;
+    private static final int DRAW = 1;
 
-    public EndOfTurnAOECard() {
+    public InspirationFlow() {
         super(ID, info);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        int turns = upgraded ? 4 : TURNS;
-        addToBot(new ApplyPowerAction(p, p, new EndOfTurnAOEPower(p, DAMAGE, turns)));
+        addToBot(new ApplyPowerAction(p, p, new InspirationFlowPower(p, DRAW)));
     }
 
     @Override
@@ -42,6 +41,6 @@ public class EndOfTurnAOECard extends BaseCard {
 
     @Override
     public AbstractCard makeCopy() {
-        return new EndOfTurnAOECard();
+        return new InspirationFlow();
     }
 }

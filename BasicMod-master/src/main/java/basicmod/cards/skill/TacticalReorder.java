@@ -1,5 +1,6 @@
-package basicmod.cards;
+package basicmod.cards.skill;
 
+import basicmod.cards.BaseCard;
 import basicmod.charater.MyCharacter;
 import basicmod.util.CardStats;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -8,7 +9,6 @@ import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 

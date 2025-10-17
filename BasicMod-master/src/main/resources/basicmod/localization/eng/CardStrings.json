@@ -39,8 +39,8 @@
   },
   "basicmod:Fireball": {
     "NAME": "Fireball",
-    "DESCRIPTION": "deal !D! damage to ALL enemies. Exhaust.",
-    "UPGRADE_DESCRIPTION": "deal !D! damage to ALL enemies. Exhaust.",
+    "DESCRIPTION": "对敌方全体造成 !D! 点伤害 消耗.",
+    "UPGRADE_DESCRIPTION": "对敌方全体造成 !D! 点伤害 消耗.",
     "EXTENDED_DESCRIPTION": [
       "Unleash a burst of fiery magic at all foes.",
       "Blue uncommon attack card.",
@@ -82,15 +82,28 @@
   },
   "basicmod:HeavyStrike": {
     "NAME": "重击",
-    "DESCRIPTION": "造成32点伤害。升级：42点伤害。"
+    "DESCRIPTION": "造成32点伤害",
+    "UPGRADE_DESCRIPTION":"42点伤害"
   },
   "basicmod:StrengthBoostCard": {
     "NAME": "Strength Boost",
     "DESCRIPTION": "At the start of your turn, gain 2 Strength. Upgrade: 3 Strength."
   },
-  "basicmod:TacticalInsightCard": {
-    "NAME": "Tactical Insight",
-    "DESCRIPTION": "At the start of your turn, draw 1 card. If you played a Skill this turn, gain 1 Block. Upgrade: Draw 2 cards."
+  "basicmod:StrikeWhite": {
+    "NAME": "打击",
+    "DESCRIPTION": "造成 !D! 点伤害。"
+  },
+  "basicmod:InspirationFlow": {
+    "NAME": "灵感涌现",
+    "DESCRIPTION": "在每回合开始时，额外抽 !M! 张牌"
+  },
+  "basicmod:AgilityAura": {
+    "NAME": "灵感",
+    "DESCRIPTION": "在每回合开始时。"
+  },
+  "basicmod:SwiftStrike": {
+    "NAME": "迅捷打击",
+    "DESCRIPTION": "造成8点伤害抽一张牌"
   }
 }
 

@@ -1,5 +1,6 @@
-package basicmod.cards;
+package basicmod.cards.attack;
 
+import basicmod.cards.BaseCard;
 import basicmod.charater.MyCharacter;
 import basicmod.util.CardStats;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -9,30 +10,35 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class HeavyStrike extends BaseCard {
-    public static final String ID = makeID(HeavyStrike.class.getSimpleName());
+public class Guiyi extends BaseCard {
+    public static final String ID = makeID(Guiyi.class.getSimpleName());
 
     private static final CardStats info = new CardStats(
             MyCharacter.Meta.CARD_COLOR,
             CardType.ATTACK,
             CardRarity.BASIC,
             CardTarget.ENEMY,
-            3 // 费用
+            2 // 能量消耗
     );
 
-    private static final int DAMAGE = 32;
-    private static final int UPG_DAMAGE = 42;
+    private static final int MULTIPLIER = 3;
+    private static final int UPG_MULTIPLIER = 5;
 
-    public HeavyStrike() {
+    public Guiyi() {
         super(ID, info);
-        setDamage(DAMAGE, UPG_DAMAGE);
+
+        baseDamage = 0; // 实际伤害在 use 时计算
+        this.magicNumber = this.baseMagicNumber = MULTIPLIER; // 保存倍数
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        int handCount = p.hand.size(); // 当前手牌数量
+        int damageAmount = handCount * this.magicNumber;
+
         addToBot(new DamageAction(
                 m,
-                new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL),
+                new DamageInfo(p, damageAmount, DamageInfo.DamageType.NORMAL),
                 AbstractGameAction.AttackEffect.SLASH_HEAVY
         ));
     }
@@ -41,14 +47,13 @@ public class HeavyStrike extends BaseCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(UPG_DAMAGE - DAMAGE); // 升级增加10点伤害
-            initializeDescription();
+            upgradeMagicNumber(UPG_MULTIPLIER - MULTIPLIER);
         }
     }
 
     @Override
     public AbstractCard makeCopy() {
-        return new HeavyStrike();
+        return new Guiyi();
     }
 }
 

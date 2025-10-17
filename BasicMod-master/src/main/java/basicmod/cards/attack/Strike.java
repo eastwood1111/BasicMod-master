@@ -1,5 +1,6 @@
-package basicmod.cards;
+package basicmod.cards.attack;
 
+import basicmod.cards.BaseCard;
 import basicmod.charater.MyCharacter;
 import basicmod.util.CardStats;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
