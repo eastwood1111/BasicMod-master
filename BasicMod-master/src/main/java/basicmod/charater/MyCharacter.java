@@ -77,7 +77,7 @@ public class MyCharacter extends CustomPlayer {
                     BG_ATTACK, BG_SKILL, BG_POWER, ENERGY_ORB,
                     BG_ATTACK_P, BG_SKILL_P, BG_POWER_P, ENERGY_ORB_P,
                     SMALL_ORB);
-        }
+        } 
 
         public static void registerCharacter() {
             BaseMod.addCharacter(new MyCharacter(), CHAR_SELECT_BUTTON, CHAR_SELECT_PORTRAIT);

@@ -283,7 +283,7 @@ public class BasicMod implements
 
     @Override
     public void receiveEditCharacters() {
-        MyCharacter.Meta.registerColor();
+
         MyCharacter.Meta.registerCharacter();
 
     }
