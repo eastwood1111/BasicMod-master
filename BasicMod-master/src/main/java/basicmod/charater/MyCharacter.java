@@ -7,6 +7,7 @@ import basemod.animations.SpriterAnimation;
 import basicmod.cards.skill.Defend;
 import basicmod.cards.attack.Guiyi;
 import basicmod.cards.attack.Strike;
+import basicmod.relics.MyRelic;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.math.MathUtils;
@@ -150,11 +151,12 @@ public class MyCharacter extends CustomPlayer {
 
 
 
+
     @Override
     public ArrayList<String> getStartingRelics() {
         ArrayList<String> retVal = new ArrayList<>();
         //IDs of starting relics. You can have multiple, but one is recommended.
-        retVal.add(BurningBlood.ID);
+        retVal.add(MyRelic.ID);
 
         return retVal;
     }
@@ -261,3 +263,4 @@ public class MyCharacter extends CustomPlayer {
         return new MyCharacter();
     }
 }
+

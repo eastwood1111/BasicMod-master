@@ -51,7 +51,7 @@
             <artifactId>modthespire</artifactId>
             <version>${ModTheSpire.version}</version>
             <scope>system</scope>
-            <systemPath>${steam.path}/workshop/content/646570/1605060445/ModTheSpire.jar</systemPath>
+            <systemPath>D:/steam/steamapps/common/SlayTheSpire/mods/basicmod.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>basemod</groupId>
@@ -60,14 +60,14 @@
                 in the left sidebar under External Libraries and don't need to be accurate.-->
             <version>5.44.0</version>
             <scope>system</scope>
-            <systemPath>${steam.path}/workshop/content/646570/1605833019/BaseMod.jar</systemPath>
+            <systemPath>D:/steam/steamapps/common/SlayTheSpire/mods/basicmod.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>com.evacipated.cardcrawl.mod</groupId>
             <artifactId>StSLib</artifactId>
             <version>2.4.0</version>
             <scope>system</scope>
-            <systemPath>${steam.path}/workshop/content/646570/1609158507/StSLib.jar</systemPath>
+            <systemPath>D:/steam/steamapps/common/SlayTheSpire/mods/basicmod.jar</systemPath>
         </dependency>
     </dependencies>
 

@@ -1,9 +1,10 @@
 {
-  "${modID}:RelicID": {
-    "NAME": "Good Relic",
-    "FLAVOR": "Flavor text displayed in detailed relic view.",
+  "${modID}:MyRelic": {
+    "NAME": "My Relic",
+    "FLAVOR": "I followed a tutorial!",
     "DESCRIPTIONS": [
-      "Gain [E] at the start of your turn. [E] is an energy icon."
+      "Whenever you play a card, gain #b",
+      " #yStrength."
     ]
   }
 }
