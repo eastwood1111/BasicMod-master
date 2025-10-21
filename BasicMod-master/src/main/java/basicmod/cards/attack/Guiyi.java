@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class Guiyi extends BaseCard {
     public static final String ID = makeID(Guiyi.class.getSimpleName());
+    private static final String IMG = "images/cards/attack/guiyi.png";
 
     private static final CardStats info = new CardStats(
             MyCharacter.Meta.CARD_COLOR,

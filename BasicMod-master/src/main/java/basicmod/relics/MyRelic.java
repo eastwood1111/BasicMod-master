@@ -1,30 +1,51 @@
 package basicmod.relics;
 
+import basicmod.cards.skill.PageFragment;
 import basicmod.charater.MyCharacter;
-import com.megacrit.cardcrawl.actions.utility.UseCardAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.relics.AbstractRelic;
 
 import static basicmod.BasicMod.makeID;
 
 public class MyRelic extends BaseRelic {
-    private static final String NAME = "MyRelic"; //The name will be used for determining the image file as well as the ID.
-    public static final String ID = makeID(NAME); //This adds the mod's prefix to the relic ID, resulting in modID:MyRelic
-    private static final RelicTier RARITY = RelicTier.STARTER; //The relic's rarity.
-    private static final LandingSound SOUND = LandingSound.CLINK; //The sound played when the relic is clicked.
+    public static final String ID = makeID("MyRelic");
 
-    private static final int STRENGTH = 10; //For convenience of changing it later and clearly knowing what the number means instead of just having a 10 sitting around in the code.
+    private static final int BASE_COUNT = 1;
+    private static final int UPGRADE_COUNT = 2;
+    private final boolean upgraded;
 
+    // 构造函数
     public MyRelic() {
-        super(ID, NAME, MyCharacter.Meta.CARD_COLOR, RARITY, SOUND);
+        this(false);
     }
 
+    public MyRelic(boolean upgraded) {
+        super(ID, "CodexRelic", MyCharacter.Meta.CARD_COLOR,
+                upgraded ? RelicTier.BOSS : RelicTier.STARTER,
+                LandingSound.MAGICAL);
+        this.upgraded = upgraded;
+        this.grayscale = !upgraded; // 升级版不灰色
+    }
 
     @Override
-    public void onUseCard(AbstractCard targetCard, UseCardAction useCardAction) {
-        super.onUseCard(targetCard, useCardAction);
+    public void atBattleStartPreDraw() {
+        flash();
+        int count = upgraded ? UPGRADE_COUNT : BASE_COUNT;
+        for (int i = 0; i < count; i++) {
+            AbstractDungeon.actionManager.addToBottom(
+                    new MakeTempCardInHandAction(new PageFragment(), 1)
+            );
+        }
     }
-    // Take advantage of autocomplete!
-    // If you type "public onUse" IntelliJ should already have the method in the suggestions.
-    // Use the up/down arrows to select it and press enter to automatically create this whole chunk.
-    // This autocomplete is also a good way to see all the hooks/look for the right hook by name, by just typing "publi"
+
+    @Override
+    public String getUpdatedDescription() {
+        return upgraded ? DESCRIPTIONS[1] : DESCRIPTIONS[0];
+    }
+
+    @Override
+    public AbstractRelic makeCopy() {
+        return new MyRelic(upgraded);
+    }
 }

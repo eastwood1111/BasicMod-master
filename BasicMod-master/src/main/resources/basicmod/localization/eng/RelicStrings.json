@@ -1,10 +1,10 @@
 {
-  "${modID}:MyRelic": {
-    "NAME": "My Relic",
-    "FLAVOR": "I followed a tutorial!",
+  "basicmod:MyRelic": {
+    "NAME": "秘典",
+    "FLAVOR": "古老的魔法书，记录着遗忘的知识。",
     "DESCRIPTIONS": [
-      "Whenever you play a card, gain #b",
-      " #yStrength."
+      "战斗开始时，获得一张 #y残页 。",
+      "战斗开始时，获得 #b2 张 #y残页 。"
     ]
   }
 }

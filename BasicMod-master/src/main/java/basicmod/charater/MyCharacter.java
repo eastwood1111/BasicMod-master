@@ -4,6 +4,7 @@ import basemod.BaseMod;
 import basemod.abstracts.CustomEnergyOrb;
 import basemod.abstracts.CustomPlayer;
 import basemod.animations.SpriterAnimation;
+import basicmod.cards.attack.SlashingInsight;
 import basicmod.cards.skill.Defend;
 import basicmod.cards.attack.Guiyi;
 import basicmod.cards.attack.Strike;
@@ -77,7 +78,7 @@ public class MyCharacter extends CustomPlayer {
                     BG_ATTACK, BG_SKILL, BG_POWER, ENERGY_ORB,
                     BG_ATTACK_P, BG_SKILL_P, BG_POWER_P, ENERGY_ORB_P,
                     SMALL_ORB);
-        } 
+        }
 
         public static void registerCharacter() {
             BaseMod.addCharacter(new MyCharacter(), CHAR_SELECT_BUTTON, CHAR_SELECT_PORTRAIT);
@@ -143,7 +144,7 @@ public class MyCharacter extends CustomPlayer {
             retVal.add(Strike.ID);
             retVal.add(Defend.ID);
         }
-        retVal.add(Guiyi.ID);
+        retVal.add(SlashingInsight.ID);
         return retVal;
     }
 

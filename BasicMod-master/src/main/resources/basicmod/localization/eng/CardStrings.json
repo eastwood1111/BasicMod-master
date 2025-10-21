@@ -18,9 +18,9 @@
     ]
   },
   "basicmod:Guiyi": {
-    "NAME": "Guiyi",
-    "DESCRIPTION": "deal damage equal to 3 × your hand size.",
-    "UPGRADE_DESCRIPTION": "deal damage equal to 5 × your hand size.",
+    "NAME": "归一",
+    "DESCRIPTION": "造成手牌数量3倍的伤害",
+    "UPGRADE_DESCRIPTION": "造成手牌数量5倍的伤害",
     "EXTENDED_DESCRIPTION": [
       "The more cards in your hand, the stronger this attack.",
       "Costs 2 energy.",
@@ -28,9 +28,9 @@
     ]
   },
   "basicmod:DiscardDrawFive": {
-    "NAME": "Discard & Draw",
-    "DESCRIPTION": "discard 5 cards. Draw 5 cards. Exhaust.",
-    "UPGRADE_DESCRIPTION": "discard 5 cards. Draw 5 cards.",
+    "NAME": "深思",
+    "DESCRIPTION": "弃五5张牌摸5张牌 消耗",
+    "UPGRADE_DESCRIPTION": "弃五5张牌摸5张牌",
     "EXTENDED_DESCRIPTION": [
       "A swingy tactical card — can refill your hand after a big discard.",
       "Costs 0 energy. Upgrading removes Exhaust.",
@@ -38,7 +38,7 @@
     ]
   },
   "basicmod:Fireball": {
-    "NAME": "Fireball",
+    "NAME": "火球术",
     "DESCRIPTION": "对敌方全体造成 !D! 点伤害 消耗.",
     "UPGRADE_DESCRIPTION": "对敌方全体造成 !D! 点伤害 消耗.",
     "EXTENDED_DESCRIPTION": [
@@ -104,6 +104,17 @@
   "basicmod:SwiftStrike": {
     "NAME": "迅捷打击",
     "DESCRIPTION": "造成8点伤害抽一张牌"
+  },
+  "basicmod:PageFragment": {
+    "NAME": "残页",
+    "DESCRIPTION": "从弃牌堆中选择一张牌，将其加入手牌。本回合保留该牌 消耗 保留",
+    "UPGRADE_DESCRIPTION": "从弃牌堆中选择两张牌，将它们加入手牌。本回合保留这些牌 消耗 保留"
+  },
+  "basicmod:SlashingInsight": {
+    "NAME": "后发制人",
+    "DESCRIPTION": "造成 !D! 点伤害。若本回合打出过牌，下回合多抽 1 张牌",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害。若本回合打出过牌，下回合多抽 1 张牌",
+    "EXTENDED_DESCRIPTION": []
   }
 }
 
