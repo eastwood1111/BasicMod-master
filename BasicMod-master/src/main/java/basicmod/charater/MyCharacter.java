@@ -6,7 +6,6 @@ import basemod.abstracts.CustomPlayer;
 import basemod.animations.SpriterAnimation;
 import basicmod.cards.attack.SlashingInsight;
 import basicmod.cards.skill.Defend;
-import basicmod.cards.attack.Guiyi;
 import basicmod.cards.attack.Strike;
 import basicmod.relics.MyRelic;
 import com.badlogic.gdx.graphics.Color;
@@ -22,7 +21,6 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
-import com.megacrit.cardcrawl.relics.BurningBlood;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 
 import java.util.ArrayList;

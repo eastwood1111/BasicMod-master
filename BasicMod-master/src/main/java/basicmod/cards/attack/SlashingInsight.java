@@ -3,10 +3,8 @@ package basicmod.cards.attack;
 import basicmod.cards.BaseCard;
 import basicmod.charater.MyCharacter;
 import basicmod.util.CardStats;
-import basicmod.powers.ExtraDrawNextTurnPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -30,7 +28,7 @@ public class SlashingInsight extends BaseCard {
     );
 
     private static final int DAMAGE = 7;
-    private static final int UPG_DAMAGE = 3;
+    private static final int UPG_DAMAGE = 3; // 升级后增加伤害
 
     public SlashingInsight() {
         super(ID, info);
@@ -40,7 +38,7 @@ public class SlashingInsight extends BaseCard {
         this.rawDescription = cardStrings.DESCRIPTION;
         this.initializeDescription();
 
-        setDamage(DAMAGE, UPG_DAMAGE);
+        setDamage(DAMAGE, UPG_DAMAGE); // 设置伤害
     }
 
     @Override
@@ -52,17 +50,18 @@ public class SlashingInsight extends BaseCard {
                 AbstractGameAction.AttackEffect.SLASH_HORIZONTAL
         ));
 
-        // 打出该牌获得一层 Power
-        addToBot(new ApplyPowerAction(p, p, new ExtraDrawNextTurnPower(p, 1), 1));
+        // 随机选择一张卡牌并将其费用设置为 0
+        if (!p.hand.isEmpty()) {
+            AbstractCard cardToReduce = p.hand.getRandomCard(true); // 随机选择一张手牌
+            cardToReduce.setCostForTurn(0);  // 设置卡牌在本回合内费用为 0
+        }
     }
 
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(UPG_DAMAGE);
-
-            // 升级后描述
+            upgradeDamage(UPG_DAMAGE); // 升级后增加伤害
             this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             this.initializeDescription();
         }

@@ -16,7 +16,7 @@ public class Blizzard extends BaseCard {
     private static final CardStats info = new CardStats(
             MyCharacter.Meta.CARD_COLOR,
             CardType.ATTACK,
-            CardRarity.RARE,
+            CardRarity.UNCOMMON,
             CardTarget.ALL_ENEMY,
             1
     );

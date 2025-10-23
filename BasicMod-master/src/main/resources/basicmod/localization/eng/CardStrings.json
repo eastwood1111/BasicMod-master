@@ -83,7 +83,7 @@
   "basicmod:HeavyStrike": {
     "NAME": "重击",
     "DESCRIPTION": "造成32点伤害",
-    "UPGRADE_DESCRIPTION":"42点伤害"
+    "UPGRADE_DESCRIPTION": "42点伤害"
   },
   "basicmod:StrengthBoostCard": {
     "NAME": "Strength Boost",
@@ -124,9 +124,21 @@
   },
   "basicmod:Blizzard": {
     "NAME": "暴风雪",
-    "DESCRIPTION": "造成 !D! 点伤害 若目标已有虚弱 抽1张牌 给予1层虚弱 ",
-    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害 若目标已有虚弱 抽1张牌 给予1层虚弱",
+    "DESCRIPTION": "对敌方全体造成 !D! 点伤害3次 消耗",
+    "UPGRADE_DESCRIPTION": "对敌方全体造成 !D! 点伤害4次 消耗",
     "EXTENDED_DESCRIPTION": []
-}
+  },
+  "basicmod:Overdrive": {
+    "NAME": "恶魔献祭",
+    "DESCRIPTION": "每回合少抽1张牌，获得3点力量3点敏捷",
+    "UPGRADE_DESCRIPTION": "每回合少抽1张牌，获得3点力量3点敏捷",
+    "EXTENDED_DESCRIPTION": []
+  },
+  "basicmod:ExtraDrawOnUseCard": {
+    "NAME": "回络",
+    "DESCRIPTION": "当你使用卡牌进行抽牌时，额外抽1张牌",
+    "UPGRADE_DESCRIPTION": "当你使用卡牌进行抽牌时，额外抽1张牌",
+    "EXTENDED_DESCRIPTION": []
   }
+}
 
