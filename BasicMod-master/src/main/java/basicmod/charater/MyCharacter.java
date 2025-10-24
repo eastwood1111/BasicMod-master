@@ -4,6 +4,7 @@ import basemod.BaseMod;
 import basemod.abstracts.CustomEnergyOrb;
 import basemod.abstracts.CustomPlayer;
 import basemod.animations.SpriterAnimation;
+import basicmod.cards.attack.SlashingInsight;
 import basicmod.cards.skill.Defend;
 import basicmod.cards.attack.Strike;
 import basicmod.relics.MyRelic;

@@ -111,25 +111,25 @@
     "UPGRADE_DESCRIPTION": "从弃牌堆中选择两张牌，将它们加入手牌。本回合保留这些牌 消耗 保留"
   },
   "basicmod:SlashingInsight": {
-    "NAME": "洞察",
-    "DESCRIPTION": "造成 !D! 点伤害 将随机一张手牌本回合费用变为0",
-    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害 将随机一张手牌本回合费用变为0",
+    "NAME": "后发制人",
+    "DESCRIPTION": "造成 !D! 点伤害。若本回合打出过牌，下回合多抽 1 张牌",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害。若本回合打出过牌，下回合多抽 1 张牌",
     "EXTENDED_DESCRIPTION": []
   },
   "basicmod:WeakStrike": {
-    "NAME": "伺虚",
+    "NAME": "伺虚而行",
     "DESCRIPTION": "造成 !D! 点伤害 若目标已有虚弱 抽1张牌 给予1层虚弱 ",
     "UPGRADE_DESCRIPTION": "造成 !D! 点伤害 若目标已有虚弱 抽1张牌 给予1层虚弱",
     "EXTENDED_DESCRIPTION": []
   },
   "basicmod:Blizzard": {
-    "NAME": "暴雨",
+    "NAME": "暴风雪",
     "DESCRIPTION": "对敌方全体造成 !D! 点伤害3次 消耗",
     "UPGRADE_DESCRIPTION": "对敌方全体造成 !D! 点伤害4次 消耗",
     "EXTENDED_DESCRIPTION": []
   },
   "basicmod:Overdrive": {
-    "NAME": "献祭",
+    "NAME": "恶魔献祭",
     "DESCRIPTION": "每回合少抽1张牌，获得3点力量3点敏捷",
     "UPGRADE_DESCRIPTION": "每回合少抽1张牌，获得3点力量3点敏捷",
     "EXTENDED_DESCRIPTION": []
@@ -138,12 +138,6 @@
     "NAME": "回络",
     "DESCRIPTION": "当你使用卡牌进行抽牌时，额外抽1张牌",
     "UPGRADE_DESCRIPTION": "当你使用卡牌进行抽牌时，额外抽1张牌",
-    "EXTENDED_DESCRIPTION": []
-  },
-  "basicmod:ShieldFromDraw": {
-    "NAME": "抽牌护盾",
-    "DESCRIPTION": "每抽一张牌获得 #b1 点格挡。",
-    "UPGRADE_DESCRIPTION": "每抽一张牌获得 #b2 点格挡。",
     "EXTENDED_DESCRIPTION": []
   }
 }
