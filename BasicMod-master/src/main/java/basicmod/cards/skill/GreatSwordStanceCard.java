@@ -8,9 +8,14 @@ import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.localization.CardStrings;
+import basicmod.BasicMod;
 
 public class GreatSwordStanceCard extends BaseCard {
     public static final String ID = makeID(GreatSwordStanceCard.class.getSimpleName());
+    private static final CardStrings cardStrings = com.megacrit.cardcrawl.core.CardCrawlGame.languagePack.getCardStrings(ID);
+    private static final String NAME = cardStrings.NAME;
+    private static final String DESCRIPTION = cardStrings.DESCRIPTION;
 
     private static final CardStats info = new CardStats(
             MyCharacter.Meta.CARD_COLOR,
@@ -20,13 +25,15 @@ public class GreatSwordStanceCard extends BaseCard {
             0
     );
 
-    private static final int BASE_STR = 5;
+    private static final int BASE_STR = 6;
     private static final int UPG_STR = 6;
 
     public GreatSwordStanceCard() {
         super(ID, info);
+        this.name = NAME;
         this.baseMagicNumber = this.magicNumber = BASE_STR;
-        this.rawDescription = "进入大剑架势，获得" + BASE_STR + "点力量。";
+        this.rawDescription = DESCRIPTION.replace("!STR!", String.valueOf(BASE_STR));
+        this.tags.add(basicmod.Enums.STANCE);
         initializeDescription();
     }
 
@@ -38,7 +45,6 @@ public class GreatSwordStanceCard extends BaseCard {
             p.addPower(stancePower);
         }
 
-        // 切换架势并获得力量
         stancePower.switchStance(CurrentStancePower.Stance.GREAT_SWORD, this.magicNumber);
 
         // 升级后才抽1张牌
@@ -51,9 +57,8 @@ public class GreatSwordStanceCard extends BaseCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            // 升级力量值
             upgradeMagicNumber(UPG_STR - BASE_STR);
-            this.rawDescription = "升级后：进入大剑架势，获得" + UPG_STR + "点力量。抽1张牌。";
+            this.rawDescription = DESCRIPTION.replace("!STR!", String.valueOf(UPG_STR)) + " 抽1张牌。";
             initializeDescription();
         }
     }

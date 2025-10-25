@@ -29,8 +29,8 @@
   },
   "basicmod:DiscardDrawFive": {
     "NAME": "深思",
-    "DESCRIPTION": "弃五5张牌摸5张牌 消耗",
-    "UPGRADE_DESCRIPTION": "弃五5张牌摸5张牌",
+    "DESCRIPTION": "弃5张牌摸5张牌 消耗",
+    "UPGRADE_DESCRIPTION": "弃5张牌摸5张牌",
     "EXTENDED_DESCRIPTION": [
       "A swingy tactical card — can refill your hand after a big discard.",
       "Costs 0 energy. Upgrading removes Exhaust.",
@@ -134,25 +134,35 @@
     "UPGRADE_DESCRIPTION": "每回合少抽1张牌，获得3点力量3点敏捷",
     "EXTENDED_DESCRIPTION": []
   },
-  "SwordStanceCard": {
+  "basicmod:SwordStanceCard": {
     "NAME": "剑架势",
-    "DESCRIPTION": "进入剑架势，获得3点力量。切换到其他架势时会移除力量。",
+    "DESCRIPTION": "保留 进入剑架势，获得3点力量。切换到其他架势时会移除力量。",
     "UPGRADE_DESCRIPTION": "升级后效果保持不变。"
   },
-  "ShieldStanceCard": {
+  "basicmod:ShieldStanceCard": {
     "NAME": "盾架势",
-    "DESCRIPTION": "进入盾架势，获得3点敏捷。切换到其他架势时会移除敏捷。",
+    "DESCRIPTION": "保留 进入盾架势，获得3点敏捷。切换到其他架势时会移除敏捷。",
     "UPGRADE_DESCRIPTION": "升级后效果保持不变。"
   },
-  "GreatSwordStanceCard": {
+  "basicmod:GreatSwordStanceCard": {
     "NAME": "大剑架势",
     "DESCRIPTION": "进入大剑架势，获得 6 点力量。若当前没有架势，进入架势时抽两张牌。",
     "UPGRADE_DESCRIPTION": "耗能减少至 0。"
   },
-  "basicmod:TwoHandsPowerCard": {
+  "basicmod:TwoHandsCard": {
     "NAME": "双手各持",
-    "DESCRIPTION": "你可以同时拥有两个架势。切换架势时按进入顺序进行切换。",
-    "UPGRADE_DESCRIPTION": "固有。你可以同时拥有两个架势。切换架势时按进入顺序进行切换。"
+    "DESCRIPTION": "你可以同时拥有两个架势",
+    "UPGRADE_DESCRIPTION": "固有。你可以同时拥有两个架势"
+  },
+  "basicmod:TwoHandsModeCard": {
+    "NAME": "双手共持",
+    "DESCRIPTION": "获得3点力量 不可升级",
+    "UPGRADE_DESCRIPTION": "获得3点力量 不可升级"
+  },
+  "basicmod:StanceTriggerCard": {
+    "NAME": "骑士之魂",
+    "DESCRIPTION": "打出架势牌抽一张牌",
+    "UPGRADE_DESCRIPTION": "打出架势牌抽一张牌"
   }
 }
 

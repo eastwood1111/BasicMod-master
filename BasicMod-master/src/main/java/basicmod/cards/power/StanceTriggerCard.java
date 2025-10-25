@@ -3,30 +3,29 @@ package basicmod.cards.power;
 import basicmod.cards.BaseCard;
 import basicmod.charater.MyCharacter;
 import basicmod.util.CardStats;
-import basicmod.powers.CurrentStancePower;
-import basicmod.powers.TwoHandsPower;
+import basicmod.powers.StanceDrawPower;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
-public class TwoHandsCard extends BaseCard {
-    public static final String ID = makeID(TwoHandsCard.class.getSimpleName());
+public class StanceTriggerCard extends BaseCard {
+    public static final String ID = makeID(StanceTriggerCard.class.getSimpleName());
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final String NAME = cardStrings.NAME;
     private static final String DESCRIPTION = cardStrings.DESCRIPTION;
-    private static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 
     private static final CardStats info = new CardStats(
             MyCharacter.Meta.CARD_COLOR,
             CardType.POWER,
-            CardRarity.RARE,
+            CardRarity.UNCOMMON,
             CardTarget.SELF,
-            2
+            1 // 基础费用
     );
 
-    public TwoHandsCard() {
+    public StanceTriggerCard() {
         super(ID, info);
         this.name = NAME;
         this.rawDescription = DESCRIPTION;
@@ -35,33 +34,28 @@ public class TwoHandsCard extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        // 添加双手各持状态
-        if (!p.hasPower(TwoHandsPower.POWER_ID)) {
-            p.addPower(new TwoHandsPower(p));
-        }
+        StanceDrawPower power = (StanceDrawPower) p.getPower(StanceDrawPower.POWER_ID);
 
-        CurrentStancePower stancePower = (CurrentStancePower)p.getPower(CurrentStancePower.POWER_ID);
-        if (stancePower == null) {
-            stancePower = new CurrentStancePower(p);
-            p.addPower(stancePower);
+        if (power == null) {
+            // 玩家没有该 Power，添加一个初始层数为1的 Power
+            p.addPower(new StanceDrawPower(p));
+        } else {
+            // 已经存在 Power，则叠加一层
+            power.stackPower(1);
         }
-
-        // 可选：切换架势示例
-        // stancePower.switchStance(CurrentStancePower.Stance.SWORD, 3);
     }
-
 
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            this.rawDescription = UPGRADE_DESCRIPTION;
+            this.upgradeBaseCost(this.cost - 1); // 升级后减1费
             initializeDescription();
         }
     }
 
     @Override
     public AbstractCard makeCopy() {
-        return new TwoHandsCard();
+        return new StanceTriggerCard();
     }
 }

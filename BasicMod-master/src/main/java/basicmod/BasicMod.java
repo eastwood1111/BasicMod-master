@@ -48,6 +48,7 @@ public class BasicMod implements
         PostInitializeSubscriber {
     public static ModInfo info;
     public static String modID; //Edit your pom.xml to change this
+    public static Object Enums;
 
     static {
         loadModInfo();

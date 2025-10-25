@@ -1,5 +1,6 @@
 package basicmod.cards.skill;
 
+import basicmod.Enums;
 import basicmod.cards.BaseCard;
 import basicmod.charater.MyCharacter;
 import basicmod.util.CardStats;
@@ -8,9 +9,14 @@ import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.localization.CardStrings;
+import basicmod.BasicMod;
 
 public class ShieldStanceCard extends BaseCard {
     public static final String ID = makeID(ShieldStanceCard.class.getSimpleName());
+    private static final CardStrings cardStrings = com.megacrit.cardcrawl.core.CardCrawlGame.languagePack.getCardStrings(ID);
+    private static final String NAME = cardStrings.NAME;
+    private static final String DESCRIPTION = cardStrings.DESCRIPTION;
 
     private static final CardStats info = new CardStats(
             MyCharacter.Meta.CARD_COLOR,
@@ -25,8 +31,14 @@ public class ShieldStanceCard extends BaseCard {
 
     public ShieldStanceCard() {
         super(ID, info);
+        this.name = NAME;
         this.baseMagicNumber = this.magicNumber = BASE_DEX;
-        this.rawDescription = "进入盾架势，获得" + BASE_DEX + "点敏捷。抽1张牌。";
+        this.rawDescription = DESCRIPTION.replace("!DEX!", String.valueOf(BASE_DEX));
+
+        // 保留手牌
+        this.selfRetain = true;
+        // 添加自定义 Tag，标记为架势牌
+        this.tags.add(Enums.STANCE);
         initializeDescription();
     }
 
@@ -40,7 +52,7 @@ public class ShieldStanceCard extends BaseCard {
 
         stancePower.switchStance(CurrentStancePower.Stance.SHIELD, this.magicNumber);
 
-        // 基础卡自带抽1张，升级卡也抽1张
+
         addToBot(new DrawCardAction(p, 1));
     }
 
@@ -49,7 +61,7 @@ public class ShieldStanceCard extends BaseCard {
         if (!upgraded) {
             upgradeName();
             upgradeMagicNumber(UPG_DEX - BASE_DEX);
-            this.rawDescription = "升级后：进入盾架势，获得" + UPG_DEX + "点敏捷。抽1张牌。";
+            this.rawDescription = DESCRIPTION.replace("!DEX!", String.valueOf(UPG_DEX));
             initializeDescription();
         }
     }

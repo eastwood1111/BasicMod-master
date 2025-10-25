@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 
 import java.util.LinkedList;
+import java.util.HashMap;
 
 public class CurrentStancePower extends AbstractPower implements CloneablePowerInterface {
     public static final String POWER_ID = "basicmod:CurrentStancePower";
@@ -20,6 +21,7 @@ public class CurrentStancePower extends AbstractPower implements CloneablePowerI
     public enum Stance {SWORD, SHIELD, GREAT_SWORD}
 
     private LinkedList<Stance> stanceQueue = new LinkedList<>();
+    private HashMap<Stance, Integer> stanceAmounts = new HashMap<>();
 
     public CurrentStancePower(AbstractCreature owner) {
         this.name = NAME;
@@ -39,17 +41,28 @@ public class CurrentStancePower extends AbstractPower implements CloneablePowerI
     }
 
     public void switchStance(Stance newStance, int amount) {
-        // 如果已有该架势则忽略
-        if (stanceQueue.contains(newStance)) return;
+        boolean dualMode = owner.hasPower(TwoHandsPower.POWER_ID);
 
-        // 队列满 2 个时移除最早的架势
-        if (stanceQueue.size() >= 2) {
-            Stance oldest = stanceQueue.removeFirst();
-            removeStanceEffect(oldest);
+        if (!dualMode) {
+            // 单架势模式：移除全部旧架势
+            while (!stanceQueue.isEmpty()) {
+                Stance old = stanceQueue.removeFirst();
+                int oldAmt = stanceAmounts.remove(old);
+                removeStanceEffect(old, oldAmt);
+            }
+        } else {
+            // 双架势模式：最多两个
+            if (stanceQueue.size() >= 2) {
+                // 移除队头
+                Stance oldest = stanceQueue.removeFirst();
+                int oldAmt = stanceAmounts.remove(oldest);
+                removeStanceEffect(oldest, oldAmt);
+            }
         }
 
-        // 新架势加入队尾
+        // 添加新架势到队尾
         stanceQueue.addLast(newStance);
+        stanceAmounts.put(newStance, amount);
         applyStanceEffect(newStance, amount);
 
         updateDescription();
@@ -67,30 +80,21 @@ public class CurrentStancePower extends AbstractPower implements CloneablePowerI
         }
     }
 
-    private void removeStanceEffect(Stance stance) {
+    private void removeStanceEffect(Stance stance, int amount) {
         switch (stance) {
             case SWORD:
             case GREAT_SWORD:
-                addToBot(new ApplyPowerAction(owner, owner, new StrengthPower(owner, -getAmount(stance))));
+                addToBot(new ApplyPowerAction(owner, owner, new StrengthPower(owner, -amount)));
                 break;
             case SHIELD:
-                addToBot(new ApplyPowerAction(owner, owner, new DexterityPower(owner, -getAmount(stance))));
+                addToBot(new ApplyPowerAction(owner, owner, new DexterityPower(owner, -amount)));
                 break;
-        }
-    }
-
-    private int getAmount(Stance stance) {
-        switch (stance) {
-            case SWORD:
-            case SHIELD: return 3;
-            case GREAT_SWORD: return 6;
-            default: return 0;
         }
     }
 
     public Stance getCurrentStance() {
         if (stanceQueue.isEmpty()) return null;
-        return stanceQueue.getLast(); // 队尾为最近使用的
+        return stanceQueue.getLast(); // 队尾为主架势
     }
 
     public Stance getSecondaryStance() {
