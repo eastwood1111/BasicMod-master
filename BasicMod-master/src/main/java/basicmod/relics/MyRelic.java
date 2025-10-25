@@ -1,6 +1,7 @@
 package basicmod.relics;
 
-import basicmod.cards.skill.PageFragment;
+import basicmod.cards.skill.SwordStanceCard;
+import basicmod.cards.skill.ShieldStanceCard;
 import basicmod.charater.MyCharacter;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -11,8 +12,6 @@ import static basicmod.BasicMod.makeID;
 public class MyRelic extends BaseRelic {
     public static final String ID = makeID("MyRelic");
 
-    private static final int BASE_COUNT = 1;
-    private static final int UPGRADE_COUNT = 2;
     private final boolean upgraded;
 
     // 构造函数
@@ -21,7 +20,7 @@ public class MyRelic extends BaseRelic {
     }
 
     public MyRelic(boolean upgraded) {
-        super(ID, "CodexRelic", MyCharacter.Meta.CARD_COLOR,
+        super(ID, "myrelic", MyCharacter.Meta.CARD_COLOR,
                 upgraded ? RelicTier.BOSS : RelicTier.STARTER,
                 LandingSound.MAGICAL);
         this.upgraded = upgraded;
@@ -31,12 +30,13 @@ public class MyRelic extends BaseRelic {
     @Override
     public void atBattleStartPreDraw() {
         flash();
-        int count = upgraded ? UPGRADE_COUNT : BASE_COUNT;
-        for (int i = 0; i < count; i++) {
-            AbstractDungeon.actionManager.addToBottom(
-                    new MakeTempCardInHandAction(new PageFragment(), 1)
-            );
-        }
+        // 开局加入剑架势和盾架势牌
+        AbstractDungeon.actionManager.addToBottom(
+                new MakeTempCardInHandAction(new SwordStanceCard(), 1)
+        );
+        AbstractDungeon.actionManager.addToBottom(
+                new MakeTempCardInHandAction(new ShieldStanceCard(), 1)
+        );
     }
 
     @Override

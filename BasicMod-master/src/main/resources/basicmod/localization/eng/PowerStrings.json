@@ -4,5 +4,12 @@
     "DESCRIPTIONS": [
       "You are Very Cool and Strong."
     ]
+  },
+  "basicmod:CurrentStancePower": {
+    "NAME": "当前架势",
+    "DESCRIPTIONS": [
+      "当前架势：",
+      "双架势模式中，主架势："
+    ]
   }
 }

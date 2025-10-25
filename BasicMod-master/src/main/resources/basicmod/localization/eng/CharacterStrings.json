@@ -1,8 +1,8 @@
 {
   "${modID}:CharacterID": {
     "NAMES": [
-      "探究者",
-      "探究者"
+      "小骑士",
+      "小骑士"
     ],
     "TEXT": [
       "Line #1 of character select description. NL Line 2 of character select description.",
