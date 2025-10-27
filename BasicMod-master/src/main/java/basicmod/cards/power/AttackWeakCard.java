@@ -2,17 +2,15 @@ package basicmod.cards.power;
 
 import basicmod.cards.BaseCard;
 import basicmod.charater.MyCharacter;
-import basicmod.powers.AttackWeakPower;
 import basicmod.util.CardStats;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import basicmod.powers.AttackWeakPower;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.WeakPower;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
-public class AttackWeakPowerCard extends BaseCard {
-    public static final String ID = makeID(AttackWeakPowerCard.class.getSimpleName());
+public class AttackWeakCard extends BaseCard {
+    public static final String ID = makeID(AttackWeakCard.class.getSimpleName());
+
     private static final CardStats info = new CardStats(
             MyCharacter.Meta.CARD_COLOR,
             CardType.POWER,
@@ -21,28 +19,28 @@ public class AttackWeakPowerCard extends BaseCard {
             1
     );
 
-    private final boolean upgraded;
-
-    public AttackWeakPowerCard() {
+    public AttackWeakCard() {
         super(ID, info);
-        this.upgraded = false;
-    }
-
-    public AttackWeakPowerCard(boolean upgraded) {
-        super(ID, info);
-        this.upgraded = upgraded;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        // 给玩家添加一个 Power，记录触发逻辑
+        // 添加自定义 Power，控制打出攻击牌触发
         if (!p.hasPower(AttackWeakPower.POWER_ID)) {
             p.addPower(new AttackWeakPower(p, upgraded));
         }
     }
 
     @Override
+    public void upgrade() {
+        if (!upgraded) {
+            upgradeName();
+            // 升级后 Power 作用全体敌人
+        }
+    }
+
+    @Override
     public AbstractCard makeCopy() {
-        return new AttackWeakPowerCard(upgraded);
+        return new AttackWeakCard();
     }
 }

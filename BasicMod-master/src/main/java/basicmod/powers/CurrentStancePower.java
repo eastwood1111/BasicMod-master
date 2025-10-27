@@ -18,7 +18,8 @@ public class CurrentStancePower extends AbstractPower implements CloneablePowerI
     public static final String NAME = "当前架势";
     public static final String[] DESCRIPTIONS = {"当前架势："};
 
-    public enum Stance {SWORD, SHIELD, GREAT_SWORD}
+    public enum Stance {SWORD, SHIELD, GREAT_SWORD, MAGIC,SPEAR}
+
 
     private LinkedList<Stance> stanceQueue = new LinkedList<>();
     private HashMap<Stance, Integer> stanceAmounts = new HashMap<>();
@@ -113,9 +114,10 @@ public class CurrentStancePower extends AbstractPower implements CloneablePowerI
     private String stanceToText(Stance s) {
         if (s == null) return "无";
         switch (s) {
-            case SWORD: return "剑架势";
-            case SHIELD: return "盾架势";
-            case GREAT_SWORD: return "大剑架势";
+            case SWORD: return "剑";
+            case SHIELD: return "盾";
+            case GREAT_SWORD: return "大剑";
+            case MAGIC: return "祷告魔法";
             default: return "无";
         }
     }

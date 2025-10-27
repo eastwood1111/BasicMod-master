@@ -168,6 +168,16 @@
     "NAME": "架势防御",
     "DESCRIPTION": "打出1张架势牌后获得3点格挡",
     "UPGRADE_DESCRIPTION":"打出1张架势牌后获得4点格挡"
+  },
+  "basicmod:AttackWeakPowerCard": {
+    "NAME": "燃脂",
+    "DESCRIPTION": "打出一张攻击牌后随机对敌人赋予一层缓慢",
+    "UPGRADE_DESCRIPTION":"打出一张攻击牌后对全体敌人赋予一层缓慢"
+  },
+  "basicmod:SpearCard": {
+    "NAME": "矛",
+    "DESCRIPTION": "打出攻击牌时移除敌方的格挡",
+    "UPGRADE_DESCRIPTION":"打出攻击牌时移除敌方的格挡"
   }
 }
 
