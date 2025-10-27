@@ -163,6 +163,11 @@
     "NAME": "骑士之魂",
     "DESCRIPTION": "打出架势牌抽一张牌",
     "UPGRADE_DESCRIPTION": "打出架势牌抽一张牌"
+  },
+  "basicmod:StanceDefendCard": {
+    "NAME": "架势防御",
+    "DESCRIPTION": "打出1张架势牌后获得3点格挡",
+    "UPGRADE_DESCRIPTION":"打出1张架势牌后获得4点格挡"
   }
 }
 

@@ -22,7 +22,7 @@ public class GreatSwordStanceCard extends BaseCard {
             CardType.SKILL,
             CardRarity.UNCOMMON,
             CardTarget.SELF,
-            0
+            1
     );
 
     private static final int BASE_STR = 6;

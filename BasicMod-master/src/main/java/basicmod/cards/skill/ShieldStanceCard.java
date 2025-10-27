@@ -21,9 +21,9 @@ public class ShieldStanceCard extends BaseCard {
     private static final CardStats info = new CardStats(
             MyCharacter.Meta.CARD_COLOR,
             CardType.SKILL,
-            CardRarity.SPECIAL,
+            CardRarity.BASIC,
             CardTarget.SELF,
-            0
+            1
     );
 
     private static final int BASE_DEX = 3;

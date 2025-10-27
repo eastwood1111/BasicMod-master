@@ -30,13 +30,17 @@ public class MyRelic extends BaseRelic {
     @Override
     public void atBattleStartPreDraw() {
         flash();
-        // 开局加入剑架势和盾架势牌
+        // 开局加入剑架势牌
         AbstractDungeon.actionManager.addToBottom(
                 new MakeTempCardInHandAction(new SwordStanceCard(), 1)
         );
-        AbstractDungeon.actionManager.addToBottom(
-                new MakeTempCardInHandAction(new ShieldStanceCard(), 1)
-        );
+
+        // 如果是升级版Boss遗物，再加入盾架势牌
+        if (upgraded) {
+            AbstractDungeon.actionManager.addToBottom(
+                    new MakeTempCardInHandAction(new ShieldStanceCard(), 1)
+            );
+        }
     }
 
     @Override
