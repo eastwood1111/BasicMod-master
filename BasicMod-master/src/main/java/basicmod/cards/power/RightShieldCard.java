@@ -2,46 +2,45 @@ package basicmod.cards.power;
 
 import basicmod.cards.BaseCard;
 import basicmod.charater.MyCharacter;
+import basicmod.powers.RightShieldPower;
 import basicmod.util.CardStats;
-import basicmod.powers.SpearPower;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 
-public class SpearCard extends BaseCard {
-    public static final String ID = makeID(SpearCard.class.getSimpleName());
+public class RightShieldCard extends BaseCard {
+    public static final String ID = makeID(RightShieldCard.class.getSimpleName());
+
     private static final CardStats info = new CardStats(
             MyCharacter.Meta.CARD_COLOR,
             CardType.POWER,
-            CardRarity.UNCOMMON,
+            CardRarity.RARE,
             CardTarget.SELF,
-            1
+            1 // 初始费用
     );
 
-    public SpearCard() {
+    public RightShieldCard() {
         super(ID, info);
+        this.magicNumber = this.baseMagicNumber = 5; // 每5回合触发
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        SpearPower power = (SpearPower)p.getPower(SpearPower.POWER_ID);
-        if (power == null) {
-            addToBot(new ApplyPowerAction(p, p, new SpearPower(p)));
-        }
+        addToBot(new com.megacrit.cardcrawl.actions.common.ApplyPowerAction(
+                p, p, new RightShieldPower(p, this.magicNumber), this.magicNumber
+        ));
     }
 
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBaseCost(0);
-            initializeDescription();
+            upgradeMagicNumber(-1); // 从5回合变4回合
         }
     }
 
     @Override
     public AbstractCard makeCopy() {
-        return new SpearCard();
+        return new RightShieldCard();
     }
 }

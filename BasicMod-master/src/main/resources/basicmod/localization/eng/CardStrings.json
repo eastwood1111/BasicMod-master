@@ -136,18 +136,18 @@
   },
   "basicmod:SwordStanceCard": {
     "NAME": "剑架势",
-    "DESCRIPTION": "保留 进入剑架势，获得3点力量。切换到其他架势时会移除力量。",
+    "DESCRIPTION": "保留 进入剑架势，获得3点力量。",
     "UPGRADE_DESCRIPTION": "升级后效果保持不变。"
   },
   "basicmod:ShieldStanceCard": {
     "NAME": "盾架势",
-    "DESCRIPTION": "保留 进入盾架势，获得3点敏捷。切换到其他架势时会移除敏捷。",
+    "DESCRIPTION": "保留 进入盾架势，获得3点敏捷。",
     "UPGRADE_DESCRIPTION": "升级后效果保持不变。"
   },
   "basicmod:GreatSwordStanceCard": {
     "NAME": "大剑架势",
-    "DESCRIPTION": "进入大剑架势，获得 6 点力量。若当前没有架势，进入架势时抽两张牌。",
-    "UPGRADE_DESCRIPTION": "耗能减少至 0。"
+    "DESCRIPTION": "进入大剑架势，获得 6 点力量。",
+    "UPGRADE_DESCRIPTION": "进入大剑架势，获得 6 点力量。抽1张牌"
   },
   "basicmod:TwoHandsCard": {
     "NAME": "双手各持",
@@ -178,6 +178,26 @@
     "NAME": "矛",
     "DESCRIPTION": "打出攻击牌时移除敌方的格挡",
     "UPGRADE_DESCRIPTION":"打出攻击牌时移除敌方的格挡"
+  },
+  "basicmod:GunCard": {
+    "NAME": "枪反",
+    "DESCRIPTION": "打出攻击牌时给予敌方一层易伤",
+    "UPGRADE_DESCRIPTION":"打出攻击牌时给予敌方一层易伤"
+  },
+  "basicmod:RightShieldCard": {
+    "NAME": "右盾",
+    "DESCRIPTION": "每五回合获得一层无实体",
+    "UPGRADE_DESCRIPTION":"每四回合获得一层无实体"
+  },
+  "basicmod:IronStanceCard": {
+    "NAME": "韧构",
+    "DESCRIPTION": "获得9层金属化，抽1张牌",
+    "UPGRADE_DESCRIPTION":"获得9层金属化，抽1张牌"
+  },
+  "basicmod:GreedySerpentCard": {
+    "NAME": "贪婪金蛇",
+    "DESCRIPTION": "若本回合为精英关卡，额外掉落一个遗物",
+    "UPGRADE_DESCRIPTION":"若本回合为精英关卡，额外掉落一个遗物"
   }
 }
 

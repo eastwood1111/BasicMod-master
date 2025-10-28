@@ -18,7 +18,7 @@ public class CurrentStancePower extends AbstractPower implements CloneablePowerI
     public static final String NAME = "当前架势";
     public static final String[] DESCRIPTIONS = {"当前架势："};
 
-    public enum Stance {SWORD, SHIELD, GREAT_SWORD, MAGIC,SPEAR}
+    public enum Stance {SWORD, SHIELD, GREAT_SWORD, MAGIC,IRON}
 
 
     private LinkedList<Stance> stanceQueue = new LinkedList<>();
@@ -78,6 +78,9 @@ public class CurrentStancePower extends AbstractPower implements CloneablePowerI
             case SHIELD:
                 addToBot(new ApplyPowerAction(owner, owner, new DexterityPower(owner, amount)));
                 break;
+            case IRON:
+                addToBot(new ApplyPowerAction(owner, owner, new com.megacrit.cardcrawl.powers.MetallicizePower(owner, amount)));
+                break;
         }
     }
 
@@ -90,8 +93,12 @@ public class CurrentStancePower extends AbstractPower implements CloneablePowerI
             case SHIELD:
                 addToBot(new ApplyPowerAction(owner, owner, new DexterityPower(owner, -amount)));
                 break;
+            case IRON:
+                addToBot(new ApplyPowerAction(owner, owner, new com.megacrit.cardcrawl.powers.MetallicizePower(owner, -amount)));
+                break;
         }
     }
+
 
     public Stance getCurrentStance() {
         if (stanceQueue.isEmpty()) return null;
@@ -117,7 +124,8 @@ public class CurrentStancePower extends AbstractPower implements CloneablePowerI
             case SWORD: return "剑";
             case SHIELD: return "盾";
             case GREAT_SWORD: return "大剑";
-            case MAGIC: return "祷告魔法";
+            case MAGIC: return "祷告/魔法";
+            case IRON: return "韧狗";
             default: return "无";
         }
     }
