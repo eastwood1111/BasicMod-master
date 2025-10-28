@@ -47,7 +47,7 @@ public class StanceDefendCard extends BaseCard {
         if (!upgraded) {
             upgradeName();
             this.baseMagicNumber = this.magicNumber = UPG_STACK;
-            this.rawDescription = DESCRIPTION.replace("!STACK!", String.valueOf(UPG_STACK));
+            this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

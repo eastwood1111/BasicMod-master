@@ -57,6 +57,7 @@ public class MagicPrayerStanceCard extends BaseCard {
         if (!upgraded) {
             upgradeName();
             this.drawAmount = DRAW_UPG; // 升级后抽牌变2张
+            this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

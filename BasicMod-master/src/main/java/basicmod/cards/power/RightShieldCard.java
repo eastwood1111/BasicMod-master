@@ -22,6 +22,7 @@ public class RightShieldCard extends BaseCard {
     public RightShieldCard() {
         super(ID, info);
         this.magicNumber = this.baseMagicNumber = 5; // 每5回合触发
+        initializeDescription();
     }
 
     @Override
@@ -36,6 +37,8 @@ public class RightShieldCard extends BaseCard {
         if (!upgraded) {
             upgradeName();
             upgradeMagicNumber(-1); // 从5回合变4回合
+            this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 

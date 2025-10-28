@@ -17,26 +17,6 @@
       "Use to block incoming damage."
     ]
   },
-  "basicmod:Guiyi": {
-    "NAME": "归一",
-    "DESCRIPTION": "造成手牌数量3倍的伤害",
-    "UPGRADE_DESCRIPTION": "造成手牌数量5倍的伤害",
-    "EXTENDED_DESCRIPTION": [
-      "The more cards in your hand, the stronger this attack.",
-      "Costs 2 energy.",
-      "Rare attack card."
-    ]
-  },
-  "basicmod:DiscardDrawFive": {
-    "NAME": "深思",
-    "DESCRIPTION": "弃5张牌摸5张牌 消耗",
-    "UPGRADE_DESCRIPTION": "弃5张牌摸5张牌",
-    "EXTENDED_DESCRIPTION": [
-      "A swingy tactical card — can refill your hand after a big discard.",
-      "Costs 0 energy. Upgrading removes Exhaust.",
-      "Use with discard synergies."
-    ]
-  },
   "basicmod:Fireball": {
     "NAME": "火球术",
     "DESCRIPTION": "对敌方全体造成 !D! 点伤害 消耗.",
@@ -47,68 +27,13 @@
       "Upgraded damage: 20."
     ]
   },
-  "basicmod:DefenseConversion": {
-    "NAME": "Defense Conversion",
-    "DESCRIPTION": "Discard all Skill cards in your hand. Gain !B! Block for each card discarded. Exhaust.",
-    "UPGRADE_DESCRIPTION": "Discard all Skill cards in your hand. Gain !B! Block for each card discarded. Exhaust.",
-    "EXTENDED_DESCRIPTION": [
-      "Turn unused tactics into defense.",
-      "Blue uncommon skill card.",
-      "Upgraded: 4 Block per Skill discarded."
-    ]
-  },
-  "basicmod:TacticalReorder": {
-    "NAME": "Tactical Reorder",
-    "DESCRIPTION": "Discard half of your hand (rounded down). Draw !M! cards.",
-    "UPGRADE_DESCRIPTION": "Discard half of your hand (rounded down). Draw !M! cards.",
-    "EXTENDED_DESCRIPTION": [
-      "Plan ahead by cycling your hand efficiently.",
-      "White rare skill card.",
-      "Upgraded: Draw 4 cards."
-    ]
-  },
-  "basicmod:ReactiveGuard": {
-    "NAME": "Reactive Guard",
-    "DESCRIPTION": "Gain !B! Block. If you played an Exhaust card this turn, gain 5 additional Block.",
-    "UPGRADE_DESCRIPTION": "Gain !B! Block. If you played an Exhaust card this turn, gain 5 additional Block."
-  },
-  "basicmod:DrawPenaltyPowerCard": {
-    "NAME": "Power Surge",
-    "DESCRIPTION": "Each turn, draw 1 less card. Gain 3 Strength and 3 Dexterity. Upgrade: 4 Strength and 4 Dexterity."
-  },
-  "basicmod:EndOfTurnAOECard": {
-    "NAME": "Inferno Burst",
-    "DESCRIPTION": "At the end of each turn for 3 turns, deal 10 damage to all enemies. Upgrade: 4 turns."
-  },
-  "basicmod:HeavyStrike": {
-    "NAME": "重击",
-    "DESCRIPTION": "造成32点伤害",
-    "UPGRADE_DESCRIPTION": "42点伤害"
-  },
-  "basicmod:StrengthBoostCard": {
-    "NAME": "Strength Boost",
-    "DESCRIPTION": "At the start of your turn, gain 2 Strength. Upgrade: 3 Strength."
-  },
   "basicmod:StrikeWhite": {
     "NAME": "打击",
     "DESCRIPTION": "造成 !D! 点伤害。"
   },
-  "basicmod:InspirationFlow": {
-    "NAME": "灵感涌现",
-    "DESCRIPTION": "在每回合开始时，额外抽 !M! 张牌"
-  },
-  "basicmod:AgilityAura": {
-    "NAME": "灵感",
-    "DESCRIPTION": "在每回合开始时。"
-  },
   "basicmod:SwiftStrike": {
     "NAME": "迅捷打击",
     "DESCRIPTION": "造成8点伤害抽一张牌"
-  },
-  "basicmod:PageFragment": {
-    "NAME": "残页",
-    "DESCRIPTION": "从弃牌堆中选择一张牌，将其加入手牌。本回合保留该牌 消耗 保留",
-    "UPGRADE_DESCRIPTION": "从弃牌堆中选择两张牌，将它们加入手牌。本回合保留这些牌 消耗 保留"
   },
   "basicmod:SlashingInsight": {
     "NAME": "后发制人",
@@ -128,21 +53,15 @@
     "UPGRADE_DESCRIPTION": "对敌方全体造成 !D! 点伤害4次 消耗",
     "EXTENDED_DESCRIPTION": []
   },
-  "basicmod:Overdrive": {
-    "NAME": "恶魔献祭",
-    "DESCRIPTION": "每回合少抽1张牌，获得3点力量3点敏捷",
-    "UPGRADE_DESCRIPTION": "每回合少抽1张牌，获得3点力量3点敏捷",
-    "EXTENDED_DESCRIPTION": []
-  },
   "basicmod:SwordStanceCard": {
     "NAME": "剑架势",
     "DESCRIPTION": "保留 进入剑架势，获得3点力量。",
-    "UPGRADE_DESCRIPTION": "升级后效果保持不变。"
+    "UPGRADE_DESCRIPTION": "保留 进入剑架势，获得4点力量。"
   },
   "basicmod:ShieldStanceCard": {
     "NAME": "盾架势",
     "DESCRIPTION": "保留 进入盾架势，获得3点敏捷。",
-    "UPGRADE_DESCRIPTION": "升级后效果保持不变。"
+    "UPGRADE_DESCRIPTION": "保留 进入盾架势，获得4点敏捷。"
   },
   "basicmod:GreatSwordStanceCard": {
     "NAME": "大剑架势",
@@ -192,12 +111,37 @@
   "basicmod:IronStanceCard": {
     "NAME": "韧构",
     "DESCRIPTION": "获得9层金属化，抽1张牌",
-    "UPGRADE_DESCRIPTION":"获得9层金属化，抽1张牌"
+    "UPGRADE_DESCRIPTION":"获得12层金属化，抽1张牌"
   },
   "basicmod:GreedySerpentCard": {
     "NAME": "贪婪金蛇",
     "DESCRIPTION": "若本回合为精英关卡，额外掉落一个遗物",
     "UPGRADE_DESCRIPTION":"若本回合为精英关卡，额外掉落一个遗物"
+  },
+  "basicmod:DivineRaceCard": {
+    "NAME": "神族",
+    "DESCRIPTION": "当前手牌费用变为0，下回合死亡 消耗",
+    "UPGRADE_DESCRIPTION":"保留 当前手牌费用变为0，下回合死亡 消耗"
+  },
+  "basicmod:MagicPrayerStanceCard": {
+    "NAME": "魔法/祷告",
+    "DESCRIPTION": "你可以咏唱魔法/祷告 抽1张牌",
+    "UPGRADE_DESCRIPTION":"你可以咏唱魔法/祷告 抽2张牌"
+  },
+  "basicmod:SoulFiveFormCard": {
+    "NAME": "魂5形态",
+    "DESCRIPTION": "获得1点力量,1点敏捷,1层无实体,1层缓冲,每回合额外抽1张牌,额外获得1点能量,每回合结束失去2点生命 虚无",
+    "UPGRADE_DESCRIPTION":"获得1点力量,1点敏捷,1层无实体,1层缓冲,每回合额外抽1张牌,额外获得1点能量,每回合结束失去2点生命"
+  },
+  "basicmod:AttackWeakCard": {
+    "NAME": "燃脂",
+    "DESCRIPTION": "每打出一张攻击牌赋予敌方一层虚弱",
+    "UPGRADE_DESCRIPTION":"每打出一张攻击牌赋予全体敌方一层虚弱"
+  },
+  "basicmod:SeppukuCard": {
+    "NAME": "切腹",
+    "DESCRIPTION": "造成没有被格挡的伤害时给予一层出血",
+    "UPGRADE_DESCRIPTION":"造成没有被格挡的伤害时给予一层出血"
   }
 }
 

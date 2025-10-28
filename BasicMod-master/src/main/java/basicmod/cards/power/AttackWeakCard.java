@@ -14,14 +14,16 @@ public class AttackWeakCard extends BaseCard {
     private static final CardStats info = new CardStats(
             MyCharacter.Meta.CARD_COLOR,
             CardType.POWER,
-            CardRarity.RARE,
+            CardRarity.UNCOMMON,
             CardTarget.SELF,
             1
     );
 
     public AttackWeakCard() {
         super(ID, info);
+        initializeDescription();
     }
+
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -36,6 +38,8 @@ public class AttackWeakCard extends BaseCard {
         if (!upgraded) {
             upgradeName();
             // 升级后 Power 作用全体敌人
+            this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 

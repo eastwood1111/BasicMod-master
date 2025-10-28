@@ -13,9 +13,9 @@ import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
 public class GreedySerpentPower extends AbstractPower implements CloneablePowerInterface {
     public static final String POWER_ID = "basicmod:GreedySerpentPower";
-    public static final String NAME = "贪婪金蛇";
+    public static final String NAME = "贪婪金蛇戒指";
     public static final String[] DESCRIPTIONS = new String[]{
-            "若本回合为精英战斗，击败后掉落的遗物数 +1。"
+            "掉落率增加"
     };
 
     public GreedySerpentPower(AbstractCreature owner, int amount) {

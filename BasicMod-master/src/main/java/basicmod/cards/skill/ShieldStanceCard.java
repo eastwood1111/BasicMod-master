@@ -61,7 +61,7 @@ public class ShieldStanceCard extends BaseCard {
         if (!upgraded) {
             upgradeName();
             upgradeMagicNumber(UPG_DEX - BASE_DEX);
-            this.rawDescription = DESCRIPTION.replace("!DEX!", String.valueOf(UPG_DEX));
+            this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

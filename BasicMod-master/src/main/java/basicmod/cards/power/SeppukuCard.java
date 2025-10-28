@@ -2,15 +2,15 @@ package basicmod.cards.power;
 
 import basicmod.cards.BaseCard;
 import basicmod.charater.MyCharacter;
+import basicmod.powers.SeppukuPower;
 import basicmod.util.CardStats;
-import basicmod.powers.EndOfTurnAOEPower;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class EndOfTurnAOE extends BaseCard {
-    public static final String ID = makeID(EndOfTurnAOE.class.getSimpleName());
+public class SeppukuCard extends BaseCard {
+    public static final String ID = makeID(SeppukuCard.class.getSimpleName());
 
     private static final CardStats info = new CardStats(
             MyCharacter.Meta.CARD_COLOR,
@@ -20,29 +20,30 @@ public class EndOfTurnAOE extends BaseCard {
             2
     );
 
-    private static final int DAMAGE = 10;
-    private static final int TURNS = 3;
-
-    public EndOfTurnAOE() {
+    public SeppukuCard() {
         super(ID, info);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        int turns = upgraded ? 4 : TURNS;
-        addToBot(new ApplyPowerAction(p, p, new EndOfTurnAOEPower(p, DAMAGE, turns)));
+        // 给自己添加 SeppukuPower，如果已有就叠加
+        if (p.getPower(SeppukuPower.POWER_ID) == null) {
+            addToBot(new ApplyPowerAction(p, p, new SeppukuPower(p, 1)));
+        } else {
+            addToBot(new ApplyPowerAction(p, p, new SeppukuPower(p, 1)));
+        }
     }
 
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            initializeDescription();
+            upgradeBaseCost(1);
         }
     }
 
     @Override
     public AbstractCard makeCopy() {
-        return new EndOfTurnAOE();
+        return new SeppukuCard();
     }
 }

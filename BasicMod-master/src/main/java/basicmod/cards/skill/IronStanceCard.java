@@ -62,7 +62,7 @@ public class IronStanceCard extends BaseCard {
         if (!upgraded) {
             upgradeName();
             upgradeMagicNumber(UPG_METAL - BASE_METAL); // 9 → 12
-            this.rawDescription = DESCRIPTION.replace("!METAL!", String.valueOf(UPG_METAL));
+            this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

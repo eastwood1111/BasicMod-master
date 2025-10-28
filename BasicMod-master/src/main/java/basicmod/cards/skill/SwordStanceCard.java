@@ -60,7 +60,7 @@ public class SwordStanceCard extends BaseCard {
         if (!upgraded) {
             upgradeName();
             upgradeMagicNumber(UPG_STR - BASE_STR);
-            this.rawDescription = DESCRIPTION.replace("!STR!", String.valueOf(UPG_STR)); // 升级后的占位符替换
+            this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }
