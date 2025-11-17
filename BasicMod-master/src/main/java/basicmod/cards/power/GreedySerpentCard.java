@@ -15,7 +15,7 @@ public class GreedySerpentCard extends BaseCard {
     private static final CardStats info = new CardStats(
             MyCharacter.Meta.CARD_COLOR,
             CardType.POWER,
-            CardRarity.RARE,
+            CardRarity.UNCOMMON,
             CardTarget.SELF,
             1
     );

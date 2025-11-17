@@ -4,12 +4,9 @@ import basemod.AutoAdd;
 import basemod.BaseMod;
 import basemod.interfaces.*;
 import basicmod.cards.BaseCard;
-import basicmod.cards.attack.*;
-import basicmod.cards.skill.Defend;
 import basicmod.charater.MyCharacter;
 import basicmod.potions.BasePotion;
 import basicmod.relics.BaseRelic;
-import basicmod.relics.MyRelic;
 import basicmod.util.GeneralUtils;
 import basicmod.util.KeywordInfo;
 import basicmod.util.Sounds;
@@ -36,6 +33,7 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
+import java.util.Set;
 
 @SpireInitializer
 public class BasicMod implements

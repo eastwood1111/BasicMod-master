@@ -50,8 +50,8 @@ public class SoulFiveFormPower extends AbstractPower implements CloneablePowerIn
     @Override
     public void atEndOfTurn(boolean isPlayer) {
         if (amount > 0) {
-
-            addToBot(new LoseHPAction(owner, owner, 2));
+            int loseHp = this.amount * 2; // 层数乘2
+            addToBot(new com.megacrit.cardcrawl.actions.common.LoseHPAction(owner, owner, loseHp));
         }
     }
 

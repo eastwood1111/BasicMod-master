@@ -142,6 +142,21 @@
     "NAME": "切腹",
     "DESCRIPTION": "造成没有被格挡的伤害时给予一层出血",
     "UPGRADE_DESCRIPTION":"造成没有被格挡的伤害时给予一层出血"
+  },
+  "basicmod:KnockdownCard": {
+    "NAME": "击倒",
+    "DESCRIPTION": "造成 !D! 点伤害，若处于大剑架势给予一层击晕。",
+    "UPGRADE_DESCRIPTION":"造成 !D! 点伤害，若处于大剑架势给予一层击晕。"
+  },
+  "basicmod:SunGun": {
+    "NAME": "阳光枪",
+    "DESCRIPTION": "下回合随机对敌方造成 !D! 点伤害，若处于魔法/祷告，额外造成 !D! 点伤害。",
+    "UPGRADE_DESCRIPTION":"下回合随机对敌方造成 !D! 点伤害，若处于魔法/祷告，额外造成 !D! 点伤害。"
+  },
+  "basicmod:SunInnerPotentialSimpleCard": {
+    "NAME": "内在潜力",
+    "DESCRIPTION": "你造成的伤害翻倍，每打出一张牌失去2点生命",
+    "UPGRADE_DESCRIPTION":"你造成的伤害翻倍，每打出一张牌失去1点生命"
   }
 }
 

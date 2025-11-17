@@ -2,8 +2,9 @@ package basicmod.powers;
 
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.utility.LoseBlockAction;
-import com.megacrit.cardcrawl.actions.utility.QueueCardAction;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -12,12 +13,11 @@ import com.megacrit.cardcrawl.powers.AbstractPower.PowerType;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 
-import java.util.ArrayList;
-
 public class SpearPower extends AbstractPower implements CloneablePowerInterface {
     public static final String POWER_ID = "basicmod:SpearPower";
     public static final String NAME = "矛";
-    public static final String[] DESCRIPTIONS = {"每次打出单体攻击牌时，移除一名敌方角色的格挡。"};
+    public static final String[] DESCRIPTIONS = {"每次打出单体攻击牌时，移除一名敌方格挡并造成伤害。"};
+
 
     public SpearPower(AbstractCreature owner) {
         this.name = NAME;
@@ -42,8 +42,21 @@ public class SpearPower extends AbstractPower implements CloneablePowerInterface
         if (card.type == AbstractCard.CardType.ATTACK && card.target == AbstractCard.CardTarget.ENEMY) {
             // 获取随机单个敌人
             AbstractMonster target = AbstractDungeon.getMonsters().getRandomMonster(true);
-            if (target != null && target.currentBlock > 0) {
-                addToBot(new LoseBlockAction(target, owner, target.currentBlock));
+            if (target != null) {
+                final AbstractMonster finalTarget = target; // 避免匿名类捕获外部变量出错
+                final AbstractCreature powerOwner = this.owner; // 避免捕获错误
+
+                addToBot(new com.megacrit.cardcrawl.actions.AbstractGameAction() {
+                    @Override
+                    public void update() {
+                        if (finalTarget != null && !finalTarget.isDeadOrEscaped()) {
+                            if (finalTarget.currentBlock > 0) {
+                                addToTop(new com.megacrit.cardcrawl.actions.utility.LoseBlockAction(finalTarget, powerOwner, finalTarget.currentBlock));
+                            }
+                        }
+                        this.isDone = true;
+                    }
+                });
             }
         }
     }
