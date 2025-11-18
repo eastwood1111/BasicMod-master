@@ -36,6 +36,7 @@ public class MyCharacter extends CustomPlayer {
     public static final int CARD_DRAW = 5;
     public static final int ORB_SLOTS = 0;
 
+
     //Strings
     private static final String ID = makeID("CharacterID"); //This should match whatever you have in the CharacterStrings.json file
     private static String[] getNames() { return CardCrawlGame.languagePack.getCharacterString(ID).NAMES; }
@@ -261,5 +262,6 @@ public class MyCharacter extends CustomPlayer {
         //Makes a new instance of your character class.
         return new MyCharacter();
     }
+
 }
 

@@ -153,10 +153,18 @@
     "DESCRIPTION": "下回合随机对敌方造成 !D! 点伤害，若处于魔法/祷告，额外造成 !D! 点伤害。",
     "UPGRADE_DESCRIPTION":"下回合随机对敌方造成 !D! 点伤害，若处于魔法/祷告，额外造成 !D! 点伤害。"
   },
-  "basicmod:SunInnerPotentialSimpleCard": {
-    "NAME": "内在潜力",
-    "DESCRIPTION": "你造成的伤害翻倍，每打出一张牌失去2点生命",
-    "UPGRADE_DESCRIPTION":"你造成的伤害翻倍，每打出一张牌失去1点生命"
+  "basicmod:YuanQu": {
+    "NAME": "原取",
+    "DESCRIPTION": "回复4点生命，下回合失去4点生命 消耗 ",
+    "UPGRADE_DESCRIPTION":"回复6点生命，下回合失去6点生命 消耗 "
+  },
+  "basicmod:PrepareStance": {
+    "NAME": "准备架势",
+    "DESCRIPTION": "下一张攻击牌造成双倍伤害",
+    "UPGRADE_DESCRIPTION": "下一张攻击牌造成双倍伤害",
+    "EXTENDED_DESCRIPTION": [
+
+    ]
   }
 }
 

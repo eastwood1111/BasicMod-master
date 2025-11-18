@@ -39,7 +39,7 @@ public class SunGunBuffPower extends AbstractPower implements CloneablePowerInte
         // 延迟伤害触发
         addToBot(new WaitAction(0.1f));
         addToBot(new DamageRandomEnemyAction(
-                new DamageInfo(owner, this.amount, DamageInfo.DamageType.NORMAL),
+                new DamageInfo(owner, this.amount, DamageInfo.DamageType.THORNS),
                 AbstractGameAction.AttackEffect.FIRE
         ));
 
