@@ -179,6 +179,21 @@
     "NAME": "马拉松b",
     "DESCRIPTION": "获得 !B! 点格挡。 NL 给予自身 !M! 层缠身。",
     "UPGRADE_DESCRIPTION": "获得 !B! 点格挡。 NL 给予自身 !M! 层缠身。"
+  },
+  "basicmod:Endurance": {
+    "NAME": "忍耐",
+    "DESCRIPTION": "本回合受到伤害减半 消耗 ",
+    "UPGRADE_DESCRIPTION": "本回合受到伤害减半 消耗 "
+  },
+  "basicmod:GreenHerb": {
+    "NAME": "绿花草",
+    "DESCRIPTION": "获得1c，本回合不能再使用绿花草",
+    "UPGRADE_DESCRIPTION": "获得2c，本回合不能再使用绿花草 "
+  },
+  "basicmod:AdorationRing": {
+    "NAME": "宠爱戒指",
+    "DESCRIPTION": "抽到这张牌时获得1c，消耗",
+    "UPGRADE_DESCRIPTION": "抽到这张牌时获得2c，消耗 "
   }
 }
 
