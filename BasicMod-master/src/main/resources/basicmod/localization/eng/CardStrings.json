@@ -167,8 +167,8 @@
   },
   "basicmod:DragonHelm": {
     "NAME": "猎龙头",
-    "DESCRIPTION": "获得1层人工制品，3点格挡 消耗 ",
-    "UPGRADE_DESCRIPTION": "获得1层人工制品，3点格挡 消耗 "
+    "DESCRIPTION": "获得1层人工制品，!B! 点格挡 消耗 ",
+    "UPGRADE_DESCRIPTION": "获得1层人工制品，!B! 点格挡 消耗 "
   },
   "basicmod:BigStomach": {
     "NAME": "大卫戴",
@@ -177,8 +177,8 @@
   },
   "basicmod:MarathonB": {
     "NAME": "马拉松b",
-    "DESCRIPTION": "获得 !B! 点格挡。 NL 给予自身 !M! 层缠身。",
-    "UPGRADE_DESCRIPTION": "获得 !B! 点格挡。 NL 给予自身 !M! 层缠身。"
+    "DESCRIPTION": "获得 !B! 点格挡。 NL 给予自身 1 层缠身。",
+    "UPGRADE_DESCRIPTION": "获得 !B! 点格挡。 NL 给予自身 1 层缠身。"
   },
   "basicmod:Endurance": {
     "NAME": "忍耐",
@@ -194,6 +194,21 @@
     "NAME": "宠爱戒指",
     "DESCRIPTION": "抽到这张牌时获得1c，消耗",
     "UPGRADE_DESCRIPTION": "抽到这张牌时获得2c，消耗 "
+  },
+  "basicmod:CurseDagger": {
+    "NAME": "咒死飞刀",
+    "DESCRIPTION": "造成 !D! 点伤害，给予 !M! 层 !咒死! ",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害，给予 !M! 层 !咒死! "
+  },
+  "basicmod:TeachSong": {
+    "NAME": "教曲",
+    "DESCRIPTION": "造成 !D! 点伤害 X+1 次",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害 X+2 次"
+  },
+  "basicmod:ReturnAttack": {
+    "NAME": "奉还",
+    "DESCRIPTION": "造成敌人攻击意图的伤害。",
+    "UPGRADE_DESCRIPTION": "造成敌人攻击意图的伤害。"
   }
 }
 

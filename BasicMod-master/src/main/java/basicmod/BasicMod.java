@@ -158,6 +158,7 @@ public class BasicMod implements
                 logger.warn(modID + " does not support " + getLangString() + " keywords.");
             }
         }
+
     }
 
     private void registerKeyword(KeywordInfo info) {
@@ -327,5 +328,6 @@ public class BasicMod implements
                 });
 
     }
+
 }
 

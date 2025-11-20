@@ -27,5 +27,10 @@
     ],
     "DESCRIPTION": "Using the COLOR field, this keyword is colored pink instead of the normal keyword color.",
     "COLOR": "fc83da"
+  },
+  {
+    "PROPER_NAME": "咒死",
+    "NAMES": ["咒死", "CurseDeath"],
+    "DESCRIPTION": "叠满10层后触发：失去等同于生命上限的生命值，并移除全部咒死。每回合开始减少1层。"
   }
 ]
