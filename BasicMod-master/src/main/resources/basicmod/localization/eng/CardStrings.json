@@ -229,6 +229,11 @@
     "NAME": "火焰壶",
     "DESCRIPTION": "造成 !D! 点伤害，给予敌方全体3层炎上",
     "UPGRADE_DESCRIPTION": "造成 !D! 点伤害，给予敌方全体3层炎上"
+  },
+  "basicmod:EscapeB": {
+    "NAME": "拔线b",
+    "DESCRIPTION": "失去6点生命，从本关逃脱",
+    "UPGRADE_DESCRIPTION": "失去4点生命，从本关逃脱"
   }
 }
 
