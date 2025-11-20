@@ -1,0 +1,68 @@
+package basicmod.cards.attack;
+
+import basicmod.cards.BaseCard;
+import basicmod.charater.MyCharacter;
+import basicmod.util.CardStats;
+import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
+
+public class Road365 extends BaseCard {
+    public static final String ID = "basicmod:Road365";
+
+    private static final CardStats info = new CardStats(
+            MyCharacter.Meta.CARD_COLOR,
+            CardType.ATTACK,
+            CardRarity.COMMON,
+            CardTarget.ENEMY,
+            1 // 初始费用
+    );
+
+    private static final int DAMAGE = 3;     // 基础伤害
+    private static final int UPG_DAMAGE = 0; // 升级增加
+
+    public Road365() {
+        super(ID, info);
+        this.baseDamage = DAMAGE;
+        initializeDescription();
+    }
+
+    @Override
+    public void use(AbstractPlayer p, AbstractMonster m) {
+        // 实际伤害在手牌显示已经计算，这里直接使用 damage
+        addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn)));
+    }
+
+    @Override
+    public void applyPowers() {
+        int relicBonus = AbstractDungeon.player.relics.size(); // 遗物加成
+        this.baseDamage = DAMAGE + relicBonus; // 临时调整基础伤害
+        super.applyPowers(); // 计算力量、易伤等加成
+        this.isDamageModified = this.damage != this.baseDamage;
+    }
+
+    @Override
+    public void calculateCardDamage(AbstractMonster m) {
+        int relicBonus = AbstractDungeon.player.relics.size();
+        this.baseDamage = DAMAGE + relicBonus; // 临时调整基础伤害
+        super.calculateCardDamage(m); // 计算目标相关加成
+    }
+
+    @Override
+    public void upgrade() {
+        if (!upgraded) {
+            upgradeName();
+            upgradeDamage(UPG_DAMAGE);
+            this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
+            initializeDescription();
+        }
+    }
+
+    @Override
+    public AbstractCard makeCopy() {
+        return new Road365();
+    }
+}

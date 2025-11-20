@@ -183,7 +183,7 @@
   "basicmod:Endurance": {
     "NAME": "忍耐",
     "DESCRIPTION": "本回合受到伤害减半 消耗 ",
-    "UPGRADE_DESCRIPTION": "本回合受到伤害减半 消耗 "
+    "UPGRADE_DESCRIPTION": "本回合受到伤害减半"
   },
   "basicmod:GreenHerb": {
     "NAME": "绿花草",
@@ -209,6 +209,27 @@
     "NAME": "奉还",
     "DESCRIPTION": "造成敌人攻击意图的伤害。",
     "UPGRADE_DESCRIPTION": "造成敌人攻击意图的伤害。"
+  },
+  "basicmod:Execution": {
+    "NAME": "处决",
+    "DESCRIPTION": "造成敌人生命上限8%的伤害，若其处于击晕状态则造成16%的伤害",
+    "UPGRADE_DESCRIPTION": "造成敌人生命上限10%的伤害，若其处于击晕状态则造成20%的伤害"
+  },
+  "basicmod:Road365": {
+    "NAME": "365里路",
+    "DESCRIPTION": "造成 !D! 点伤害，每有一个遗物增加1点伤害",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害，每有一个遗物增加2点伤害"
+  },
+  "basicmod:UnlockedCrossbow": {
+    "NAME": "无锁弩",
+    "DESCRIPTION": "打出此牌后，每打出 1 张攻击牌给予敌方全体 2 层炎上",
+    "UPGRADE_DESCRIPTION": "打出此牌后，每打出 1 张攻击牌给予敌方全体 3 层炎上"
+  },
+  "basicmod:FirePot": {
+    "NAME": "火焰壶",
+    "DESCRIPTION": "造成 !D! 点伤害，给予敌方全体3层炎上",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害，给予敌方全体3层炎上"
   }
 }
+
 
