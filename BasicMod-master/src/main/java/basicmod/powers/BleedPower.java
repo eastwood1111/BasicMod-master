@@ -50,6 +50,15 @@ public class BleedPower extends AbstractPower implements CloneablePowerInterface
             addToBot(new com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction(this.owner, this.owner, this));
         }
     }
+    @Override
+    public void onRemove() {
+        // 玩家拥有 BloodKingPleasurePower 时触发
+        AbstractCreature player = com.megacrit.cardcrawl.dungeons.AbstractDungeon.player;
+        if (player.hasPower("basicmod:BloodKingPleasurePower")) {
+            BloodKingPleasurePower power = (BloodKingPleasurePower) player.getPower("basicmod:BloodKingPleasurePower");
+            power.onEnemyBleedRemoved(this.owner);
+        }
+    }
 
     @Override
     public void stackPower(int stackAmount) {
