@@ -285,6 +285,26 @@
     "NAME": "薪王五连",
     "DESCRIPTION": "随机对敌方造成 !D! 点伤害 5 次",
     "UPGRADE_DESCRIPTION": "随机对敌方造成 !D! 点伤害 5 次"
+  },
+  "basicmod:WarmFireCard": {
+    "NAME": "温暖的火",
+    "DESCRIPTION": "获得 3 层再生 消耗",
+    "UPGRADE_DESCRIPTION": "获得 4 层再生 消耗 "
+  },
+  "basicmod:LeftBowB": {
+    "NAME": "左弓B",
+    "DESCRIPTION": "对敌方造成 !D! 点伤害 8 次 消耗 ",
+    "UPGRADE_DESCRIPTION": "对敌方造成 !D! 点伤害 8 次 消耗 "
+  },
+  "basicmod:LiSkillCard": {
+    "NAME": "里技",
+    "DESCRIPTION": "若上一张牌为攻击牌 可打出 随机对敌方造成 !D! 点伤害 8 次",
+    "UPGRADE_DESCRIPTION": "若上一张牌为攻击牌 可打出，随机对敌方造成 !D! 点伤害 10 次"
+  },
+  "basicmod:ExecuteCardV2": {
+    "NAME": "半叶无限连",
+    "DESCRIPTION": "造成 !D! 点伤害。若敌方当前血量 ≤ 20，再造成 !D! 点伤害。",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害。若敌方当前血量 ≤ 25，再造成 !D! 点伤害。"
   }
 }
 
