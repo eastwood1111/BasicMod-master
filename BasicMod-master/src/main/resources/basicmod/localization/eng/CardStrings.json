@@ -207,8 +207,8 @@
   },
   "basicmod:ReturnAttack": {
     "NAME": "奉还",
-    "DESCRIPTION": "造成敌人攻击意图的伤害。",
-    "UPGRADE_DESCRIPTION": "造成敌人攻击意图的伤害。"
+    "DESCRIPTION": "造成敌人攻击意图的伤害",
+    "UPGRADE_DESCRIPTION": "造成敌人攻击意图的伤害"
   },
   "basicmod:Execution": {
     "NAME": "处决",
@@ -222,13 +222,13 @@
   },
   "basicmod:UnlockedCrossbow": {
     "NAME": "无锁弩",
-    "DESCRIPTION": "打出此牌后，每打出 1 张攻击牌给予敌方全体 2 层炎上",
-    "UPGRADE_DESCRIPTION": "打出此牌后，每打出 1 张攻击牌给予敌方全体 3 层炎上"
+    "DESCRIPTION": "打出此牌后，每打出 1 张攻击牌给予敌方全体 2 层 炎上 ",
+    "UPGRADE_DESCRIPTION": "打出此牌后，每打出 1 张攻击牌给予敌方全体 3 层 炎上 "
   },
   "basicmod:FirePot": {
     "NAME": "火焰壶",
-    "DESCRIPTION": "造成 !D! 点伤害，给予敌方全体3层炎上",
-    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害，给予敌方全体3层炎上"
+    "DESCRIPTION": "造成 !D! 点伤害，给予敌方全体3层 炎上 ",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害，给予敌方全体3层 炎上 "
   },
   "basicmod:EscapeB": {
     "NAME": "拔线b",
@@ -237,18 +237,18 @@
   },
   "basicmod:NotNot": {
     "NAME": "并非并非",
-    "DESCRIPTION": "随机 3 次：造成 !D! 点伤害或获得 !B! 点格挡。",
-    "UPGRADE_DESCRIPTION": "随机 3 次：造成 !D! 点伤害或获得 !B! 点格挡。"
+    "DESCRIPTION": "随机 3 次：造成 !D! 点伤害或获得 !B! 点 格挡",
+    "UPGRADE_DESCRIPTION": "随机 3 次：造成 !D! 点伤害或获得 !B! 点 !格挡!"
   },
   "basicmod:BloodKingPleasureCard": {
     "NAME": "鲜血君王的欢愉",
-    "DESCRIPTION": "当有人受到出血伤害时，获得 1 点力量。",
-    "UPGRADE_DESCRIPTION": "当有人受到出血伤害时，获得 2 点力量。"
+    "DESCRIPTION": "当有人受到出血伤害时，获得 1 点 力量 ",
+    "UPGRADE_DESCRIPTION": "当有人受到出血伤害时，获得 2 点 力量 "
   },
   "basicmod:ShieldStab": {
     "NAME": "盾戳",
-    "DESCRIPTION": "造成 !D! 点伤害，获得 !B! 点格挡，给予 !M! 层出血。",
-    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害，获得 !B! 点格挡，给予 !M! 层出血。"
+    "DESCRIPTION": "造成 !D! 点伤害，获得 !B! 点格挡，给予 !M! 层 出血",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害，获得 !B! 点格挡，给予 !M! 层 出血"
   },
   "basicmod:ZombifyCard": {
     "NAME": "活尸化",
@@ -258,8 +258,33 @@
   },
   "basicmod:GreedMarkCard": {
     "NAME": "贪欲者的烙印",
-    "DESCRIPTION": "失去4点生命获得15金币。消耗",
-    "UPGRADE_DESCRIPTION": "失去4点生命获得20金币。消耗"
+    "DESCRIPTION": "失去4点生命获得15金币 消耗 ",
+    "UPGRADE_DESCRIPTION": "失去4点生命获得20金币 消耗 "
+  },
+  "basicmod:LittleSnack": {
+    "NAME": "小零食",
+    "DESCRIPTION": "给予 !M! 层中毒与 !M! 层 !虚弱!",
+    "UPGRADE_DESCRIPTION": "给予 !M! 层中毒与 !M! 层 !虚弱!"
+  },
+  "basicmod:SpiralPointDown": {
+    "NAME": "螺旋下指",
+    "DESCRIPTION": "给予 !M! 层 易伤",
+    "UPGRADE_DESCRIPTION": "给予 !M! 层 易伤"
+  },
+  "basicmod:FireStraightSword": {
+    "NAME": "会冒火的直剑",
+    "DESCRIPTION": "造成 !D! 点伤害  打出后回到手牌 ",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害  打出后回到手牌 "
+  },
+  "basicmod:SmallScythe": {
+    "NAME": "小镰刀",
+    "DESCRIPTION": "造成 !D! 点伤害。给予 缓慢",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害。给予 缓慢"
+  },
+  "basicmod:FireKingFiveCombo": {
+    "NAME": "薪王五连",
+    "DESCRIPTION": "随机对敌方造成 !D! 点伤害 5 次",
+    "UPGRADE_DESCRIPTION": "随机对敌方造成 !D! 点伤害 5 次"
   }
 }
 
