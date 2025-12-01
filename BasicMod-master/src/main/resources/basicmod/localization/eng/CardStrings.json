@@ -150,8 +150,8 @@
   },
   "basicmod:SunGun": {
     "NAME": "阳光枪",
-    "DESCRIPTION": "下回合随机对敌方造成 !D! 点伤害，若处于魔法/祷告，额外造成 !D! 点伤害。",
-    "UPGRADE_DESCRIPTION": "下回合随机对敌方造成 !D! 点伤害，若处于魔法/祷告，额外造成 !D! 点伤害。"
+    "DESCRIPTION": "下回合随机对敌方造成 !D! 点伤害，若处于魔法/祷告，额外造成 !D! 点伤害",
+    "UPGRADE_DESCRIPTION": "下回合随机对敌方造成 !D! 点伤害，若处于魔法/祷告，额外造成 !D! 点伤害"
   },
   "basicmod:YuanQu": {
     "NAME": "原取",
@@ -305,6 +305,26 @@
     "NAME": "半叶无限连",
     "DESCRIPTION": "造成 !D! 点伤害。若敌方当前血量 ≤ 20，再造成 !D! 点伤害。",
     "UPGRADE_DESCRIPTION": "造成 !D! 点伤害。若敌方当前血量 ≤ 25，再造成 !D! 点伤害。"
+  },
+  "basicmod:ManaDrain": {
+    "NAME": "魔力汲取",
+    "DESCRIPTION": "根据战场上敌人的数量获得能量。消耗。",
+    "UPGRADE_DESCRIPTION": "固有。根据战场上敌人的数量获得能量。消耗。"
+  },
+  "basicmod:DestructionMeteorCard": {
+    "NAME": "毁灭流星",
+    "DESCRIPTION": "下一个你的回合开始时，对所有敌人造成 !D! 点伤害 2 次。若处于魔法架势，则额外造成 3 次 ",
+    "UPGRADE_DESCRIPTION": "下一个你的回合开始时，对所有敌人造成 !D! 点伤害 2 次。若处于魔法架势，则额外造成 3 次 "
+  },
+  "basicmod:FlameStorm": {
+    "NAME": "烈焰风暴",
+    "DESCRIPTION": "下回合随机对敌人造成 !D! 点伤害 3 次，每次赋予 5 层炎上 ",
+    "UPGRADE_DESCRIPTION": "下回合随机对敌人造成 !D! 点伤害 4 次，每次赋予 5 层炎上 "
+  },
+  "basicmod:InnerPotentialCard": {
+    "NAME": "内在潜力",
+    "DESCRIPTION": "获得 3 点力量 3 点智力 每回合失去2点生命 ",
+    "UPGRADE_DESCRIPTION": "获得 3 点力量 3 点智力 每回合失去2点生命 "
   }
 }
 

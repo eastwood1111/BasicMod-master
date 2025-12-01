@@ -2,6 +2,7 @@ package basicmod.cards.skill;
 
 import basicmod.cards.BaseCard;
 import basicmod.charater.MyCharacter;
+import basicmod.powers.MagicPower;
 import basicmod.powers.SunGunBuffPower;
 import basicmod.powers.CurrentStancePower;
 import basicmod.util.CardStats;
@@ -42,18 +43,22 @@ public class SunGun extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        int damage = this.damage;
+        int baseDamage = this.baseDamage; // 仅基础伤害，不加智力
 
-        // 判断玩家是否处于魔法/祷告状态
-        CurrentStancePower stancePower = (CurrentStancePower) p.getPower(CurrentStancePower.POWER_ID);
-        if (stancePower != null && stancePower.getCurrentStance() == CurrentStancePower.Stance.MAGIC) {
-            damage += this.damage;
-        }
-
-        // 每次生成独立 Buff，保证多张卡牌独立触发
+        // 每张卡牌生成独立 Power
         String uniqueID = String.valueOf(System.nanoTime());
-        addToBot(new ApplyPowerAction(p, p, new SunGunBuffPower(p, damage, uniqueID), damage));
+        SunGunBuffPower power = new SunGunBuffPower(p, baseDamage, uniqueID);
+        addToBot(new ApplyPowerAction(p, p, power, baseDamage));
+
+        // 魔法架势额外触发一次
+        CurrentStancePower stancePower = (CurrentStancePower)p.getPower(CurrentStancePower.POWER_ID);
+        if (stancePower != null && stancePower.getCurrentStance() == CurrentStancePower.Stance.MAGIC) {
+            String uniqueID2 = String.valueOf(System.nanoTime() + 1);
+            SunGunBuffPower extraPower = new SunGunBuffPower(p, baseDamage, uniqueID2);
+            addToBot(new ApplyPowerAction(p, p, extraPower, baseDamage));
+        }
     }
+
 
     @Override
     public void upgrade() {

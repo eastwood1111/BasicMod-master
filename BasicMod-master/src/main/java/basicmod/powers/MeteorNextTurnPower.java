@@ -2,7 +2,7 @@ package basicmod.powers;
 
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
-import com.megacrit.cardcrawl.actions.common.DamageRandomEnemyAction;
+import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -11,16 +11,20 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 
-public class SunGunBuffPower extends AbstractPower implements CloneablePowerInterface {
-    private final String uniqueID;
+public class MeteorNextTurnPower extends AbstractPower implements CloneablePowerInterface {
 
-    public SunGunBuffPower(AbstractCreature owner, int baseDamage, String uniqueID) {
+    public static final String POWER_ID = "basicmod:MeteorNextTurnPower";
+    private final int hitTimes;
+    private final int baseDamage;
+
+    public MeteorNextTurnPower(AbstractCreature owner, int damage, int hitTimes) {
         this.owner = owner;
-        this.amount = baseDamage; // 基础伤害
-        this.uniqueID = uniqueID;
+        this.baseDamage = damage; // 保存基础伤害，不受力量
+        this.amount = damage; // Power 层数初始为基础伤害
+        this.hitTimes = hitTimes;
 
-        this.ID = "basicmod:SunGunBuffPower_" + uniqueID; // 独立 ID
-        this.name = "阳光枪能量";
+        this.ID = POWER_ID;
+        this.name = "毁灭流星蓄力";
         this.type = PowerType.BUFF;
         this.isTurnBased = true;
 
@@ -39,29 +43,34 @@ public class SunGunBuffPower extends AbstractPower implements CloneablePowerInte
         addToBot(new WaitAction(0.1f));
 
         // 计算最终伤害 = baseDamage + 智力
-        int finalDamage = this.amount; // this.amount = baseDamage
+        int finalDamage = baseDamage;
         if (owner.hasPower(MagicPower.POWER_ID)) {
             finalDamage += owner.getPower(MagicPower.POWER_ID).amount;
         }
 
-        addToBot(new DamageRandomEnemyAction(
-                new DamageInfo(owner, finalDamage, DamageInfo.DamageType.THORNS),
-                AbstractGameAction.AttackEffect.FIRE
-        ));
-
         // 层数显示 = 最终伤害
         this.amount = finalDamage;
 
-        addToBot(new RemoveSpecificPowerAction(owner, owner, this.ID));
+        for (int i = 0; i < hitTimes; i++) {
+            addToBot(new DamageAllEnemiesAction(
+                    owner,
+                    DamageInfo.createDamageMatrix(finalDamage, true),
+                    DamageInfo.DamageType.THORNS, // 不受力量影响
+                    AbstractGameAction.AttackEffect.FIRE
+            ));
+        }
+
+        // 触发后移除 Power
+        addToBot(new RemoveSpecificPowerAction(owner, owner, POWER_ID));
     }
 
     @Override
     public void updateDescription() {
-        this.description = "下回合对随机敌人造成 " + amount + " 点伤害，额外增加智力加成。";
+        this.description = "下回合对所有敌人造成 " + amount + " 点伤害，共 " + hitTimes + " 次（智力加成已计入）。";
     }
 
     @Override
     public AbstractPower makeCopy() {
-        return new SunGunBuffPower(owner, amount, uniqueID);
+        return new MeteorNextTurnPower(owner, baseDamage, hitTimes);
     }
 }
