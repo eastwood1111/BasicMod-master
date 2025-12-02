@@ -24,7 +24,11 @@ public class FlameStormPower extends AbstractPower implements CloneablePowerInte
         this.baseDamage = damage;
         this.hits = hits;
         this.ignite = ignite;
-
+        int adjustedDamage = baseDamage;
+        if (owner.hasPower(MagicPower.POWER_ID)) {
+            adjustedDamage += owner.getPower(MagicPower.POWER_ID).amount;
+        }
+        this.amount = adjustedDamage;
         this.ID = POWER_ID;
         this.name = "烈焰风暴";
         this.type = PowerType.BUFF;

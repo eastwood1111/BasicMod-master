@@ -325,6 +325,11 @@
     "NAME": "内在潜力",
     "DESCRIPTION": "获得 3 点力量 3 点智力 每回合失去2点生命 ",
     "UPGRADE_DESCRIPTION": "获得 3 点力量 3 点智力 每回合失去2点生命 "
+  },
+  "basicmod:CometAzre": {
+    "NAME": "彗星亚兹勒",
+    "DESCRIPTION": "下个回合开始时，对所有敌人造成 !D! 点伤害 X 次 若处于魔法，则伤害增加 4 点",
+    "UPGRADE_DESCRIPTION": "下个回合开始时，对所有敌人造成 !D! 点伤害 X 次 若处于魔法，则造成 5 点伤害 "
   }
 }
 

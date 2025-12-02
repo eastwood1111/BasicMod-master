@@ -18,7 +18,11 @@ public class SunGunBuffPower extends AbstractPower implements CloneablePowerInte
         this.owner = owner;
         this.amount = baseDamage; // 基础伤害
         this.uniqueID = uniqueID;
-
+        int adjustedDamage = baseDamage;
+        if (owner.hasPower(MagicPower.POWER_ID)) {
+            adjustedDamage += owner.getPower(MagicPower.POWER_ID).amount;
+        }
+        this.amount = adjustedDamage;
         this.ID = "basicmod:SunGunBuffPower_" + uniqueID; // 独立 ID
         this.name = "阳光枪能量";
         this.type = PowerType.BUFF;
