@@ -62,7 +62,6 @@ public class LiSkillCard extends BaseCard {
 
         return true;
     }
-
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         int hitCount = upgraded ? UPG_HIT_COUNT : HIT_COUNT;
@@ -70,14 +69,19 @@ public class LiSkillCard extends BaseCard {
 
         List<AbstractMonster> monsters = new ArrayList<>(AbstractDungeon.getCurrRoom().monsters.monsters);
 
+        // 临时保存初始的伤害值
+        int originalDamage = this.baseDamage;
+
         for (int i = 0; i < hitCount; i++) {
             if (monsters.isEmpty()) break;
 
             AbstractMonster target = monsters.get(rand.nextInt(monsters.size()));
 
-            this.baseDamage = DAMAGE;
-            this.calculateCardDamage(target);
+            // 计算伤害，基于当前目标更新伤害值
+            this.baseDamage = DAMAGE;  // 你可以根据实际需求动态更新 baseDamage
+            this.calculateCardDamage(target); // 更新当前卡牌的伤害值
 
+            // 确保每次攻击后伤害正确
             addToBot(new DamageAction(
                     target,
                     new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL),
@@ -85,8 +89,8 @@ public class LiSkillCard extends BaseCard {
             ));
         }
 
-        // 恢复 baseDamage
-        this.baseDamage = DAMAGE;
+        // 恢复原始的 baseDamage 和 damage
+        this.baseDamage = originalDamage;
         this.damage = this.baseDamage;
     }
 

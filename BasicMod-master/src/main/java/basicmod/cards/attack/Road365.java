@@ -38,7 +38,8 @@ public class Road365 extends BaseCard {
 
     @Override
     public void applyPowers() {
-        int relicBonus = AbstractDungeon.player.relics.size(); // 遗物加成
+        // 根据是否升级，调整遗物加成
+        int relicBonus = (upgraded ? AbstractDungeon.player.relics.size() * 2 : AbstractDungeon.player.relics.size()); // 升级后每个遗物增加2点，否则是1点
         this.baseDamage = DAMAGE + relicBonus; // 临时调整基础伤害
         super.applyPowers(); // 计算力量、易伤等加成
         this.isDamageModified = this.damage != this.baseDamage;
@@ -46,10 +47,12 @@ public class Road365 extends BaseCard {
 
     @Override
     public void calculateCardDamage(AbstractMonster m) {
-        int relicBonus = AbstractDungeon.player.relics.size();
+        // 根据是否升级，调整遗物加成
+        int relicBonus = (upgraded ? AbstractDungeon.player.relics.size() * 2 : AbstractDungeon.player.relics.size()); // 升级后每个遗物增加2点，否则是1点
         this.baseDamage = DAMAGE + relicBonus; // 临时调整基础伤害
         super.calculateCardDamage(m); // 计算目标相关加成
     }
+
 
     @Override
     public void upgrade() {

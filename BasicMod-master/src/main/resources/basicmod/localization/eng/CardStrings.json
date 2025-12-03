@@ -207,8 +207,8 @@
   },
   "basicmod:ReturnAttack": {
     "NAME": "奉还",
-    "DESCRIPTION": "造成敌人攻击意图的伤害",
-    "UPGRADE_DESCRIPTION": "造成敌人攻击意图的伤害"
+    "DESCRIPTION": "造成一次敌人攻击意图的伤害",
+    "UPGRADE_DESCRIPTION": "造成一次敌人攻击意图的伤害"
   },
   "basicmod:Execution": {
     "NAME": "处决",
@@ -330,6 +330,26 @@
     "NAME": "彗星亚兹勒",
     "DESCRIPTION": "下个回合开始时，对所有敌人造成 !D! 点伤害 X 次 若处于魔法，则伤害增加 4 点",
     "UPGRADE_DESCRIPTION": "下个回合开始时，对所有敌人造成 !D! 点伤害 X 次 若处于魔法，则造成 5 点伤害 "
+  },
+  "basicmod:Invisibility": {
+    "NAME": "隐形身躯",
+    "DESCRIPTION": "若为魔法架势，下个回合开始时获得 1 层 无实体 消耗 ",
+    "UPGRADE_DESCRIPTION": "若为魔法架势，下个回合开始时获得 1 层 无实体  "
+  },
+  "basicmod:SeekAdvice": {
+    "NAME": "寻求谏言",
+    "DESCRIPTION": "抽 2 张牌，将一张谏言加入抽牌堆 ",
+    "UPGRADE_DESCRIPTION": "抽 2 张牌，将一张谏言+加入抽牌堆  "
+  },
+  "basicmod:AdviseCard": {
+    "NAME": "谏言",
+    "DESCRIPTION": "抽 2 张牌 消耗 ",
+    "UPGRADE_DESCRIPTION": "抽 3 张牌 消耗  "
+  },
+  "basicmod:StrategicReserve": {
+    "NAME": "战略储备",
+    "DESCRIPTION": "选择任意张手牌放入抽牌堆。 NL 每放入一张，获得 !M! 点格挡。",
+    "UPGRADE_DESCRIPTION": ""
   }
 }
 

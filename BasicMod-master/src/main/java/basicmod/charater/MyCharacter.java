@@ -4,7 +4,6 @@ import basemod.BaseMod;
 import basemod.abstracts.CustomEnergyOrb;
 import basemod.abstracts.CustomPlayer;
 import basemod.animations.SpriterAnimation;
-import basicmod.cards.attack.SlashingInsight;
 import basicmod.cards.skill.Defend;
 import basicmod.cards.attack.Strike;
 import basicmod.relics.MyRelic;
@@ -143,7 +142,6 @@ public class MyCharacter extends CustomPlayer {
             retVal.add(Strike.ID);
             retVal.add(Defend.ID);
         }
-        retVal.add(SlashingInsight.ID);
         return retVal;
     }
 
