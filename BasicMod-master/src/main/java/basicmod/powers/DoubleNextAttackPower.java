@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 
 public class DoubleNextAttackPower extends AbstractPower implements CloneablePowerInterface {
     public static final String POWER_ID = "basicmod:DoubleNextAttackPower";
-    public static final String NAME = "准备架势";
+    public static final String NAME = "准备";
     public static final String[] DESCRIPTIONS = {"下一张攻击牌造成双倍伤害。"};
 
     public DoubleNextAttackPower(AbstractCreature owner) {

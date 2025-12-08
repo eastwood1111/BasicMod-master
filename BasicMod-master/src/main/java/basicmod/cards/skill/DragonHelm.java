@@ -34,8 +34,6 @@ public class DragonHelm extends BaseCard {
 
         this.name = cardStrings.NAME;
         this.rawDescription = cardStrings.DESCRIPTION;
-
-        // 按你 SunGun 的写法：构造里直接设置数值
         this.baseBlock = BLOCK;
         this.baseMagicNumber = this.magicNumber = ARTIFACT;
         this.exhaust = true;
@@ -56,8 +54,9 @@ public class DragonHelm extends BaseCard {
         if (!upgraded) {
             upgradeName();
 
-            // 完全照 SunGun 的升级方式：只改需要改的
+            // 升级后人工制品层数改为 2
             upgradeBaseCost(0);
+            upgradeMagicNumber(1);  // 从 1 升级到 2
 
             this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             initializeDescription();

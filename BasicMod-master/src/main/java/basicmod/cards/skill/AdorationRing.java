@@ -23,8 +23,8 @@ public class AdorationRing extends BaseCard {
             0  // 0费
     );
 
-    private static final int BASE_ENERGY = 1;
-    private static final int UPG_ENERGY = 2;
+    private static final int BASE_ENERGY = 2;
+    private static final int UPG_ENERGY = 3;
 
     public AdorationRing() {
         super(ID, info);

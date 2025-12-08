@@ -29,7 +29,7 @@ public class AdviseCard extends BaseCard {
 
         this.name = cardStrings.NAME;
         this.rawDescription = cardStrings.DESCRIPTION;
-
+        this.selfRetain = true;
         // 本卡为消耗卡，升级后取消消耗
         this.exhaust = true;
 

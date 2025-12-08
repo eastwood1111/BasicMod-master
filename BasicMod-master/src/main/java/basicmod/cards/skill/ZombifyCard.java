@@ -22,7 +22,7 @@ public class ZombifyCard extends BaseCard {
     public ZombifyCard() {
         super(ID, info);
         this.baseMagicNumber = this.magicNumber = 5; // 最大生命损失
-        this.baseHeal = this.heal = 4;               // 回复生命
+        this.baseHeal = this.heal = 8;               // 回复生命
         this.exhaust = true;
         this.name = cardStrings.NAME;
         this.rawDescription = cardStrings.DESCRIPTION.replace("NL","\n");
@@ -48,7 +48,7 @@ public class ZombifyCard extends BaseCard {
         if (!upgraded) {
             upgradeName();
             this.magicNumber = 4; // 升级后减少最大生命 4
-            this.heal = 5;        // 回复生命 5
+            this.heal = 10;        // 回复生命 5
             this.rawDescription = cardStrings.DESCRIPTION.replace("NL","\n");
             initializeDescription();
         }

@@ -3,6 +3,7 @@ package basicmod.cards.skill;
 import basicmod.cards.BaseCard;
 import basicmod.charater.MyCharacter;
 import basicmod.powers.GreenHerbUsedPower;
+import basicmod.powers.GainEnergyNextTurnPower;  // 引入下回合能量Power
 import basicmod.util.CardStats;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
@@ -52,8 +53,12 @@ public class GreenHerb extends BaseCard {
         // 获得能量
         addToBot(new GainEnergyAction(this.magicNumber));
 
-        // 给自己添加限制 Power
+        // 给自己添加 GreenHerbUsedPower 限制本回合使用
         addToBot(new ApplyPowerAction(p, p, new GreenHerbUsedPower(p), 1));
+
+        // 下回合获得1 BlueEnergy（或升级后2 BlueEnergy）
+        int nextTurnC = this.magicNumber;  // 当前magicNumber为基础的能量
+        addToBot(new ApplyPowerAction(p, p, new GainEnergyNextTurnPower(p, nextTurnC), 1));  // 使用 GainEnergyNextTurnPower，处理下回合的能量
     }
 
     @Override

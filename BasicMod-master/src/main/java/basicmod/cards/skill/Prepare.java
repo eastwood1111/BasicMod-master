@@ -11,8 +11,8 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 
-public class PrepareStance extends BaseCard {
-    public static final String ID = makeID(PrepareStance.class.getSimpleName());
+public class Prepare extends BaseCard {
+    public static final String ID = makeID(Prepare.class.getSimpleName());
     private static final String IMG = "images/cards/skill/default.png";
 
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
@@ -25,7 +25,7 @@ public class PrepareStance extends BaseCard {
             1
     );
 
-    public PrepareStance() {
+    public Prepare() {
         super(ID, info);
 
         this.name = cardStrings.NAME;
@@ -52,6 +52,6 @@ public class PrepareStance extends BaseCard {
 
     @Override
     public AbstractCard makeCopy() {
-        return new PrepareStance();
+        return new Prepare();
     }
 }

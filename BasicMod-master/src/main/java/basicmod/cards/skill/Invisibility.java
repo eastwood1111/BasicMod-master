@@ -7,6 +7,7 @@ import basicmod.powers.CurrentStancePower;
 import basicmod.util.CardStats;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -52,7 +53,7 @@ public class Invisibility extends BaseCard {
             addToBot(new ApplyPowerAction(p, p, new InvisibilityPower(p), 1));
         } else {
             // 如果不在魔法架势，可以选择跳过或做其他逻辑
-            System.out.println("Not in MAGIC stance, action skipped.");
+            addToBot(new GainBlockAction(p, p, 15));
         }
     }
 

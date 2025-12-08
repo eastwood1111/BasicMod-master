@@ -158,12 +158,10 @@
     "DESCRIPTION": "回复4点生命，下回合失去4点生命 消耗 ",
     "UPGRADE_DESCRIPTION": "回复6点生命，下回合失去6点生命 消耗 "
   },
-  "basicmod:PrepareStance": {
-    "NAME": "准备架势",
+  "basicmod:Prepare": {
+    "NAME": "准备",
     "DESCRIPTION": "下一张攻击牌造成双倍伤害",
-    "UPGRADE_DESCRIPTION": "下一张攻击牌造成双倍伤害",
-    "EXTENDED_DESCRIPTION": [
-    ]
+    "UPGRADE_DESCRIPTION": "下一张攻击牌造成双倍伤害"
   },
   "basicmod:DragonHelm": {
     "NAME": "猎龙头",
@@ -187,13 +185,13 @@
   },
   "basicmod:GreenHerb": {
     "NAME": "绿花草",
-    "DESCRIPTION": "获得1c，本回合不能再使用绿花草",
-    "UPGRADE_DESCRIPTION": "获得2c，本回合不能再使用绿花草 "
+    "DESCRIPTION": "获得1c，下回合1c 获得本回合不能再使用绿花草 ",
+    "UPGRADE_DESCRIPTION": "获得2c，下回合2c 本回合不能再使用绿花草 "
   },
   "basicmod:AdorationRing": {
     "NAME": "宠爱戒指",
-    "DESCRIPTION": "抽到这张牌时获得1c，消耗",
-    "UPGRADE_DESCRIPTION": "抽到这张牌时获得2c，消耗 "
+    "DESCRIPTION": "抽到这张牌时获得2c，消耗",
+    "UPGRADE_DESCRIPTION": "抽到这张牌时获得3c，消耗 "
   },
   "basicmod:CurseDagger": {
     "NAME": "咒死飞刀",
@@ -207,8 +205,8 @@
   },
   "basicmod:ReturnAttack": {
     "NAME": "奉还",
-    "DESCRIPTION": "造成一次敌人攻击意图的伤害",
-    "UPGRADE_DESCRIPTION": "造成一次敌人攻击意图的伤害"
+    "DESCRIPTION": "对敌人造成其即将造成的伤害",
+    "UPGRADE_DESCRIPTION": "对敌人造成其即将造成的伤害"
   },
   "basicmod:Execution": {
     "NAME": "处决",
@@ -252,8 +250,8 @@
   },
   "basicmod:ZombifyCard": {
     "NAME": "活尸化",
-    "DESCRIPTION": "失去 5 点最大生命，回复 4 点生命。NL 消耗",
-    "UPGRADE_DESCRIPTION": "失去 4 点最大生命，回复 5 点生命。NL 消耗",
+    "DESCRIPTION": "失去 5 点最大生命，回复 8 点生命。NL 消耗",
+    "UPGRADE_DESCRIPTION": "失去 4 点最大生命，回复 10 点生命。NL 消耗",
     "EXTENDED_DESCRIPTION": []
   },
   "basicmod:GreedMarkCard": {
@@ -333,8 +331,8 @@
   },
   "basicmod:Invisibility": {
     "NAME": "隐形身躯",
-    "DESCRIPTION": "若为魔法架势，下个回合开始时获得 1 层 无实体 消耗 ",
-    "UPGRADE_DESCRIPTION": "若为魔法架势，下个回合开始时获得 1 层 无实体  "
+    "DESCRIPTION": "获得 !D! 点格挡 若为魔法架势，下个回合开始时获得 1 层 无实体 消耗 ",
+    "UPGRADE_DESCRIPTION": "获得 !D! 点格挡 下个回合开始时获得 1 层 无实体  "
   },
   "basicmod:SeekAdvice": {
     "NAME": "寻求谏言",
@@ -343,13 +341,48 @@
   },
   "basicmod:AdviseCard": {
     "NAME": "谏言",
-    "DESCRIPTION": "抽 2 张牌 消耗 ",
-    "UPGRADE_DESCRIPTION": "抽 3 张牌 消耗  "
+    "DESCRIPTION": "保留 抽 2 张牌 消耗 ",
+    "UPGRADE_DESCRIPTION": "保留 抽 3 张牌 消耗  "
   },
   "basicmod:StrategicReserve": {
-    "NAME": "战略储备",
-    "DESCRIPTION": "选择任意张手牌放入抽牌堆。 NL 每放入一张，获得 !M! 点格挡。",
-    "UPGRADE_DESCRIPTION": ""
+    "NAME": "小卫戴",
+    "DESCRIPTION": "选择任意张手牌放入抽牌堆。 NL 每放入一张，获得 !M! 点 格挡 ",
+    "UPGRADE_DESCRIPTION": "选择任意张手牌放入抽牌堆。 NL 每放入一张，获得 !M! 点 格挡 "
+  },
+  "basicmod:SpiritSight": {
+    "NAME": "灵视",
+    "DESCRIPTION": "下回合多抽2张牌",
+    "UPGRADE_DESCRIPTION": "下回合多抽3张牌"
+  },
+  "basicmod:DragonSpear": {
+    "NAME": "猎龙草叉",
+    "DESCRIPTION": "对敌方全体造成 !D! 点伤害，若斩杀敌方则再造成一次伤害 ",
+    "UPGRADE_DESCRIPTION": "对敌方全体造成 !D! 点伤害，若斩杀敌方则再造成一次伤害"
+  },
+  "basicmod:GudaSpear": {
+    "NAME": "古达戟",
+    "DESCRIPTION": "对敌方全体造成 !D! 点伤害3次 ",
+    "UPGRADE_DESCRIPTION": "对敌方全体造成 !D! 点伤害3次 "
+  },
+  "basicmod:ReversalSword": {
+    "NAME": "反手剑",
+    "DESCRIPTION": "造成 !D! 点伤害，给予敌方2层出血 ",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害，给予敌方2层出血 "
+  },
+  "basicmod:TwinShortSword": {
+    "NAME": "双小曲",
+    "DESCRIPTION": "造成 !D! 点伤害 4 次，给予敌方2层出血 ",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害 4 次，给予敌方2层出血 "
+  },
+  "basicmod:Blood": {
+    "NAME": "血",
+    "DESCRIPTION": "给予敌方 3 层出血 ",
+    "UPGRADE_DESCRIPTION": "给予敌方 5 层出血 "
+  },
+  "basicmod:IronBody": {
+    "NAME": "铁身躯",
+    "DESCRIPTION": "获得 !B! 点格挡，将一张虚空加入弃牌堆 ",
+    "UPGRADE_DESCRIPTION": "获得 !B! 点格挡，将一张虚空加入弃牌堆 "
   }
 }
 

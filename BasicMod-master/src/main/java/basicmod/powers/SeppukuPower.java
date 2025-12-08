@@ -38,15 +38,18 @@ public class SeppukuPower extends AbstractPower implements CloneablePowerInterfa
     // 监听玩家造成伤害
     @Override
     public void onAttack(DamageInfo info, int damageAmount, AbstractCreature target) {
+        // 只对攻击造成的伤害应用
         if (!(target instanceof AbstractMonster)) return;
-        if (damageAmount <= 0) return;
+
+        // 确保是攻击牌，并且伤害没有被格挡
+        if (info.type != DamageInfo.DamageType.NORMAL || damageAmount <= 0 || info.output == 0) return;
 
         AbstractMonster m = (AbstractMonster) target;
 
-        for (int i = 0; i < this.amount; i++) {
-            if (m.getPower(BleedPower.POWER_ID) == null) {
-                addToBot(new ApplyPowerAction(m, owner, new BleedPower(m, 1)));
-            } else {
+        // 只有没有格挡的伤害才会触发出血
+        if (m.getPower("Block") == null || m.getPower("Block").amount == 0) {
+            // 每层出血
+            for (int i = 0; i < this.amount; i++) {
                 addToBot(new ApplyPowerAction(m, owner, new BleedPower(m, 1)));
             }
         }
