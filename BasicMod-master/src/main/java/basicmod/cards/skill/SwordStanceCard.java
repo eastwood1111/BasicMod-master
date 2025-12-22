@@ -25,8 +25,8 @@ public class SwordStanceCard extends BaseCard {
             1
     );
 
-    private static final int BASE_STR = 3;
-    private static final int UPG_STR = 4;
+    private static final int BASE_STR = 1;
+    private static final int UPG_STR = 2;
 
     public SwordStanceCard() {
         super(ID, info);
@@ -51,8 +51,6 @@ public class SwordStanceCard extends BaseCard {
 
         stancePower.switchStance(CurrentStancePower.Stance.SWORD, this.magicNumber);
 
-        // 每次进入架势都抽1张牌
-        addToBot(new DrawCardAction(p, 1));
     }
 
     @Override

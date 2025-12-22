@@ -18,53 +18,27 @@
     ]
   },
   "basicmod:Fireball": {
-    "NAME": "火球术",
-    "DESCRIPTION": "对敌方全体造成 !D! 点伤害 消耗.",
-    "UPGRADE_DESCRIPTION": "对敌方全体造成 !D! 点伤害 消耗.",
+    "NAME": "巨大宝箱",
+    "DESCRIPTION": "对敌方全体造成 !D! 点伤害 消耗",
+    "UPGRADE_DESCRIPTION": "对敌方全体造成 !D! 点伤害 消耗",
     "EXTENDED_DESCRIPTION": [
       "Unleash a burst of fiery magic at all foes.",
       "Blue uncommon attack card.",
       "Upgraded damage: 20."
     ]
   },
-  "basicmod:StrikeWhite": {
-    "NAME": "打击",
-    "DESCRIPTION": "造成 !D! 点伤害。"
-  },
-  "basicmod:SwiftStrike": {
-    "NAME": "迅捷打击",
-    "DESCRIPTION": "造成8点伤害抽一张牌"
-  },
-  "basicmod:SlashingInsight": {
-    "NAME": "后发制人",
-    "DESCRIPTION": "造成 !D! 点伤害。若本回合打出过牌，下回合多抽 1 张牌",
-    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害。若本回合打出过牌，下回合多抽 1 张牌",
-    "EXTENDED_DESCRIPTION": []
-  },
-  "basicmod:WeakStrike": {
-    "NAME": "伺虚而行",
-    "DESCRIPTION": "造成 !D! 点伤害 若目标已有虚弱 抽1张牌 给予1层虚弱 ",
-    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害 若目标已有虚弱 抽1张牌 给予1层虚弱",
-    "EXTENDED_DESCRIPTION": []
-  },
-  "basicmod:Blizzard": {
-    "NAME": "暴风雪",
-    "DESCRIPTION": "对敌方全体造成 !D! 点伤害3次 消耗",
-    "UPGRADE_DESCRIPTION": "对敌方全体造成 !D! 点伤害4次 消耗",
-    "EXTENDED_DESCRIPTION": []
-  },
   "basicmod:SwordStanceCard": {
-    "NAME": "剑架势",
-    "DESCRIPTION": "保留 进入剑架势，获得3点力量。",
-    "UPGRADE_DESCRIPTION": "保留 进入剑架势，获得4点力量。"
+    "NAME": "剑",
+    "DESCRIPTION": "保留 进入剑架势，获得1点力量。",
+    "UPGRADE_DESCRIPTION": "保留 进入剑架势，获得2点力量。"
   },
   "basicmod:ShieldStanceCard": {
-    "NAME": "盾架势",
-    "DESCRIPTION": "保留 进入盾架势，获得3点敏捷。",
-    "UPGRADE_DESCRIPTION": "保留 进入盾架势，获得4点敏捷。"
+    "NAME": "盾",
+    "DESCRIPTION": "保留 进入盾架势，获得1点敏捷。",
+    "UPGRADE_DESCRIPTION": "保留 进入盾架势，获得2点敏捷。"
   },
   "basicmod:GreatSwordStanceCard": {
-    "NAME": "大剑架势",
+    "NAME": "大剑",
     "DESCRIPTION": "进入大剑架势，获得 6 点力量。",
     "UPGRADE_DESCRIPTION": "进入大剑架势，获得 6 点力量。抽1张牌"
   },
@@ -120,8 +94,8 @@
   },
   "basicmod:DivineRaceCard": {
     "NAME": "神族",
-    "DESCRIPTION": "当前手牌费用变为0，下回合死亡 消耗",
-    "UPGRADE_DESCRIPTION": "保留 当前手牌费用变为0，下回合死亡 消耗"
+    "DESCRIPTION": "当前手牌费用变为0，下回合死亡 本回合仅能打出10张牌 消耗",
+    "UPGRADE_DESCRIPTION": "保留 当前手牌费用变为0，下回合死亡 本回合仅能打出15张牌 消耗"
   },
   "basicmod:MagicPrayerStanceCard": {
     "NAME": "魔法/祷告",
@@ -383,6 +357,51 @@
     "NAME": "铁身躯",
     "DESCRIPTION": "获得 !B! 点格挡，将一张虚空加入弃牌堆 ",
     "UPGRADE_DESCRIPTION": "获得 !B! 点格挡，将一张虚空加入弃牌堆 "
+  },
+  "basicmod:DoubleDebuff": {
+    "NAME": "双倍负面",
+    "DESCRIPTION": "将敌人的所有负面效果翻倍 ",
+    "UPGRADE_DESCRIPTION": "将敌人的所有负面效果翻倍 "
+  },
+  "basicmod:CursedStrike": {
+    "NAME": "落井下石",
+    "DESCRIPTION": "造成 !D! 点伤害，若敌方有负面buff，抽1张牌并获得1点能量。",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害，若敌方有负面buff，抽1张牌并获得1点能量。"
+  },
+  "basicmod:ControlOffset": {
+    "NAME": "控制抵消",
+    "DESCRIPTION": "造成 !D! 点伤害，若处于韧狗架势，额外获得一层人工制品 ",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害，若处于韧狗架势，额外获得一层人工制品 "
+  },
+  "basicmod:StomachImpact": {
+    "NAME": "胃袋冲击",
+    "DESCRIPTION": "回合结束时，对目标敌人造成 !D! 点伤害。 若处于 韧狗 架势，改为造成 当前格挡值 的伤害。",
+    "UPGRADE_DESCRIPTION": "回合结束时，对 所有 敌人造成 !D! 点伤害。 NL 若处于 韧狗 架势，改为造成 当前格挡值 的伤害。"
+  },
+  "basicmod:RepeatBCard": {
+    "NAME": "复读b",
+    "DESCRIPTION":"本回合下一张0费牌，将打出2次",
+    "UPGRADE_DESCRIPTION": "本回合下两张0费牌，将打出2次"
+  },
+  "basicmod:PowerToIntellectCard": {
+    "NAME": "转职",
+    "DESCRIPTION": "失去1点力量 获得1点智力",
+    "UPGRADE_DESCRIPTION": "失去2点力量 获得2点智力"
+  },
+  "basicmod:IntellectShield": {
+    "NAME": "泡泡盾",
+    "DESCRIPTION": "保留。  获得 !B! 点格挡。  每有1点智力，额外获得 !M! 点格挡。",
+    "UPGRADE_DESCRIPTION": "保留。  获得 !B! 点格挡。  每有1点智力，额外获得 !M! 点格挡。"
+  },
+  "basicmod:LittleDragonMan": {
+    "NAME": "小龙人",
+    "DESCRIPTION": "获得 !M! 点 力量  你无法再从卡牌中获得 格挡 。",
+    "UPGRADE_DESCRIPTION": "保留  获得 !M! 点 力量  你无法再从卡牌中获得 格挡"
+  },
+  "basicmod:RecklessSlash": {
+    "NAME": "爆",
+    "DESCRIPTION": "造成 !D! 点伤害。  自身获得 1 层 易伤 ",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害。  自身获得 1 层 易伤 "
   }
 }
 

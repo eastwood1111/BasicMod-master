@@ -6,6 +6,8 @@ import basemod.abstracts.CustomPlayer;
 import basemod.animations.SpriterAnimation;
 import basicmod.cards.skill.Defend;
 import basicmod.cards.attack.Strike;
+import basicmod.cards.skill.ShieldStanceCard;
+import basicmod.cards.skill.SwordStanceCard;
 import basicmod.relics.MyRelic;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
@@ -133,21 +135,22 @@ public class MyCharacter extends CustomPlayer {
         dialogX = (drawX + 0.0F * Settings.scale);
         dialogY = (drawY + 220.0F * Settings.scale);
     }
-
     @Override
     public ArrayList<String> getStartingDeck() {
         ArrayList<String> retVal = new ArrayList<>();
 
-        for (int i = 0; i < 5; i++) {
+        // 打击与防御各 4 张
+        for (int i = 0; i < 4; i++) {
             retVal.add(Strike.ID);
             retVal.add(Defend.ID);
         }
+
+        // 架势牌各 1 张
+        retVal.add(ShieldStanceCard.ID);
+        retVal.add(SwordStanceCard.ID);
+
         return retVal;
     }
-
-
-
-
 
 
     @Override

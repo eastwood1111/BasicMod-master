@@ -1,8 +1,8 @@
 package basicmod.relics;
 
-import basicmod.Enums; // 确保导入了定义 STANCE 标签的类
+import basicmod.Enums; // 确保导入了你的 Enums 类
 import basicmod.charater.MyCharacter;
-import com.megacrit.cardcrawl.actions.common.DrawCardAction;
+import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -10,48 +10,39 @@ import com.megacrit.cardcrawl.relics.AbstractRelic;
 
 import static basicmod.BasicMod.makeID;
 
-public class MyRelic extends BaseRelic {
-    public static final String ID = makeID("MyRelic");
+public class StanceEnergyBossRelic extends BaseRelic {
+    public static final String ID = makeID("StanceEnergyBossRelic");
 
-    private final boolean upgraded;
     private boolean triggeredThisTurn = false;
 
-    public MyRelic() {
-        this(false);
-    }
-
-    public MyRelic(boolean upgraded) {
-        // 初始遗物使用 STARTER，升级版（如果有的话）使用 BOSS
-        super(ID, "myrelic", MyCharacter.Meta.CARD_COLOR,
-                upgraded ? RelicTier.BOSS : RelicTier.STARTER,
+    public StanceEnergyBossRelic() {
+        super(ID, "stance_energy_boss", // 对应 resources/images/relics/stance_energy_boss.png
+                MyCharacter.Meta.CARD_COLOR,
+                RelicTier.BOSS,
                 LandingSound.MAGICAL);
-        this.upgraded = upgraded;
     }
 
     @Override
     public void atTurnStart() {
-        // 每回合开始重置：允许触发，恢复颜色，停止脉冲
+        // 每回合开始重置状态
         this.triggeredThisTurn = false;
         this.grayscale = false;
-        this.stopPulse();
     }
 
     @Override
     public void onUseCard(AbstractCard card, com.megacrit.cardcrawl.actions.utility.UseCardAction action) {
-        // 核心判断：本回合未触发 且 该牌拥有架势标签
+        // 使用 Tag 判断：如果卡牌拥有 STANCE 标签且本回合尚未触发
         if (!this.triggeredThisTurn && card.hasTag(Enums.STANCE)) {
-
             this.triggeredThisTurn = true;
             this.flash();
 
-            // 在玩家上方显示遗物激活
+            // 视觉反馈：在玩家上方显示遗物图标
             addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
 
-            // 抽牌逻辑：普通 1 张，升级版 2 张
-            int drawAmount = upgraded ? 2 : 1;
-            addToBot(new DrawCardAction(AbstractDungeon.player, drawAmount));
+            // 获得 1 点能量
+            addToBot(new GainEnergyAction(1));
 
-            // 变灰表示本回合已用尽效果
+            // 变灰表示本回合已消耗
             this.grayscale = true;
         }
     }
@@ -70,18 +61,18 @@ public class MyRelic extends BaseRelic {
 
     @Override
     public void onPlayerEndTurn() {
-        // 玩家回合结束时恢复颜色，视觉提示下回合可用
+        // 回合结束时恢复颜色，提醒玩家下回合又可以用了
         this.grayscale = false;
     }
 
     @Override
     public String getUpdatedDescription() {
-        // 请确保 RelicStrings.json 中 DESCRIPTIONS[0] 是抽1张，DESCRIPTIONS[1] 是抽2张
-        return upgraded ? DESCRIPTIONS[1] : DESCRIPTIONS[0];
+        // 请在 RelicStrings.json 中配置 DESCRIPTIONS[0]
+        return DESCRIPTIONS[0];
     }
 
     @Override
     public AbstractRelic makeCopy() {
-        return new MyRelic(upgraded);
+        return new StanceEnergyBossRelic();
     }
 }

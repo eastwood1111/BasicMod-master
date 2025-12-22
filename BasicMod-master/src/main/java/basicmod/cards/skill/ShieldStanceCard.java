@@ -26,8 +26,8 @@ public class ShieldStanceCard extends BaseCard {
             1
     );
 
-    private static final int BASE_DEX = 3;
-    private static final int UPG_DEX = 4;
+    private static final int BASE_DEX = 1;
+    private static final int UPG_DEX = 2;
 
     public ShieldStanceCard() {
         super(ID, info);
@@ -53,7 +53,6 @@ public class ShieldStanceCard extends BaseCard {
         stancePower.switchStance(CurrentStancePower.Stance.SHIELD, this.magicNumber);
 
 
-        addToBot(new DrawCardAction(p, 1));
     }
 
     @Override

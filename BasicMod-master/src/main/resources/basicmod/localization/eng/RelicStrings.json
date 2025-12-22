@@ -3,8 +3,15 @@
     "NAME": "架势",
     "FLAVOR": "高墙的薪王啊苏醒起来吧",
     "DESCRIPTIONS": [
-      "战斗开始时，获得一张 剑架势 盾架势 "
+      "每回合第一次使用架势牌时抽1张牌 "
 
+    ]
+  },
+  "basicmod:StanceEnergyBossRelic": {
+    "NAME": "百般五艺",
+    "FLAVOR": "无论何种姿态，都能从呼吸中汲取力量。",
+    "DESCRIPTIONS": [
+      "每回合当你第一次打出 架势 牌时，获得 [E] 。"
     ]
   }
 }
