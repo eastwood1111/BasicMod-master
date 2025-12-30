@@ -1,12 +1,21 @@
 {
-  "${modID}:PotionID": {
-    "NAME": "Some Kind of Potion",
+  "basicmod:EmberPotion": {
+    "NAME": "余火",
     "DESCRIPTIONS": [
-      "Little",
-      " pieces ",
-      "that get put together",
-      " into a description.",
-      " Exactly how depends on the potion, and you can set it up however you want."
+      "回复 #b",
+      "% 的生命值，并获得 #b",
+      " 点最大生命值。"
+    ]
+  },
+  "basicmod:StylePotion": {
+    "NAME": "流派药水",
+    "DESCRIPTIONS": ["选择一个架势进入。"]
+  },
+  "basicmod:ChaosPotion": {
+    "NAME": "魔药",
+    "DESCRIPTIONS": [
+      "给予所有敌人 #b",
+      " 层随机的 #y出血 、 #y炎上 、 #y咒死 、 #y中毒 、 #y易伤 或 #y虚弱 。"
     ]
   }
 }

@@ -4,12 +4,12 @@ import basicmod.cards.BaseCard;
 import basicmod.charater.MyCharacter;
 import basicmod.util.CardStats;
 import basicmod.powers.StanceDrawPower;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction; // 引入 Action
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 public class StanceTriggerCard extends BaseCard {
     public static final String ID = makeID(StanceTriggerCard.class.getSimpleName());
@@ -22,7 +22,7 @@ public class StanceTriggerCard extends BaseCard {
             CardType.POWER,
             CardRarity.UNCOMMON,
             CardTarget.SELF,
-            1 // 基础费用
+            1
     );
 
     public StanceTriggerCard() {
@@ -34,22 +34,16 @@ public class StanceTriggerCard extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        StanceDrawPower power = (StanceDrawPower) p.getPower(StanceDrawPower.POWER_ID);
-
-        if (power == null) {
-            // 玩家没有该 Power，添加一个初始层数为1的 Power
-            p.addPower(new StanceDrawPower(p));
-        } else {
-            // 已经存在 Power，则叠加一层
-            power.stackPower(1);
-        }
+        // 使用标准的 ApplyPowerAction
+        // 它会自动判断：如果玩家没有这个 Power，就 new 一个；如果有，就调用 stackPower 叠加
+        addToBot(new ApplyPowerAction(p, p, new StanceDrawPower(p, 1), 1));
     }
 
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            this.upgradeBaseCost(this.cost - 1); // 升级后减1费
+            this.upgradeBaseCost(0); // 1费变0费更直接的写法
             initializeDescription();
         }
     }

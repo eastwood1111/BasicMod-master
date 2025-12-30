@@ -28,7 +28,7 @@ public class IronBody extends BaseCard {
     );
 
     private static final int BLOCK = 12;
-    private static final int UPGRADE_BLOCK = 16;
+    private static final int UPGRADE_BLOCK = 15;
 
     public IronBody() {
         super(ID, info);

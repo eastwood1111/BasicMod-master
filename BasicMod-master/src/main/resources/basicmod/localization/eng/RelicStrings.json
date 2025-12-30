@@ -13,5 +13,37 @@
     "DESCRIPTIONS": [
       "每回合当你第一次打出 架势 牌时，获得 [E] 。"
     ]
+  },
+  "basicmod:MyRelicUpgrade": {
+    "NAME": "老狼",
+    "FLAVOR": "有无老狼？",
+    "DESCRIPTIONS": ["每回合第一次使用 #y架势 牌时，抽 #b2 张牌。"]
+  },
+  "basicmod:DebuffBlockRelic": {
+    "NAME": "折磨纹章",
+    "FLAVOR": "敌人的痛苦是你最坚实的护甲。",
+    "DESCRIPTIONS": ["每当你赋予敌人 #b1 层 #y负面状态 ，获得 #b1 点 #y格挡 。"]
+  },
+  "basicmod:CardHpLossReductionRelic": {
+    "NAME": "凝血护符",
+    "FLAVOR": "这张护符能让你在施展禁术时，血液流失得慢一些。",
+    "DESCRIPTIONS": ["你因 #y卡牌 效果而失去的 #y生命值 减少 #b1 。"]
+  },
+  "basicmod:NobleAshesRelic": {
+    "NAME": "贵人骨灰",
+    "FLAVOR": "这位权贵生前享尽荣华，死后其余韵竟也能滋养肉身。",
+    "DESCRIPTIONS": ["你的所有生命回复效果提升 #b25% 。"]
+  },
+  "basicmod:LowHpDiscountRelic": {
+    "NAME": "残损古币",
+    "FLAVOR": "虽然已经破损，但其中残留的某种执念会在你虚弱时提供援助。",
+    "DESCRIPTIONS": ["若你的生命值低于 #b50% ，每回合打出的第 #b1 张牌耗能为 #b0 。"]
+  },
+  "basicmod:RenGouRelic": {
+    "NAME": "韧狗护符",
+    "FLAVOR": "保持姿态，坚不可摧。",
+    "DESCRIPTIONS": [
+      "战斗开始时，进入 #y韧狗架势 。"
+    ]
   }
 }

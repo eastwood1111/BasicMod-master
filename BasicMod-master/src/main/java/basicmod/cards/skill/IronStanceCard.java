@@ -28,8 +28,8 @@ public class IronStanceCard extends BaseCard {
             1
     );
 
-    private static final int BASE_METAL = 9;
-    private static final int UPG_METAL = 12;
+    private static final int BASE_METAL = 6;
+    private static final int UPG_METAL = 9;
 
     public IronStanceCard() {
         super(ID, info);
@@ -52,8 +52,6 @@ public class IronStanceCard extends BaseCard {
         // 切换到金属架势
         stancePower.switchStance(CurrentStancePower.Stance.IRON, this.magicNumber);
 
-        // 抽1张牌
-        addToBot(new DrawCardAction(p, 1));
     }
 
 
