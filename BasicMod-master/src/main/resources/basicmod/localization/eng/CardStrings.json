@@ -84,8 +84,8 @@
   },
   "basicmod:IronStanceCard": {
     "NAME": "韧构",
-    "DESCRIPTION": "获得9层金属化，抽1张牌",
-    "UPGRADE_DESCRIPTION": "获得12层金属化，抽1张牌"
+    "DESCRIPTION": "获得6层金属化",
+    "UPGRADE_DESCRIPTION": "获得9层金属化"
   },
   "basicmod:GreedySerpentCard": {
     "NAME": "贪婪金蛇",
@@ -340,8 +340,8 @@
   },
   "basicmod:ReversalSword": {
     "NAME": "反手剑",
-    "DESCRIPTION": "造成 !D! 点伤害，给予敌方2层出血 ",
-    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害，给予敌方2层出血 "
+    "DESCRIPTION": "若上一张打出的牌为攻击牌可打出，造成 !D! 点伤害，给予敌方2层出血 ",
+    "UPGRADE_DESCRIPTION": "若上一张打出的牌为攻击牌可打出，造成 !D! 点伤害，给予敌方2层出血 "
   },
   "basicmod:TwinShortSword": {
     "NAME": "双小曲",
