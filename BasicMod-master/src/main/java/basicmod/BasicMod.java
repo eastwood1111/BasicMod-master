@@ -166,7 +166,9 @@ public class BasicMod implements
         if (!info.ID.isEmpty()) {
             keywords.put(info.ID, info);
         }
+
     }
+
 
     @Override
     public void receiveAddAudio() {

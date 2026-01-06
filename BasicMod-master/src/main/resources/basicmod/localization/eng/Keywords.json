@@ -30,7 +30,54 @@
   },
   {
     "PROPER_NAME": "咒死",
-    "NAMES": ["咒死", "CurseDeath"],
-    "DESCRIPTION": "叠满10层后触发：失去等同于生命上限的生命值，并移除全部咒死。每回合开始减少1层。"
+    "NAMES": [
+      "咒死",
+      "curse_death"
+    ],
+    "DESCRIPTION": "每回合结束层数减1。若层数叠加至 #b10 层，目标将直接死亡。"
+  },
+  {
+    "PROPER_NAME": "剑",
+    "NAMES": [
+      "剑",
+      "sword"
+    ],
+    "DESCRIPTION": "获得力量，退出剑后移除"
+  },
+  {
+    "PROPER_NAME": "盾",
+    "NAMES": [
+      "盾",
+      "Shield"
+    ],
+    "DESCRIPTION": "获得敏捷，退出盾后移除"
+  },
+  {
+    "PROPER_NAME": "出血",
+    "NAMES": [
+      "出血",
+      "blood"
+    ],
+    "DESCRIPTION": "敌人回合开始时失去层数三倍的生命"
+  },
+  {
+    "PROPER_NAME": "炎上",
+    "NAMES": [
+      "炎上",
+      "Flame"
+    ],
+    "DESCRIPTION": "敌人回合开始受到炎上层数的伤害，然后移除"
+  },
+  {
+    "PROPER_NAME": "智力",
+    "NAMES": [
+      "智力",
+      "magic"
+    ],
+    "DESCRIPTION": "智力可以增幅法术的使用"
   }
+
+
+
+
 ]

@@ -10,8 +10,8 @@
   },
   "basicmod:Defend": {
     "NAME": "防御",
-    "DESCRIPTION": "获得 !B! 点格挡.",
-    "UPGRADE_DESCRIPTION": "获得 !B! 点格挡.",
+    "DESCRIPTION": "获得 !B! 点 格挡 .",
+    "UPGRADE_DESCRIPTION": "获得 !B! 点 格挡 .",
     "EXTENDED_DESCRIPTION": [
       "Starter skill card.",
       "Use to block incoming damage."
@@ -29,13 +29,13 @@
   },
   "basicmod:SwordStanceCard": {
     "NAME": "剑",
-    "DESCRIPTION": "保留 进入剑架势，获得1点力量。",
-    "UPGRADE_DESCRIPTION": "保留 进入剑架势，获得2点力量。"
+    "DESCRIPTION": "保留 ， basicmod:剑 获得 !M! 点 力量 ",
+    "UPGRADE_DESCRIPTION": "保留 ， basicmod:剑 获得 !M! 点 力量 "
   },
   "basicmod:ShieldStanceCard": {
     "NAME": "盾",
-    "DESCRIPTION": "保留 进入盾架势，获得1点敏捷。",
-    "UPGRADE_DESCRIPTION": "保留 进入盾架势，获得2点敏捷。"
+    "DESCRIPTION": "保留 ， basicmod:盾 获得 !M! 点 敏捷 ",
+    "UPGRADE_DESCRIPTION": "保留 ， basicmod:盾 获得 !M! 点 敏捷 "
   },
   "basicmod:GreatSwordStanceCard": {
     "NAME": "大剑",
@@ -59,43 +59,43 @@
   },
   "basicmod:StanceDefendCard": {
     "NAME": "架势防御",
-    "DESCRIPTION": "打出1张架势牌后获得3点格挡",
-    "UPGRADE_DESCRIPTION": "打出1张架势牌后获得4点格挡"
+    "DESCRIPTION": "打出1张架势牌后获得3点 格挡 。",
+    "UPGRADE_DESCRIPTION": "打出1张架势牌后获得4点 格挡 。"
   },
   "basicmod:AttackWeakPowerCard": {
     "NAME": "燃脂",
-    "DESCRIPTION": "打出一张攻击牌后随机对敌人赋予一层缓慢",
-    "UPGRADE_DESCRIPTION": "打出一张攻击牌后对全体敌人赋予一层缓慢"
+    "DESCRIPTION": "打出一张攻击牌后随机对敌人赋予一层 虚弱 。",
+    "UPGRADE_DESCRIPTION": "打出一张攻击牌后对全体敌人赋予一层 虚弱 。"
   },
   "basicmod:SpearCard": {
     "NAME": "矛",
-    "DESCRIPTION": "打出攻击牌时移除敌方的格挡",
-    "UPGRADE_DESCRIPTION": "打出攻击牌时移除敌方的格挡"
+    "DESCRIPTION": "打出攻击牌时移除敌方的 格挡 。",
+    "UPGRADE_DESCRIPTION": "打出攻击牌时移除敌方的 格挡 。"
   },
   "basicmod:GunCard": {
     "NAME": "枪反",
-    "DESCRIPTION": "打出攻击牌时给予敌方一层易伤",
-    "UPGRADE_DESCRIPTION": "打出攻击牌时给予敌方一层易伤"
+    "DESCRIPTION": "打出攻击牌时给予敌方一层 易伤 。",
+    "UPGRADE_DESCRIPTION": "打出攻击牌时给予敌方一层 易伤 。"
   },
   "basicmod:RightShieldCard": {
     "NAME": "右盾",
-    "DESCRIPTION": "每五回合获得一层无实体",
-    "UPGRADE_DESCRIPTION": "每四回合获得一层无实体"
+    "DESCRIPTION": "每五回合获得一层 无实体 。",
+    "UPGRADE_DESCRIPTION": "每四回合获得一层 无实体 。"
   },
   "basicmod:IronStanceCard": {
     "NAME": "韧构",
-    "DESCRIPTION": "获得6层金属化",
-    "UPGRADE_DESCRIPTION": "获得9层金属化"
+    "DESCRIPTION": "获得6层 金属化 。",
+    "UPGRADE_DESCRIPTION": "获得9层 金属化 。"
   },
   "basicmod:GreedySerpentCard": {
     "NAME": "贪婪金蛇",
-    "DESCRIPTION": "若本回合为精英关卡，额外掉落一个遗物",
-    "UPGRADE_DESCRIPTION": "若本回合为精英关卡，额外掉落一个遗物"
+    "DESCRIPTION": "若本回合为精英关卡，额外掉落一个 遗物 。",
+    "UPGRADE_DESCRIPTION": "若本回合为精英关卡，额外掉落一个 遗物 。"
   },
   "basicmod:DivineRaceCard": {
     "NAME": "神族",
-    "DESCRIPTION": "当前手牌费用变为0，下回合死亡 本回合仅能打出10张牌 消耗",
-    "UPGRADE_DESCRIPTION": "保留 当前手牌费用变为0，下回合死亡 本回合仅能打出15张牌 消耗"
+    "DESCRIPTION": "当前手牌费用变为0，下回合死亡 本回合仅能打出10张牌 消耗。",
+    "UPGRADE_DESCRIPTION": "保留 当前手牌费用变为0，下回合死亡 本回合仅能打出15张牌 消耗。"
   },
   "basicmod:MagicPrayerStanceCard": {
     "NAME": "魔法/祷告",
@@ -104,23 +104,23 @@
   },
   "basicmod:SoulFiveFormCard": {
     "NAME": "魂5形态",
-    "DESCRIPTION": "获得1点力量,1点敏捷,1层无实体,1层缓冲,每回合额外抽1张牌,额外获得1点能量,每回合结束失去2点生命 虚无",
-    "UPGRADE_DESCRIPTION": "获得1点力量,1点敏捷,1层无实体,1层缓冲,每回合额外抽1张牌,额外获得1点能量,每回合结束失去2点生命"
+    "DESCRIPTION": "获得1点 力量,1点 敏捷,1层 无实体,1层 缓冲,每回合额外抽1张牌,额外获得1点 能量,每回合结束失去2点 生命 虚无",
+    "UPGRADE_DESCRIPTION": "获得1点 力量,1点 敏捷,1层 无实体,1层 缓冲,每回合额外抽1张牌,额外获得1点 能量,每回合结束失去2点 生命"
   },
   "basicmod:AttackWeakCard": {
     "NAME": "燃脂",
-    "DESCRIPTION": "每打出一张攻击牌赋予敌方一层虚弱",
-    "UPGRADE_DESCRIPTION": "每打出一张攻击牌赋予全体敌方一层虚弱"
+    "DESCRIPTION": "每打出一张攻击牌赋予敌方一层 虚弱 。",
+    "UPGRADE_DESCRIPTION": "每打出一张攻击牌赋予全体敌方一层 虚弱 。"
   },
   "basicmod:SeppukuCard": {
     "NAME": "切腹",
-    "DESCRIPTION": "造成没有被格挡的伤害时给予一层出血",
-    "UPGRADE_DESCRIPTION": "造成没有被格挡的伤害时给予一层出血"
+    "DESCRIPTION": "造成没有被格挡的伤害时给予一层 basicmod:出血 。",
+    "UPGRADE_DESCRIPTION": "造成没有被格挡的伤害时给予一层 basicmod:出血 。"
   },
   "basicmod:KnockdownCard": {
     "NAME": "击倒",
-    "DESCRIPTION": "造成 !D! 点伤害，若处于大剑架势给予一层击晕。",
-    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害，若处于大剑架势给予一层击晕。"
+    "DESCRIPTION": "造成 !D! 点伤害，若处于大剑架势给予一层 击晕 。",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害，若处于大剑架势给予一层 击晕 。"
   },
   "basicmod:SunGun": {
     "NAME": "阳光枪",
@@ -129,8 +129,8 @@
   },
   "basicmod:YuanQu": {
     "NAME": "原取",
-    "DESCRIPTION": "回复4点生命，下回合失去4点生命 消耗 ",
-    "UPGRADE_DESCRIPTION": "回复6点生命，下回合失去6点生命 消耗 "
+    "DESCRIPTION": "回复4点 生命，下回合失去4点 生命 消耗 ",
+    "UPGRADE_DESCRIPTION": "回复6点 生命，下回合失去6点 生命 消耗 "
   },
   "basicmod:Prepare": {
     "NAME": "准备",
@@ -139,38 +139,38 @@
   },
   "basicmod:DragonHelm": {
     "NAME": "猎龙头",
-    "DESCRIPTION": "获得1层人工制品，!B! 点格挡 消耗 ",
-    "UPGRADE_DESCRIPTION": "获得1层人工制品，!B! 点格挡 消耗 "
+    "DESCRIPTION": "获得1层 人工制品 ，!B! 点 格挡 消耗 ",
+    "UPGRADE_DESCRIPTION": "获得1层 人工制品 ，!B! 点 格挡 消耗 "
   },
   "basicmod:BigStomach": {
     "NAME": "大卫戴",
-    "DESCRIPTION": "获得你牌库数量的格挡 ",
-    "UPGRADE_DESCRIPTION": "获得你牌库数量的格挡 "
+    "DESCRIPTION": "获得你牌库数量的 格挡 。",
+    "UPGRADE_DESCRIPTION": "获得你牌库数量的 格挡 。"
   },
   "basicmod:MarathonB": {
     "NAME": "马拉松b",
-    "DESCRIPTION": "获得 !B! 点格挡。 NL 给予自身 1 层缠身。",
-    "UPGRADE_DESCRIPTION": "获得 !B! 点格挡。 NL 给予自身 1 层缠身。"
+    "DESCRIPTION": "获得 !B! 点 格挡。 NL 给予自身 1 层 缠身。",
+    "UPGRADE_DESCRIPTION": "获得 !B! 点 格挡。 NL 给予自身 1 层 缠身。"
   },
   "basicmod:Endurance": {
     "NAME": "忍耐",
-    "DESCRIPTION": "本回合受到伤害减半 消耗 ",
-    "UPGRADE_DESCRIPTION": "本回合受到伤害减半"
+    "DESCRIPTION": "本回合受到伤害减半 消耗 。",
+    "UPGRADE_DESCRIPTION": "本回合受到伤害减半。"
   },
   "basicmod:GreenHerb": {
     "NAME": "绿花草",
-    "DESCRIPTION": "获得1c，下回合1c 获得本回合不能再使用绿花草 ",
-    "UPGRADE_DESCRIPTION": "获得2c，下回合2c 本回合不能再使用绿花草 "
+    "DESCRIPTION": "获得[E]，下回合获得 [E] ，获得本回合不能再使用绿花草 ",
+    "UPGRADE_DESCRIPTION": "获得 [E] [E]，下回合获得 [E] [E] ，本回合不能再使用绿花草 "
   },
   "basicmod:AdorationRing": {
     "NAME": "宠爱戒指",
-    "DESCRIPTION": "抽到这张牌时获得2c，消耗",
-    "UPGRADE_DESCRIPTION": "抽到这张牌时获得3c，消耗 "
+    "DESCRIPTION": "抽到这张牌时获得 [E] [E]  ，消耗",
+    "UPGRADE_DESCRIPTION": "抽到这张牌时获得 [E] [E] [E] ，消耗 "
   },
   "basicmod:CurseDagger": {
     "NAME": "咒死飞刀",
-    "DESCRIPTION": "造成 !D! 点伤害，给予 !M! 层 !咒死! ",
-    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害，给予 !M! 层 !咒死! "
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 给予 !M! 层 basicmod:咒死 ",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害。 NL 给予 !M! 层 basicmod:咒死 "
   },
   "basicmod:TeachSong": {
     "NAME": "教曲",
@@ -194,23 +194,23 @@
   },
   "basicmod:UnlockedCrossbow": {
     "NAME": "无锁弩",
-    "DESCRIPTION": "打出此牌后，每打出 1 张攻击牌给予敌方全体 2 层 炎上 ",
-    "UPGRADE_DESCRIPTION": "打出此牌后，每打出 1 张攻击牌给予敌方全体 3 层 炎上 "
+    "DESCRIPTION": "打出此牌后，每打出 1 张攻击牌给予敌方全体 2 层 basicmod:炎上 。",
+    "UPGRADE_DESCRIPTION": "打出此牌后，每打出 1 张攻击牌给予敌方全体 3 层 basicmod:炎上 。"
   },
   "basicmod:FirePot": {
     "NAME": "火焰壶",
-    "DESCRIPTION": "造成 !D! 点伤害，给予敌方全体3层 炎上 ",
-    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害，给予敌方全体3层 炎上 "
+    "DESCRIPTION": "造成 !D! 点伤害，给予敌方全体3层 basicmod:炎上 。",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害，给予敌方全体3层 basicmod:炎上 。"
   },
   "basicmod:EscapeB": {
     "NAME": "拔线b",
-    "DESCRIPTION": "失去6点生命，从本关逃脱",
-    "UPGRADE_DESCRIPTION": "失去4点生命，从本关逃脱"
+    "DESCRIPTION": "失去6点 生命 ，从本关逃脱",
+    "UPGRADE_DESCRIPTION": "失去4点 生命 ，从本关逃脱"
   },
   "basicmod:NotNot": {
     "NAME": "并非并非",
-    "DESCRIPTION": "随机 3 次：造成 !D! 点伤害或获得 !B! 点 格挡",
-    "UPGRADE_DESCRIPTION": "随机 3 次：造成 !D! 点伤害或获得 !B! 点 !格挡!"
+    "DESCRIPTION": "随机 3 次：造成 !D! 点伤害或获得 !B! 点 格挡 。",
+    "UPGRADE_DESCRIPTION": "随机 3 次：造成 !D! 点伤害或获得 !B! 点 格挡 。"
   },
   "basicmod:BloodKingPleasureCard": {
     "NAME": "鲜血君王的欢愉",
@@ -219,29 +219,29 @@
   },
   "basicmod:ShieldStab": {
     "NAME": "盾戳",
-    "DESCRIPTION": "造成 !D! 点伤害，获得 !B! 点格挡，给予 !M! 层 出血",
-    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害，获得 !B! 点格挡，给予 !M! 层 出血"
+    "DESCRIPTION": "造成 !D! 点伤害，获得 !B! 点格挡，给予 !M! 层 basicmod:出血",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害，获得 !B! 点格挡，给予 !M! 层 basicmod:出血"
   },
   "basicmod:ZombifyCard": {
     "NAME": "活尸化",
-    "DESCRIPTION": "失去 5 点最大生命，回复 8 点生命。NL 消耗",
-    "UPGRADE_DESCRIPTION": "失去 4 点最大生命，回复 10 点生命。NL 消耗",
+    "DESCRIPTION": "失去 5 点 最大生命，回复 8 点 生命。NL 消耗",
+    "UPGRADE_DESCRIPTION": "失去 4 点 最大生命，回复 10 点 生命。NL 消耗",
     "EXTENDED_DESCRIPTION": []
   },
   "basicmod:GreedMarkCard": {
     "NAME": "贪欲者的烙印",
-    "DESCRIPTION": "失去4点生命获得15金币 消耗 ",
-    "UPGRADE_DESCRIPTION": "失去4点生命获得20金币 消耗 "
+    "DESCRIPTION": "失去4点 生命 获得15 金币 消耗 ",
+    "UPGRADE_DESCRIPTION": "失去4点 生命 获得20 金币 消耗 "
   },
   "basicmod:LittleSnack": {
     "NAME": "小零食",
-    "DESCRIPTION": "给予 !M! 层中毒与 !M! 层 !虚弱!",
-    "UPGRADE_DESCRIPTION": "给予 !M! 层中毒与 !M! 层 !虚弱!"
+    "DESCRIPTION": "给予 !M! 层 中毒 与 !M! 层 虚弱 ",
+    "UPGRADE_DESCRIPTION": "给予 !M! 层 中毒 与 !M! 层 虚弱 "
   },
   "basicmod:SpiralPointDown": {
     "NAME": "螺旋下指",
-    "DESCRIPTION": "给予 !M! 层 易伤",
-    "UPGRADE_DESCRIPTION": "给予 !M! 层 易伤"
+    "DESCRIPTION": "给予 !M! 层 易伤 。",
+    "UPGRADE_DESCRIPTION": "给予 !M! 层 易伤 。"
   },
   "basicmod:FireStraightSword": {
     "NAME": "会冒火的直剑",
@@ -250,8 +250,8 @@
   },
   "basicmod:SmallScythe": {
     "NAME": "小镰刀",
-    "DESCRIPTION": "造成 !D! 点伤害。给予 缓慢",
-    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害。给予 缓慢"
+    "DESCRIPTION": "造成 !D! 点伤害。给予 缓慢 。",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害。给予 缓慢 。"
   },
   "basicmod:FireKingFiveCombo": {
     "NAME": "薪王五连",
@@ -260,8 +260,8 @@
   },
   "basicmod:WarmFireCard": {
     "NAME": "温暖的火",
-    "DESCRIPTION": "获得 3 层再生 消耗",
-    "UPGRADE_DESCRIPTION": "获得 4 层再生 消耗 "
+    "DESCRIPTION": "获得 3 层 再生 消耗",
+    "UPGRADE_DESCRIPTION": "获得 4 层 再生 消耗 "
   },
   "basicmod:LeftBowB": {
     "NAME": "左弓B",
@@ -295,23 +295,23 @@
   },
   "basicmod:InnerPotentialCard": {
     "NAME": "内在潜力",
-    "DESCRIPTION": "获得 3 点力量 3 点智力 每回合失去2点生命 ",
-    "UPGRADE_DESCRIPTION": "获得 3 点力量 3 点智力 每回合失去2点生命 "
+    "DESCRIPTION": "获得 3 点 力量 3 点 basicmod:智力 ，每回合失去2点 生命 ",
+    "UPGRADE_DESCRIPTION": "获得 3 点 力量 3 点 basicmod:智力 ，每回合失去2点 生命 "
   },
   "basicmod:CometAzre": {
     "NAME": "彗星亚兹勒",
     "DESCRIPTION": "下个回合开始时，对所有敌人造成 !D! 点伤害 X 次 若处于魔法，则伤害增加 4 点",
-    "UPGRADE_DESCRIPTION": "下个回合开始时，对所有敌人造成 !D! 点伤害 X 次 若处于魔法，则造成 5 点伤害 "
+    "UPGRADE_DESCRIPTION": "下个回合开始时，对所有敌人造成 !D! 点伤害 X 次 若处于魔法，则伤害增加 5 点伤害 "
   },
   "basicmod:Invisibility": {
     "NAME": "隐形身躯",
     "DESCRIPTION": "获得 !D! 点格挡 若为魔法架势，下个回合开始时获得 1 层 无实体 消耗 ",
-    "UPGRADE_DESCRIPTION": "获得 !D! 点格挡 下个回合开始时获得 1 层 无实体  "
+    "UPGRADE_DESCRIPTION": "获得 !D! 点格挡 下个回合开始时获得 1 层 无实体 。"
   },
   "basicmod:SeekAdvice": {
     "NAME": "寻求谏言",
-    "DESCRIPTION": "抽 2 张牌，将一张谏言加入抽牌堆 ",
-    "UPGRADE_DESCRIPTION": "抽 2 张牌，将一张谏言+加入抽牌堆  "
+    "DESCRIPTION": "抽 2 张牌，将一张 谏言 加入抽牌堆 ",
+    "UPGRADE_DESCRIPTION": "抽 2 张牌，将一张 谏言+ 加入抽牌堆  "
   },
   "basicmod:AdviseCard": {
     "NAME": "谏言",
@@ -320,8 +320,8 @@
   },
   "basicmod:StrategicReserve": {
     "NAME": "小卫戴",
-    "DESCRIPTION": "选择任意张手牌放入抽牌堆。 NL 每放入一张，获得 !M! 点 格挡 ",
-    "UPGRADE_DESCRIPTION": "选择任意张手牌放入抽牌堆。 NL 每放入一张，获得 !M! 点 格挡 "
+    "DESCRIPTION": "选择任意张手牌放入抽牌堆。 NL 每放入一张，获得 !M! 点 格挡 。",
+    "UPGRADE_DESCRIPTION": "选择任意张手牌放入抽牌堆。 NL 每放入一张，获得 !M! 点 格挡 。"
   },
   "basicmod:SpiritSight": {
     "NAME": "灵视",
@@ -340,23 +340,23 @@
   },
   "basicmod:ReversalSword": {
     "NAME": "反手剑",
-    "DESCRIPTION": "若上一张打出的牌为攻击牌可打出，造成 !D! 点伤害，给予敌方2层出血 ",
-    "UPGRADE_DESCRIPTION": "若上一张打出的牌为攻击牌可打出，造成 !D! 点伤害，给予敌方2层出血 "
+    "DESCRIPTION": "若上一张打出的牌为攻击牌可打出，造成 !D! 点伤害，给予敌方2层 basicmod:出血 。",
+    "UPGRADE_DESCRIPTION": "若上一张打出的牌为攻击牌可打出，造成 !D! 点伤害，给予敌方2层 basicmod:出血 。"
   },
   "basicmod:TwinShortSword": {
     "NAME": "双小曲",
-    "DESCRIPTION": "造成 !D! 点伤害 4 次，给予敌方2层出血 ",
-    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害 4 次，给予敌方2层出血 "
+    "DESCRIPTION": "造成 !D! 点伤害 4 次，给予敌方2层 basicmod:出血 。",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害 4 次，给予敌方2层 basicmod:出血 。"
   },
   "basicmod:Blood": {
     "NAME": "血",
-    "DESCRIPTION": "给予敌方 3 层出血 ",
-    "UPGRADE_DESCRIPTION": "给予敌方 5 层出血 "
+    "DESCRIPTION": "给予敌方 3 层 basicmod:出血 。",
+    "UPGRADE_DESCRIPTION": "给予敌方 5 层 basicmod:出血 。"
   },
   "basicmod:IronBody": {
     "NAME": "铁身躯",
-    "DESCRIPTION": "获得 !B! 点格挡，将一张虚空加入弃牌堆 ",
-    "UPGRADE_DESCRIPTION": "获得 !B! 点格挡，将一张虚空加入弃牌堆 "
+    "DESCRIPTION": "获得 !B! 点 格挡 ，将一张 虚空 加入弃牌堆 ",
+    "UPGRADE_DESCRIPTION": "获得 !B! 点 格挡 ，将一张 虚空 加入弃牌堆 "
   },
   "basicmod:DoubleDebuff": {
     "NAME": "双倍负面",
@@ -365,16 +365,16 @@
   },
   "basicmod:CursedStrike": {
     "NAME": "落井下石",
-    "DESCRIPTION": "造成 !D! 点伤害，若敌方有负面buff，抽1张牌并获得1点能量。",
-    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害，若敌方有负面buff，抽1张牌并获得1点能量。"
+    "DESCRIPTION": "造成 !D! 点伤害，若敌方有负面buff，抽1张牌并获得 [E] 。",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害，若敌方有负面buff，抽1张牌并获得 [E] 。"
   },
   "basicmod:ControlOffset": {
     "NAME": "控制抵消",
-    "DESCRIPTION": "造成 !D! 点伤害，若处于韧狗架势，额外获得一层人工制品 ",
-    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害，若处于韧狗架势，额外获得一层人工制品 "
+    "DESCRIPTION": "造成 !D! 点伤害，若处于韧狗架势，额外获得一层 人工制品 。",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害，若处于韧狗架势，额外获得一层 人工制品 。"
   },
   "basicmod:StomachImpact": {
-    "NAME": "胃袋冲击",
+    "NAME": "原力",
     "DESCRIPTION": "回合结束时，对目标敌人造成 !D! 点伤害。 若处于 韧狗 架势，改为造成 当前格挡值 的伤害。",
     "UPGRADE_DESCRIPTION": "回合结束时，对 所有 敌人造成 !D! 点伤害。 NL 若处于 韧狗 架势，改为造成 当前格挡值 的伤害。"
   },
@@ -385,13 +385,13 @@
   },
   "basicmod:PowerToIntellectCard": {
     "NAME": "转职",
-    "DESCRIPTION": "失去1点力量 获得1点智力",
-    "UPGRADE_DESCRIPTION": "失去2点力量 获得2点智力"
+    "DESCRIPTION": "失去1点力量 获得1点 basicmod:智力 。",
+    "UPGRADE_DESCRIPTION": "失去2点力量 获得2点 basicmod:智力 。"
   },
   "basicmod:IntellectShield": {
     "NAME": "泡泡盾",
-    "DESCRIPTION": "保留。  获得 !B! 点格挡。  每有1点智力，额外获得 !M! 点格挡。",
-    "UPGRADE_DESCRIPTION": "保留。  获得 !B! 点格挡。  每有1点智力，额外获得 !M! 点格挡。"
+    "DESCRIPTION": "保留。  获得 !B! 点 格挡 。  每有1点 basicmod:智力 ，额外获得 !M! 点 格挡 。",
+    "UPGRADE_DESCRIPTION": "保留。  获得 !B! 点 格挡 。  每有1点 basicmod:智力 ，额外获得 !M! 点 格挡 。"
   },
   "basicmod:LittleDragonMan": {
     "NAME": "小龙人",
