@@ -3,7 +3,6 @@ package basicmod.cards.attack;
 import basicmod.cards.BaseCard;
 import basicmod.charater.MyCharacter;
 import basicmod.util.CardStats;
-
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -11,10 +10,6 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
 
 public class LiSkillCard extends BaseCard {
 
@@ -24,81 +19,79 @@ public class LiSkillCard extends BaseCard {
             MyCharacter.Meta.CARD_COLOR,
             CardType.ATTACK,
             CardRarity.RARE,
-            CardTarget.ALL,
-            2 // 初始费用
+            CardTarget.ALL_ENEMY, // 修改为 ALL_ENEMY 语义更准确
+            2
     );
 
     private static final int DAMAGE = 2;
     private static final int HIT_COUNT = 8;
-    private static final int UPG_HIT_COUNT = 10;
+    private static final int UPG_HIT_COUNT = 2; // 升级增加 2 次，共 10 次
 
     public LiSkillCard() {
         super(ID, info);
-        this.name = cardStrings.NAME;
-        this.rawDescription = cardStrings.DESCRIPTION;
-        this.initializeDescription();
-
         this.baseDamage = DAMAGE;
-        this.damage = this.baseDamage;
+        // 将攻击次数绑定到 magicNumber
+        this.baseMagicNumber = this.magicNumber = HIT_COUNT;
     }
 
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
         if (!super.canUse(p, m)) return false;
 
-        // 获取上一张打出的牌
+        // 检查战斗中是否打出过牌
         if (AbstractDungeon.actionManager.cardsPlayedThisCombat.isEmpty()) {
-            this.cantUseMessage = "上一张牌不是攻击牌，无法打出！";
+            this.cantUseMessage = "上一张牌不是攻击牌！"; // 实际上是没打过牌
             return false;
         }
 
+        // 获取最后一张打出的牌
         AbstractCard lastCard = AbstractDungeon.actionManager.cardsPlayedThisCombat
                 .get(AbstractDungeon.actionManager.cardsPlayedThisCombat.size() - 1);
 
         if (lastCard.type != CardType.ATTACK) {
-            this.cantUseMessage = "上一张牌不是攻击牌，无法打出！";
+            this.cantUseMessage = "上一张牌不是攻击牌！";
             return false;
         }
 
         return true;
     }
+
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        int hitCount = upgraded ? UPG_HIT_COUNT : HIT_COUNT;
-        Random rand = new Random();
+        // 循环次数直接取用 magicNumber
+        for (int i = 0; i < this.magicNumber; i++) {
+            // 使用 addToBot 配合内部逻辑，确保随机选择的是存活的敌人
+            addToBot(new AbstractGameAction() {
+                @Override
+                public void update() {
+                    // 重新获取随机存活目标
+                    AbstractMonster randomTarget = AbstractDungeon.getMonsters().getRandomMonster(null, true, AbstractDungeon.cardRandomRng);
 
-        List<AbstractMonster> monsters = new ArrayList<>(AbstractDungeon.getCurrRoom().monsters.monsters);
+                    if (randomTarget != null) {
+                        // 重新计算针对该目标的伤害（考虑易伤等）
+                        calculateCardDamage(randomTarget);
 
-        // 临时保存初始的伤害值
-        int originalDamage = this.baseDamage;
-
-        for (int i = 0; i < hitCount; i++) {
-            if (monsters.isEmpty()) break;
-
-            AbstractMonster target = monsters.get(rand.nextInt(monsters.size()));
-
-            // 计算伤害，基于当前目标更新伤害值
-            this.baseDamage = DAMAGE;  // 你可以根据实际需求动态更新 baseDamage
-            this.calculateCardDamage(target); // 更新当前卡牌的伤害值
-
-            // 确保每次攻击后伤害正确
-            addToBot(new DamageAction(
-                    target,
-                    new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL),
-                    AbstractGameAction.AttackEffect.SLASH_HEAVY
-            ));
+                        // 执行伤害
+                        addToTop(new DamageAction(
+                                randomTarget,
+                                new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL),
+                                AttackEffect.SLASH_HEAVY
+                        ));
+                    }
+                    this.isDone = true;
+                }
+            });
         }
-
-        // 恢复原始的 baseDamage 和 damage
-        this.baseDamage = originalDamage;
-        this.damage = this.baseDamage;
     }
 
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
+            // 升级增加段数
+            upgradeMagicNumber(UPG_HIT_COUNT);
+            // 如果有升级描述切换，在这里处理
+            // this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

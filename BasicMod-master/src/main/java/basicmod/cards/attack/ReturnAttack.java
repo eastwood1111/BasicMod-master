@@ -3,15 +3,14 @@ package basicmod.cards.attack;
 import basicmod.cards.BaseCard;
 import basicmod.charater.MyCharacter;
 import basicmod.util.CardStats;
-import com.megacrit.cardcrawl.actions.AbstractGameAction; // 引入攻击特效
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
-import basemod.ReflectionHacks; // 【重要】需要引入这个类来获取多段攻击次数
+import basemod.ReflectionHacks;
 
 public class ReturnAttack extends BaseCard {
     public static final String ID = "basicmod:ReturnAttack";
@@ -27,37 +26,50 @@ public class ReturnAttack extends BaseCard {
 
     public ReturnAttack() {
         super(ID, info);
+        this.baseDamage = 0;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (m != null) {
-            // 1. 获取单段基础伤害
-            int intentDamage = m.getIntentBaseDmg();
-            if (intentDamage < 0) intentDamage = 0;
+        // use 之前 calculateCardDamage 会被调用，所以直接用 this.damage
+        addToBot(new DamageAction(
+                m,
+                new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL),
+                AbstractGameAction.AttackEffect.SLASH_HEAVY
+        ));
+    }
 
-            // 2. 【核心修复】通过反射检查是否为多段攻击，并计算总伤害
-            // 读取 protected 字段 isMultiDmg
-            boolean isMultiDmg = (boolean) ReflectionHacks.getPrivate(m, AbstractMonster.class, "isMultiDmg");
+    // 【关键修复】重写此方法，让卡牌在指向敌人时实时显示伤害
+    @Override
+    public void calculateCardDamage(AbstractMonster m) {
+        updateBaseDamageFromIntent(m);
+        super.calculateCardDamage(m);
+    }
 
+    // 【关键修复】当卡牌在手中，没有指向敌人时，伤害归零或保持基础
+    @Override
+    public void applyPowers() {
+        this.baseDamage = 0;
+        super.applyPowers();
+    }
+
+    private void updateBaseDamageFromIntent(AbstractMonster m) {
+        if (m != null && (m.intent == AbstractMonster.Intent.ATTACK ||
+                m.intent == AbstractMonster.Intent.ATTACK_BUFF ||
+                m.intent == AbstractMonster.Intent.ATTACK_DEBUFF ||
+                m.intent == AbstractMonster.Intent.ATTACK_DEFEND)) {
+
+            // 直接获取怪物意图面板上的单段伤害（已计入怪物力量和虚弱）
+            int multiAmt = 1;
+            boolean isMultiDmg = ReflectionHacks.getPrivate(m, AbstractMonster.class, "isMultiDmg");
             if (isMultiDmg) {
-                // 读取 protected 字段 intentMultiAmt (攻击段数)
-                int multiAmt = (int) ReflectionHacks.getPrivate(m, AbstractMonster.class, "intentMultiAmt");
-                intentDamage *= multiAmt; // 总伤害 = 单段 * 次数
+                multiAmt = ReflectionHacks.getPrivate(m, AbstractMonster.class, "intentMultiAmt");
             }
 
-            // 3. 设置这张卡的基础伤害为怪物的总伤害
-            // 这样做的优点是：可以利用卡牌自身的 calculateCardDamage 方法来正确应用玩家的力量、易伤等效果
-            this.baseDamage = intentDamage;
-            this.calculateCardDamage(m);
-
-            // 4.造成伤害
-            // 注意：这里使用 this.damage，它是经过 calculateCardDamage 计算后的最终数值
-            addToBot(new DamageAction(
-                    m,
-                    new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL),
-                    AbstractGameAction.AttackEffect.SLASH_HEAVY // 建议添加一个打击特效
-            ));
+            int singleDmg = ReflectionHacks.getPrivate(m, AbstractMonster.class, "intentDmg");
+            this.baseDamage = singleDmg * multiAmt;
+        } else {
+            this.baseDamage = 0;
         }
     }
 
@@ -66,13 +78,9 @@ public class ReturnAttack extends BaseCard {
         if (!upgraded) {
             upgradeName();
             this.upgradeBaseCost(1);
+            // 建议在 description 里写 "!D!" 来动态显示伤害
             this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             initializeDescription();
         }
-    }
-
-    @Override
-    public AbstractCard makeCopy() {
-        return new ReturnAttack();
     }
 }

@@ -25,10 +25,10 @@ public class BleedPower extends AbstractPower implements CloneablePowerInterface
         this.isTurnBased = false;
 
         this.region128 = new TextureAtlas.AtlasRegion(
-                ImageMaster.loadImage("basicmod/images/powers/large/example.png"), 0, 0, 84, 84
+                ImageMaster.loadImage("basicmod/images/powers/large/BleedPower.png"), 0, 0, 84, 84
         );
         this.region48 = new TextureAtlas.AtlasRegion(
-                ImageMaster.loadImage("basicmod/images/powers/example.png"), 0, 0, 32, 32
+                ImageMaster.loadImage("basicmod/images/powers/BleedPower.png"), 0, 0, 32, 32
         );
 
         updateDescription();

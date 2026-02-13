@@ -39,8 +39,8 @@
   },
   "basicmod:GreatSwordStanceCard": {
     "NAME": "大剑",
-    "DESCRIPTION": "进入大剑架势，获得 6 点力量。",
-    "UPGRADE_DESCRIPTION": "进入大剑架势，获得 6 点力量。抽1张牌"
+    "DESCRIPTION": "进入大剑架势，获得 !M! 点 力量 。",
+    "UPGRADE_DESCRIPTION": "进入大剑架势，获得 !M! 点 力量 。"
   },
   "basicmod:TwoHandsCard": {
     "NAME": "双手各持",
@@ -54,13 +54,13 @@
   },
   "basicmod:StanceTriggerCard": {
     "NAME": "骑士之魂",
-    "DESCRIPTION": "打出架势牌抽一张牌",
-    "UPGRADE_DESCRIPTION": "打出架势牌抽一张牌"
+    "DESCRIPTION": "切换架势时抽一张牌",
+    "UPGRADE_DESCRIPTION": "切换架势时抽一张牌"
   },
   "basicmod:StanceDefendCard": {
     "NAME": "架势防御",
-    "DESCRIPTION": "打出1张架势牌后获得3点 格挡 。",
-    "UPGRADE_DESCRIPTION": "打出1张架势牌后获得4点 格挡 。"
+    "DESCRIPTION": "切换架势后获得 !M! 点 格挡 。",
+    "UPGRADE_DESCRIPTION": "切换架势后获得 !M! 点 格挡 。"
   },
   "basicmod:AttackWeakPowerCard": {
     "NAME": "燃脂",
@@ -69,13 +69,13 @@
   },
   "basicmod:SpearCard": {
     "NAME": "矛",
-    "DESCRIPTION": "打出攻击牌时移除敌方的 格挡 。",
-    "UPGRADE_DESCRIPTION": "打出攻击牌时移除敌方的 格挡 。"
+    "DESCRIPTION": "打出单体攻击牌时移除敌方的 格挡 。",
+    "UPGRADE_DESCRIPTION": "打出单体攻击牌时移除敌方的 格挡 。"
   },
   "basicmod:GunCard": {
     "NAME": "枪反",
-    "DESCRIPTION": "打出攻击牌时给予敌方一层 易伤 。",
-    "UPGRADE_DESCRIPTION": "打出攻击牌时给予敌方一层 易伤 。"
+    "DESCRIPTION": "若敌方为攻击意图造成 !D! 点伤害，1层 basicmod:击晕 ,1层 易伤 ，否则造成1点伤害。 消耗 ",
+    "UPGRADE_DESCRIPTION": "若敌方为攻击意图造成 !D! 点伤害，1层 basicmod:击晕 ,3层 易伤 ，否则造成1点伤害。 消耗 "
   },
   "basicmod:RightShieldCard": {
     "NAME": "右盾",
@@ -99,8 +99,8 @@
   },
   "basicmod:MagicPrayerStanceCard": {
     "NAME": "魔法/祷告",
-    "DESCRIPTION": "你可以咏唱魔法/祷告 抽1张牌",
-    "UPGRADE_DESCRIPTION": "你可以咏唱魔法/祷告 抽2张牌"
+    "DESCRIPTION": "你可以强化咏唱魔法/祷告 抽1张牌",
+    "UPGRADE_DESCRIPTION": "你可以强化咏唱魔法/祷告 抽2张牌"
   },
   "basicmod:SoulFiveFormCard": {
     "NAME": "魂5形态",
@@ -159,8 +159,8 @@
   },
   "basicmod:GreenHerb": {
     "NAME": "绿花草",
-    "DESCRIPTION": "获得[E]，下回合获得 [E] ，获得本回合不能再使用绿花草 ",
-    "UPGRADE_DESCRIPTION": "获得 [E] [E]，下回合获得 [E] [E] ，本回合不能再使用绿花草 "
+    "DESCRIPTION": "获得 [E] ，下回合获得 [E] ，本回合不能再使用绿花草 ",
+    "UPGRADE_DESCRIPTION": "获得 [E] [E] ，下回合获得 [E] [E] ，本回合不能再使用绿花草 "
   },
   "basicmod:AdorationRing": {
     "NAME": "宠爱戒指",
@@ -179,8 +179,8 @@
   },
   "basicmod:ReturnAttack": {
     "NAME": "奉还",
-    "DESCRIPTION": "对敌人造成其即将造成的伤害",
-    "UPGRADE_DESCRIPTION": "对敌人造成其即将造成的伤害"
+    "DESCRIPTION": "造成 !D! 点伤害（等同于目标敌人的意图总伤害）。",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害（等同于目标敌人的意图总伤害）。"
   },
   "basicmod:Execution": {
     "NAME": "处决",
@@ -290,8 +290,8 @@
   },
   "basicmod:FlameStorm": {
     "NAME": "烈焰风暴",
-    "DESCRIPTION": "下回合随机对敌人造成 !D! 点伤害 3 次，每次赋予 5 层炎上 ",
-    "UPGRADE_DESCRIPTION": "下回合随机对敌人造成 !D! 点伤害 4 次，每次赋予 5 层炎上 "
+    "DESCRIPTION": "下回合随机对敌人造成 !D! 点伤害 3 次，每次赋予 5 层 basicmod:炎上 ",
+    "UPGRADE_DESCRIPTION": "下回合随机对敌人造成 !D! 点伤害 4 次，每次赋予 5 层 basicmod:炎上 "
   },
   "basicmod:InnerPotentialCard": {
     "NAME": "内在潜力",
@@ -305,8 +305,8 @@
   },
   "basicmod:Invisibility": {
     "NAME": "隐形身躯",
-    "DESCRIPTION": "获得 !D! 点格挡 若为魔法架势，下个回合开始时获得 1 层 无实体 消耗 ",
-    "UPGRADE_DESCRIPTION": "获得 !D! 点格挡 下个回合开始时获得 1 层 无实体 。"
+    "DESCRIPTION": "获得 !B! 点格挡 若为魔法架势，下个回合开始时获得 1 层 无实体 。 消耗 ",
+    "UPGRADE_DESCRIPTION": "获得 !B! 点格挡 下个回合开始时获得 1 层 无实体 。"
   },
   "basicmod:SeekAdvice": {
     "NAME": "寻求谏言",
@@ -385,8 +385,8 @@
   },
   "basicmod:PowerToIntellectCard": {
     "NAME": "转职",
-    "DESCRIPTION": "失去1点力量 获得1点 basicmod:智力 。",
-    "UPGRADE_DESCRIPTION": "失去2点力量 获得2点 basicmod:智力 。"
+    "DESCRIPTION": "失去1点 力量 获得1点 basicmod:智力 。",
+    "UPGRADE_DESCRIPTION": "失去2点 力量 获得2点 basicmod:智力 。"
   },
   "basicmod:IntellectShield": {
     "NAME": "泡泡盾",

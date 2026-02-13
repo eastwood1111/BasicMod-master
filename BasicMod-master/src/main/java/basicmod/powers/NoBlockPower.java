@@ -13,7 +13,7 @@ public class NoBlockPower extends AbstractPower {
     public static final String POWER_ID = "basicmod:NoBlockPower";
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
-    public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
+    public static final String[] DESCRIPTIONS = {"你无法从卡牌内获得格挡 "};
 
     // 假设你有一个存放图片的路径，如果没有，可以使用原版图标代替
     // private static final Texture tex84 = TextureLoader.getTexture("basicmodResources/images/powers/NoBlock84.png");
@@ -28,10 +28,10 @@ public class NoBlockPower extends AbstractPower {
 
         // 如果没有自定义图片，借用原版“脆弱”或者“破甲”的图标
         this.region128 = new TextureAtlas.AtlasRegion(
-                ImageMaster.loadImage("basicmod/images/powers/large/example.png"), 0, 0, 84, 84
+                ImageMaster.loadImage("basicmod/images/powers/large/NoBlockPower.png"), 0, 0, 84, 84
         );
         this.region48 = new TextureAtlas.AtlasRegion(
-                ImageMaster.loadImage("basicmod/images/powers/example.png"), 0, 0, 32, 32
+                ImageMaster.loadImage("basicmod/images/powers/NoBlockPower.png"), 0, 0, 32, 32
         );
 
         updateDescription();

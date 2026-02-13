@@ -24,10 +24,10 @@ public class DrawNextTurnPower extends AbstractPower {
         // 如果你没有用 TextureLoader，暂时保持这样也可以，但建议检查路径是否完全正确。
         // 这里的 84, 84 和 32, 32 是标准大小
         this.region128 = new TextureAtlas.AtlasRegion(
-                ImageMaster.loadImage("basicmod/images/powers/large/example.png"), 0, 0, 84, 84
+                ImageMaster.loadImage("basicmod/images/powers/large/DrawNextTurnPower.png"), 0, 0, 84, 84
         );
         this.region48 = new TextureAtlas.AtlasRegion(
-                ImageMaster.loadImage("basicmod/images/powers/example.png"), 0, 0, 32, 32
+                ImageMaster.loadImage("basicmod/images/powers/DrawNextTurnPower.png"), 0, 0, 32, 32
         );
 
         updateDescription();

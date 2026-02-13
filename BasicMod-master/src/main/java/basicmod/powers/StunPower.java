@@ -1,82 +1,106 @@
 package basicmod.powers;
 
+import basemod.ReflectionHacks;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
-import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.helpers.ImageMaster;
 
 public class StunPower extends AbstractPower implements CloneablePowerInterface {
-
     public static final String POWER_ID = "basicmod:StunPower";
     public static final String NAME = "击晕";
-    public static final String[] DESCRIPTIONS = new String[]{"无法行动。"};
+
+    // 保存怪物原本准备好的动作（用于解除后继续原招）
+    private boolean saved = false;
+    private byte savedNextMove;
+    private AbstractMonster.Intent savedIntent;
+    private String savedMoveName;
+    private Object savedMoveInfo; // AbstractMonster$EnemyMoveInfo（私有内部类，用 Object 保存）
 
     public StunPower(AbstractCreature owner, int amount) {
         this.name = NAME;
         this.ID = POWER_ID;
         this.owner = owner;
         this.amount = amount;
-
         this.type = PowerType.DEBUFF;
         this.isTurnBased = true;
 
         this.region128 = new TextureAtlas.AtlasRegion(
-                ImageMaster.loadImage("basicmod/images/powers/large/example.png"), 0, 0, 84, 84
+                ImageMaster.loadImage("basicmod/images/powers/large/StunPower.png"),
+                0, 0, 84, 84
         );
         this.region48 = new TextureAtlas.AtlasRegion(
-                ImageMaster.loadImage("basicmod/images/powers/example.png"), 0, 0, 32, 32
+                ImageMaster.loadImage("basicmod/images/powers/StunPower.png"),
+                0, 0, 32, 32
         );
 
         updateDescription();
     }
 
-    // 初次施加时，显示击晕意图
     @Override
     public void onInitialApplication() {
-        if (owner instanceof AbstractMonster) {
-            AbstractMonster m = (AbstractMonster) owner;
-            m.setMove((byte)0, AbstractMonster.Intent.STUN);
-            m.createIntent();
+        if (!(owner instanceof AbstractMonster)) return;
+        AbstractMonster m = (AbstractMonster) owner;
+
+        // 只保存一次（避免叠层时反复覆盖“原招”）
+        if (!saved) {
+            saved = true;
+            savedNextMove = (byte) ReflectionHacks.getPrivate(m, AbstractMonster.class, "nextMove");
+            savedIntent   = (AbstractMonster.Intent) ReflectionHacks.getPrivate(m, AbstractMonster.class, "intent");
+            savedMoveName = (String) ReflectionHacks.getPrivate(m, AbstractMonster.class, "moveName");
+            savedMoveInfo = ReflectionHacks.getPrivate(m, AbstractMonster.class, "move"); // EnemyMoveInfo
         }
+
+        // 显示眩晕意图（这里 moveId 仅用于显示/占位，关键是解除时恢复原 move）
+        m.setMove((byte) -2, AbstractMonster.Intent.STUN);
+        m.createIntent();
     }
 
-    // 回合开始时，怪物本回合不执行攻击动作
-    @Override
-    public void atStartOfTurn() {
-        if (owner instanceof AbstractMonster) {
-            AbstractMonster m = (AbstractMonster) owner;
-            // 暂停动作，确保动作序列正确
-            addToBot(new WaitAction(0.1f));
-            // 不执行任何攻击动作，本回合跳过
-        }
-    }
-
-    // 回合结束后减少回合数并移除 Power
     @Override
     public void atEndOfRound() {
-        this.amount--;
-        if (this.amount <= 0) {
-            addToBot(new RemoveSpecificPowerAction(owner, owner, POWER_ID));
+        if (this.amount <= 1) {
+            AbstractDungeon.actionManager.addToBottom(
+                    new RemoveSpecificPowerAction(this.owner, this.owner, this.ID)
+            );
+        } else {
+            this.amount--;
         }
     }
 
-    // Power 移除时，让怪物恢复正常意图
     @Override
     public void onRemove() {
-        if (owner instanceof AbstractMonster) {
-            AbstractMonster m = (AbstractMonster) owner;
-            m.rollMove();     // 重新选择下一步行动
-            m.createIntent(); // 刷新 UI
-        }
+        if (!(owner instanceof AbstractMonster)) return;
+        AbstractMonster m = (AbstractMonster) owner;
+        if (m.isDeadOrEscaped()) return;
+        if (!saved) return;
+
+        // 用 action 排队，避免与移除/回合结算时序冲突
+        AbstractDungeon.actionManager.addToBottom(new AbstractGameAction() {
+            @Override
+            public void update() {
+                if (m.isDeadOrEscaped()) { isDone = true; return; }
+
+                // 恢复“原本准备好的那一招”
+                ReflectionHacks.setPrivate(m, AbstractMonster.class, "nextMove", savedNextMove);
+                ReflectionHacks.setPrivate(m, AbstractMonster.class, "intent", savedIntent);
+                ReflectionHacks.setPrivate(m, AbstractMonster.class, "moveName", savedMoveName);
+                ReflectionHacks.setPrivate(m, AbstractMonster.class, "move", savedMoveInfo);
+
+                m.createIntent();
+                m.applyPowers();
+                isDone = true;
+            }
+        });
     }
 
     @Override
     public void updateDescription() {
-        this.description = DESCRIPTIONS[0];
+        this.description = "无法行动。";
     }
 
     @Override

@@ -6,12 +6,10 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
-// 必须导入这个接口
 import com.evacipated.cardcrawl.mod.stslib.relics.OnApplyPowerRelic;
 
 import static basicmod.BasicMod.makeID;
 
-// 关键点：添加 implements OnApplyPowerRelic
 public class DebuffBlockRelic extends BaseRelic implements OnApplyPowerRelic {
     public static final String ID = makeID("DebuffBlockRelic");
 
@@ -19,24 +17,27 @@ public class DebuffBlockRelic extends BaseRelic implements OnApplyPowerRelic {
         super(ID, "myrelic", RelicTier.RARE, LandingSound.CLINK);
     }
 
-    /**
-     * 来自 OnApplyPowerRelic 接口的方法
-     * 返回值 true 表示允许施加该能力，false 表示阻止施加
-     */
     @Override
     public boolean onApplyPower(AbstractPower power, AbstractCreature target, AbstractCreature source) {
-        // 判断：玩家施加给敌人，且是负面效果
+        // 基础判断：玩家给敌人施加负面效果
         if (source == AbstractDungeon.player && target != AbstractDungeon.player && power.type == AbstractPower.PowerType.DEBUFF) {
 
-            if (power.amount > 0) {
+            // --- 修复开始 ---
+            // 检查目标是否有 "Artifact" (人工制品)
+            // 如果有，说明这次 Debuff 会被抵消，所以不触发遗物效果
+            boolean hasArtifact = target.hasPower("Artifact");
+
+            if (!hasArtifact && power.amount > 0) {
                 this.flash();
-                // 提示遗物激活
                 addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
-                // 获得等同于层数的格挡
                 addToBot(new GainBlockAction(AbstractDungeon.player, AbstractDungeon.player, power.amount));
             }
+            // --- 修复结束 ---
         }
-        return true; // 必须返回 true，否则负面状态加不上去
+
+        // 必须返回 true，我们只是在判断是否给格挡，而不是阻止 Debuff 本身的施加逻辑
+        // 如果这里因为有 artifact 而返回 false，会导致人工制品层数不消耗（因为施加动作被你拦截了）
+        return true;
     }
 
     @Override

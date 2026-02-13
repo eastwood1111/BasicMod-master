@@ -26,11 +26,11 @@ public class CurseDeathPower extends AbstractPower implements CloneablePowerInte
         this.isTurnBased = false;
 
         this.region128 = new TextureAtlas.AtlasRegion(
-                ImageMaster.loadImage("basicmod/images/powers/large/example.png"),
+                ImageMaster.loadImage("basicmod/images/powers/large/CurseDeathPower.png"),
                 0, 0, 84, 84
         );
         this.region48 = new TextureAtlas.AtlasRegion(
-                ImageMaster.loadImage("basicmod/images/powers/example.png"),
+                ImageMaster.loadImage("basicmod/images/powers/CurseDeathPower.png"),
                 0, 0, 32, 32
         );
 
