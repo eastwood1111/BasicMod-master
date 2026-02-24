@@ -2,58 +2,74 @@ package basicmod.powers;
 
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
-import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 
 public class MeteorNextTurnPower extends AbstractPower implements CloneablePowerInterface {
 
-    public static final String POWER_ID = "basicmod:MeteorNextTurnPower";
-    private final int hitTimes;
-    private final int baseDamage;
+    private final String uniqueID;
 
-    public MeteorNextTurnPower(AbstractCreature owner, int damage, int hitTimes) {
+    private final int hitTimes;
+    private final int baseDamage; // 永远保存基础伤害
+
+    public MeteorNextTurnPower(AbstractCreature owner, int baseDamage, int hitTimes, String uniqueID) {
         this.owner = owner;
-        this.baseDamage = damage; // 保存基础伤害，不受力量
-        this.amount = damage; // Power 层数初始为基础伤害
+        this.baseDamage = baseDamage;
         this.hitTimes = hitTimes;
-        int adjustedDamage = baseDamage;
-        if (owner.hasPower(MagicPower.POWER_ID)) {
-            adjustedDamage += owner.getPower(MagicPower.POWER_ID).amount;
-        }
-        this.amount = adjustedDamage;
-        this.ID = POWER_ID;
+        this.uniqueID = uniqueID;
+
+        // ✅ 独立ID，避免覆盖
+        this.ID = "basicmod:MeteorNextTurnPower_" + uniqueID;
+
         this.name = "毁灭流星";
         this.type = PowerType.BUFF;
         this.isTurnBased = true;
 
         this.region128 = new TextureAtlas.AtlasRegion(
-                ImageMaster.loadImage("basicmod/images/powers/large/example.png"), 0, 0, 84, 84
+                ImageMaster.loadImage("basicmod/images/powers/large/DestructionMeteorCard.png"), 0, 0, 84, 84
         );
         this.region48 = new TextureAtlas.AtlasRegion(
-                ImageMaster.loadImage("basicmod/images/powers/example.png"), 0, 0, 32, 32
+                ImageMaster.loadImage("basicmod/images/powers/DestructionMeteorCard.png"), 0, 0, 32, 32
         );
 
-        updateDescription();
+        updateDamageDisplay(); // 初始化显示
     }
 
+    // ================================
+    // 每帧刷新显示数值
+    // ================================
+    @Override
+    public void update(int slot) {
+        super.update(slot);
+        updateDamageDisplay();
+    }
+
+    private void updateDamageDisplay() {
+        int intel = 0;
+        if (owner != null && owner.hasPower(MagicPower.POWER_ID)) {
+            intel = owner.getPower(MagicPower.POWER_ID).amount;
+        }
+
+        // 显示最终伤害 = 基础 + 智力
+        this.amount = baseDamage + intel;
+
+        this.description = "下回合对所有敌人造成 " + this.amount + " 点伤害，共 " + hitTimes + " 次。";
+    }
+
+    // ================================
+    // 回合开始触发
+    // ================================
     @Override
     public void atStartOfTurn() {
         addToBot(new WaitAction(0.1f));
 
-        // 计算最终伤害 = baseDamage + 智力
-        int finalDamage = baseDamage;
-        if (owner.hasPower(MagicPower.POWER_ID)) {
-            finalDamage += owner.getPower(MagicPower.POWER_ID).amount;
-        }
-
-        // 层数显示 = 最终伤害
-        this.amount = finalDamage;
+        int finalDamage = this.amount; // 已经是最终伤害（基础+智力）
 
         for (int i = 0; i < hitTimes; i++) {
             addToBot(new DamageAllEnemiesAction(
@@ -64,17 +80,12 @@ public class MeteorNextTurnPower extends AbstractPower implements CloneablePower
             ));
         }
 
-        // 触发后移除 Power
-        addToBot(new RemoveSpecificPowerAction(owner, owner, POWER_ID));
-    }
-
-    @Override
-    public void updateDescription() {
-        this.description = "下回合对所有敌人造成 " + amount + " 点伤害，共 " + hitTimes + " 次（智力加成已计入）。";
+        // ✅ 用 this.ID 移除自己（独立实例）
+        addToBot(new RemoveSpecificPowerAction(owner, owner, this.ID));
     }
 
     @Override
     public AbstractPower makeCopy() {
-        return new MeteorNextTurnPower(owner, baseDamage, hitTimes);
+        return new MeteorNextTurnPower(owner, this.baseDamage, this.hitTimes, this.uniqueID);
     }
 }

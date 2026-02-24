@@ -37,7 +37,6 @@ public class IronStanceCard extends BaseCard {
         this.baseMagicNumber = this.magicNumber = BASE_METAL;
         this.rawDescription = DESCRIPTION.replace("!METAL!", String.valueOf(BASE_METAL));
 
-        this.selfRetain = true; // 回合结束保留
         this.tags.add(Enums.STANCE); // 标记为架势牌
         initializeDescription();
     }

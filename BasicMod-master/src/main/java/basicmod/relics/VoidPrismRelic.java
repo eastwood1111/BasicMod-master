@@ -12,7 +12,7 @@ public class VoidPrismRelic extends BaseRelic {
     public static final String ID = makeID("VoidPrismRelic");
     private static final int ENERGY_AMT = 1;
     // 触发阈值
-    private static final int TRIGGER_TURN = 2;
+    private static final int TRIGGER_TURN = 3;
 
     public VoidPrismRelic() {
         super(ID, "void_prism", RelicTier.BOSS, LandingSound.MAGICAL);

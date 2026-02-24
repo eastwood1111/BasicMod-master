@@ -14,7 +14,7 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 public class BleedPower extends AbstractPower implements CloneablePowerInterface {
     public static final String POWER_ID = "basicmod:BleedPower";
     public static final String NAME = "出血";
-    public static final String[] DESCRIPTIONS = {"每回合开始失去层数 × 3 点生命。"};
+    public static final String[] DESCRIPTIONS = {"每回合开始失去层数 × 2 点生命。"};
 
     public BleedPower(AbstractCreature owner, int amount) {
         this.name = NAME;
@@ -38,8 +38,8 @@ public class BleedPower extends AbstractPower implements CloneablePowerInterface
     @Override
     public void atStartOfTurn() {
         if (this.amount > 0) {
-            // 每层造成 3 点失去生命
-            int loseHp = this.amount * 3;
+            // 每层造成 2 点失去生命
+            int loseHp = this.amount * 2;
             addToBot(new com.megacrit.cardcrawl.actions.common.LoseHPAction(
                     this.owner,
                     this.owner,

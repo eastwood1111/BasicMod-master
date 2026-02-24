@@ -8,11 +8,11 @@ import basicmod.powers.CurrentStancePower;
 import basicmod.util.CardStats;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
 
 public class SunGun extends BaseCard {
     public static final String ID = makeID(SunGun.class.getSimpleName());
@@ -28,8 +28,8 @@ public class SunGun extends BaseCard {
             1
     );
 
-    private static final int DAMAGE = 10;
-    private static final int UPG_DAMAGE = 12;
+    private static final int DAMAGE = 14;
+    private static final int UPG_DAMAGE = 16;
 
     public SunGun() {
         super(ID, info);
@@ -43,15 +43,14 @@ public class SunGun extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        int baseDamage = this.baseDamage; // 仅基础伤害，不加智力
+        // 结算仍然只用基础值（你原本就是这样）
+        int baseDamage = this.baseDamage;
 
-        // 每张卡牌生成独立 Power
         String uniqueID = String.valueOf(System.nanoTime());
         SunGunBuffPower power = new SunGunBuffPower(p, baseDamage, uniqueID);
         addToBot(new ApplyPowerAction(p, p, power, baseDamage));
 
-        // 魔法架势额外触发一次
-        CurrentStancePower stancePower = (CurrentStancePower)p.getPower(CurrentStancePower.POWER_ID);
+        CurrentStancePower stancePower = (CurrentStancePower) p.getPower(CurrentStancePower.POWER_ID);
         if (stancePower != null && stancePower.getCurrentStance() == CurrentStancePower.Stance.MAGIC) {
             String uniqueID2 = String.valueOf(System.nanoTime() + 1);
             SunGunBuffPower extraPower = new SunGunBuffPower(p, baseDamage, uniqueID2);
@@ -59,6 +58,34 @@ public class SunGun extends BaseCard {
         }
     }
 
+    // =========================
+    // 关键：屏蔽力量，自己加智力到“显示”
+    // =========================
+    @Override
+    public void applyPowers() {
+        // 不调用 super.applyPowers(); 避免 Strength 影响显示
+        int intelBonus = getIntBonus();
+        this.damage = this.baseDamage + intelBonus;
+        this.isDamageModified = (this.damage != this.baseDamage);
+    }
+
+    @Override
+    public void calculateCardDamage(AbstractMonster mo) {
+        // 同理，不调用 super.calculateCardDamage();
+        int intelBonus = getIntBonus();
+        this.damage = this.baseDamage + intelBonus;
+        this.isDamageModified = (this.damage != this.baseDamage);
+    }
+
+    private int getIntBonus() {
+        if (AbstractDungeon.player == null) return 0;
+
+        MagicPower mp = (MagicPower) AbstractDungeon.player.getPower(MagicPower.POWER_ID);
+        if (mp == null) return 0;
+
+        // ✅ 这里按你的智力公式改：
+        return mp.amount; // 例：智力=amount，显示时加到数值上
+    }
 
     @Override
     public void upgrade() {

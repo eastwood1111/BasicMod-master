@@ -2,61 +2,75 @@ package basicmod.powers;
 
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
-import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import basicmod.powers.MagicPower;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 
 public class CometAzrePower extends AbstractPower implements CloneablePowerInterface {
 
-    public static final String POWER_ID = "basicmod:CometAzreNextTurnPower";
-    private final int hitTimes;
-    private final int baseDamage;
+    private final String uniqueID;
 
-    public CometAzrePower(AbstractCreature owner, int damage, int hitTimes) {
+    private final int hitTimes;
+    private final int baseDamage; // 永远保存基础伤害（卡牌已把魔法架势加成算进来）
+
+    public CometAzrePower(AbstractCreature owner, int baseDamage, int hitTimes, String uniqueID) {
         this.owner = owner;
-        this.baseDamage = damage; // 基础伤害（卡牌已经处理魔法架势加成）
-        this.amount = damage; // 初始层数显示为基础伤害
+        this.baseDamage = baseDamage;
         this.hitTimes = hitTimes;
-        int adjustedDamage = baseDamage;
-        if (owner.hasPower(MagicPower.POWER_ID)) {
-            adjustedDamage += owner.getPower(MagicPower.POWER_ID).amount;
-        }
-        this.amount = adjustedDamage; // 层数显示包含智力
-        this.ID = POWER_ID;
+        this.uniqueID = uniqueID;
+
+        // ✅ 独立ID，避免覆盖
+        this.ID = "basicmod:CometAzreNextTurnPower_" + uniqueID;
+
         this.name = "彗星亚兹勒";
         this.type = PowerType.BUFF;
         this.isTurnBased = true;
 
         this.region128 = new TextureAtlas.AtlasRegion(
-                ImageMaster.loadImage("basicmod/images/powers/large/example.png"), 0, 0, 84, 84
+                ImageMaster.loadImage("basicmod/images/powers/large/CometAzre.png"), 0, 0, 84, 84
         );
         this.region48 = new TextureAtlas.AtlasRegion(
-                ImageMaster.loadImage("basicmod/images/powers/example.png"), 0, 0, 32, 32
+                ImageMaster.loadImage("basicmod/images/powers/CometAzre.png"), 0, 0, 32, 32
         );
 
-        updateDescription();
+        updateDamageDisplay(); // 初始化显示
     }
 
+    // ================================
+    // 每帧刷新显示数值
+    // ================================
+    @Override
+    public void update(int slot) {
+        super.update(slot);
+        updateDamageDisplay();
+    }
+
+    private void updateDamageDisplay() {
+        int intel = 0;
+        if (owner != null && owner.hasPower(MagicPower.POWER_ID)) {
+            intel = owner.getPower(MagicPower.POWER_ID).amount;
+        }
+
+        // 显示最终伤害 = 基础 + 智力
+        this.amount = baseDamage + intel;
+
+        this.description = "下回合对所有敌人造成 " + this.amount + " 点伤害，共 " + hitTimes + " 次。";
+    }
+
+    // ================================
+    // 回合开始触发
+    // ================================
     @Override
     public void atStartOfTurn() {
         addToBot(new WaitAction(0.1f));
 
-        // 计算最终伤害 = 卡牌决定的基础伤害 + 智力加成
-        int finalDamage = baseDamage;
-        if (owner.hasPower(MagicPower.POWER_ID)) {
-            finalDamage += owner.getPower(MagicPower.POWER_ID).amount;
-        }
+        int finalDamage = this.amount; // 已经是最终伤害（基础+智力）
 
-        // 更新层数显示为最终伤害
-        this.amount = finalDamage;
-
-        // 对所有敌人造成多次伤害
         for (int i = 0; i < hitTimes; i++) {
             addToBot(new DamageAllEnemiesAction(
                     owner,
@@ -66,17 +80,12 @@ public class CometAzrePower extends AbstractPower implements CloneablePowerInter
             ));
         }
 
-        // 触发后移除 Power
-        addToBot(new RemoveSpecificPowerAction(owner, owner, POWER_ID));
-    }
-
-    @Override
-    public void updateDescription() {
-        this.description = "下回合对所有敌人造成 " + amount + " 点伤害，共 " + hitTimes + " 次";
+        // ✅ 用 this.ID 移除自己（独立实例）
+        addToBot(new RemoveSpecificPowerAction(owner, owner, this.ID));
     }
 
     @Override
     public AbstractPower makeCopy() {
-        return new CometAzrePower(owner, baseDamage, hitTimes);
+        return new CometAzrePower(owner, this.baseDamage, this.hitTimes, this.uniqueID);
     }
 }

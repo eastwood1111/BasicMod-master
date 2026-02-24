@@ -21,7 +21,7 @@ public class SwordStanceCard extends BaseCard {
     );
 
     // 修改基础数值为 2
-    private static final int BASE_STR = 2;
+    private static final int BASE_STR = 3;
 
     public SwordStanceCard() {
         super(ID, info);

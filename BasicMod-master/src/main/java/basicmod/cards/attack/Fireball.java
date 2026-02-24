@@ -41,6 +41,13 @@ public class Fireball extends BaseCard {
                 this.multiDamage,
                 this.damageTypeForTurn,
                 AbstractGameAction.AttackEffect.FIRE
+                //执行过程解析：
+                //玩家点击卡牌；
+                //系统调用 use() 方法；
+                //创建 DamageAllEnemiesAction 对象；
+                //通过 addToBot() 将Action加入队列；
+                //ActionManager按顺序执行伤害结算；
+                //每个敌人根据 multiDamage[] 受到对应伤害。
         ));
     }
 

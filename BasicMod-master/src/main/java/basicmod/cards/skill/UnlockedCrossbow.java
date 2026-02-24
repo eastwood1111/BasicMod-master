@@ -31,6 +31,8 @@ public class UnlockedCrossbow extends BaseCard {
     public UnlockedCrossbow() {
         super(ID, info);
         this.baseMagicNumber = this.magicNumber = BURN;
+
+        initializeDescription();
     }
 
     @Override
@@ -45,8 +47,12 @@ public class UnlockedCrossbow extends BaseCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(1); // 升级后灼伤层数 +1
-            initializeDescription();
+            upgradeMagicNumber(1); // 数值从 2 变 3
+
+            // 核心：必须重新读取描述，底层逻辑才会重新扫描 !M! 占位符
+            this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
+
+            initializeDescription(); // 刷新显示
         }
     }
 

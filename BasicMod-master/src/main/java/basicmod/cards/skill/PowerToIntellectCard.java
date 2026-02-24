@@ -11,33 +11,22 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.powers.StrengthPower;
+import com.megacrit.cardcrawl.powers.DexterityPower; // 1. 导入敏捷能力类
 
 public class PowerToIntellectCard extends BaseCard {
-    // Unique ID
     public static final String ID = "basicmod:PowerToIntellectCard";
+    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
-    // Localization
-    private static final CardStrings cardStrings =
-            CardCrawlGame.languagePack.getCardStrings(ID);
-
-    // Card Stats
     private static final CardStats info = new CardStats(
-            MyCharacter.Meta.CARD_COLOR,  // Card Color
-            CardType.SKILL,               // Card Type
-            CardRarity.UNCOMMON,              // Rarity
-            CardTarget.SELF,              // Target
-            1                             // Cost
+            MyCharacter.Meta.CARD_COLOR,
+            CardType.SKILL,
+            CardRarity.UNCOMMON,
+            CardTarget.SELF,
+            1
     );
 
     public PowerToIntellectCard() {
         super(ID, info);
-
-        // Set basic properties
-        // Note: Do not set this.name or this.rawDescription manually here if BaseCard handles it,
-        // but if BaseCard doesn't auto-load strings, this is fine.
-
-        // Define the values for "Magic" (Intellect gain) and Strength loss.
-        // Since both values are 1 (or 2 when upgraded), we can use one variable.
         this.baseMagicNumber = 1;
         this.magicNumber = this.baseMagicNumber;
 
@@ -47,23 +36,22 @@ public class PowerToIntellectCard extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        // 1. Lose Strength (Apply negative Strength)
-        // We use ApplyPowerAction with a negative amount.
+        // 1. 失去力量 (数值为 magicNumber)
         addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, -this.magicNumber), -this.magicNumber));
 
-        // 2. Gain Intellect (MagicPower)
+        // 2. 获得智力 (MagicPower, 数值为 magicNumber)
         addToBot(new ApplyPowerAction(p, p, new MagicPower(p, this.magicNumber), this.magicNumber));
+
+        // 3. 获得敏捷 (DexterityPower, 数值为 magicNumber)
+        addToBot(new ApplyPowerAction(p, p, new DexterityPower(p, this.magicNumber), this.magicNumber));
     }
 
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            // Upgrade the values from 1 to 2
+            // 升级后 magicNumber 从 1 变为 2，上述三个效果都会同步提升
             upgradeMagicNumber(1);
-
-            // If your JSON description uses !M!, you don't need to change the description string manually.
-            // Example JSON: "Lose !M! Strength. Gain !M! Intellect."
             initializeDescription();
         }
     }

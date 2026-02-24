@@ -3,21 +3,21 @@ package basicmod.cards.attack;
 import basicmod.cards.BaseCard;
 import basicmod.charater.MyCharacter;
 import basicmod.util.CardStats;
-import basicmod.powers.BleedPower;  // 引入出血Power
+import basicmod.powers.BleedPower;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 
-public class ReversalSword extends BaseCard {  // "反手剑" 卡牌
+public class ReversalSword extends BaseCard {
 
-    public static final String ID = "basicmod:ReversalSword";  // 卡牌ID
+    public static final String ID = "basicmod:ReversalSword";
     private static final CardStrings cardStrings =
             CardCrawlGame.languagePack.getCardStrings(ID);
 
@@ -26,69 +26,81 @@ public class ReversalSword extends BaseCard {  // "反手剑" 卡牌
             CardType.ATTACK,
             CardRarity.COMMON,
             CardTarget.ENEMY,
-            0  // 费用 0
+            0
     );
 
-    private static final int DAMAGE = 5;  // 初始伤害 5
-    private static final int BLEED_LAYERS = 2;  // 初始出血层数 2
-    private static final int UPGRADE_BLEED_LAYERS = 3;  // 升级后出血层数 3
+    private static final int DAMAGE = 5;
+    private static final int UPG_DAMAGE = 2; // 升级增加的伤害
+    private static final int BLEED_LAYERS = 2;
 
     public ReversalSword() {
         super(ID, info);
 
         this.name = cardStrings.NAME;
         this.rawDescription = cardStrings.DESCRIPTION;
+
         this.baseDamage = DAMAGE;
-        this.damage = this.baseDamage;
-        this.exhaust = false;  // 卡牌不消耗
+        this.baseMagicNumber = this.magicNumber = BLEED_LAYERS;
+
+        this.exhaust = false;
         initializeDescription();
     }
 
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        // 调用父类的 canUse 方法，确保基本条件满足
         if (!super.canUse(p, m)) return false;
 
-        // 获取上一张打出的牌
-        if (AbstractDungeon.actionManager.cardsPlayedThisTurn.isEmpty()) {
+        // 检查整场战斗的记录
+        if (AbstractDungeon.actionManager.cardsPlayedThisCombat.isEmpty()) {
             this.cantUseMessage = "上一张牌不是攻击牌，无法打出！";
             return false;
         }
 
-        // 获取上一张打出的牌
-        AbstractCard lastCard = AbstractDungeon.actionManager.cardsPlayedThisTurn
-                .get(AbstractDungeon.actionManager.cardsPlayedThisTurn.size() - 1);
+        AbstractCard lastCard = AbstractDungeon.actionManager.cardsPlayedThisCombat
+                .get(AbstractDungeon.actionManager.cardsPlayedThisCombat.size() - 1);
 
-        // 判断上一张打出的牌是否是攻击牌
         if (lastCard.type != CardType.ATTACK) {
             this.cantUseMessage = "上一张牌不是攻击牌，无法打出！";
             return false;
         }
 
-        // 如果上一张卡牌是攻击卡，则返回 true，表示可以使用
         return true;
     }
 
     @Override
-    public void use(AbstractPlayer p, AbstractMonster m) {
-        // 使用 DamageInfo 来造成伤害
-        DamageInfo damageInfo = new DamageInfo(p, 5, DamageInfo.DamageType.NORMAL);  // 假设伤害是 5
+    public void triggerOnGlowCheck() {
+        // 如果满足使用条件（上一张是攻击牌），则显示金色边框
+        if (!AbstractDungeon.actionManager.cardsPlayedThisCombat.isEmpty()) {
+            AbstractCard lastCard = AbstractDungeon.actionManager.cardsPlayedThisCombat
+                    .get(AbstractDungeon.actionManager.cardsPlayedThisCombat.size() - 1);
 
-        // 造成伤害
-        addToBot(new DamageAction(m, damageInfo, AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-
-        // 给予 BleedPower（出血）层数，假设给予 2 层出血
-        addToBot(new ApplyPowerAction(m, p, new BleedPower(m, 2), 2));
+            if (lastCard.type == CardType.ATTACK) {
+                this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
+                return;
+            }
+        }
+        // 否则恢复默认蓝色
+        this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
     }
 
+    @Override
+    public void use(AbstractPlayer p, AbstractMonster m) {
+        // 使用 this.damage 和 this.magicNumber 确保数值正确应用
+        addToBot(new DamageAction(m,
+                new DamageInfo(p, this.damage, this.damageTypeForTurn),
+                AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
 
+        addToBot(new ApplyPowerAction(m, p,
+                new BleedPower(m, this.magicNumber), this.magicNumber));
+    }
 
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            // 升级后增加出血层数
-            upgradeMagicNumber(UPGRADE_BLEED_LAYERS - BLEED_LAYERS);
+            // 升级：仅增加伤害
+            upgradeDamage(UPG_DAMAGE);
+
             this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             initializeDescription();
         }

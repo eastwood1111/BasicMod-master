@@ -21,7 +21,7 @@ public class ShieldStanceCard extends BaseCard {
     );
 
     // 设定获得的值为 2
-    private static final int BASE_DEX = 2;
+    private static final int BASE_DEX = 3;
 
     public ShieldStanceCard() {
         super(ID, info);

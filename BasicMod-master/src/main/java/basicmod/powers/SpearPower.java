@@ -25,8 +25,8 @@ public class SpearPower extends AbstractPower implements CloneablePowerInterface
 
         // 资源路径建议根据你的项目实际情况修改
         // 注意：请确保这些路径下的图片文件真实存在，否则游戏会崩溃
-        this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("basicmod/images/powers/large/example.png"), 0, 0, 84, 84);
-        this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("basicmod/images/powers/example.png"), 0, 0, 32, 32);
+        this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("basicmod/images/powers/large/SpearCard.png"), 0, 0, 84, 84);
+        this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("basicmod/images/powers/SpearCard.png"), 0, 0, 32, 32);
 
         updateDescription();
     }

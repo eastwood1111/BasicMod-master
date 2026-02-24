@@ -35,11 +35,16 @@ public class FireStraightSword extends BaseCard {
     private static final int UPG_DAMAGE = 11;
 
     public FireStraightSword() {
-        super(ID,info);
-
+        super(ID, info);
         this.name = cardStrings.NAME;
         this.rawDescription = cardStrings.DESCRIPTION;
-        this.exhaust = true;
+
+        // 1. 移除 this.exhaust = true; (这样就不会触发死枝)
+        this.exhaust = false;
+
+        // 2. 启用回到手牌逻辑
+        this.returnToHand = true;
+
         this.baseDamage = DAMAGE;
         initializeDescription();
     }
@@ -53,10 +58,8 @@ public class FireStraightSword extends BaseCard {
                 AbstractGameAction.AttackEffect.FIRE
         ));
 
-        // 将一张此牌的临时副本回到手牌
-        AbstractCard copy = this.makeStatEquivalentCopy();
-        copy.purgeOnUse = true; // 避免无限复制
-        addToBot(new MakeTempCardInHandAction(copy, 1));
+        // 3. 移除这一段 MakeTempCardInHandAction 的逻辑
+        // 引擎会自动根据 returnToHand = true 把这张牌本体移回手牌
     }
 
     @Override

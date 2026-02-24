@@ -58,7 +58,7 @@
     "UPGRADE_DESCRIPTION": "切换架势时抽一张牌"
   },
   "basicmod:StanceDefendCard": {
-    "NAME": "架势防御",
+    "NAME": "君子六艺",
     "DESCRIPTION": "切换架势后获得 !M! 点 格挡 。",
     "UPGRADE_DESCRIPTION": "切换架势后获得 !M! 点 格挡 。"
   },
@@ -285,8 +285,8 @@
   },
   "basicmod:DestructionMeteorCard": {
     "NAME": "毁灭流星",
-    "DESCRIPTION": "下一个你的回合开始时，对所有敌人造成 !D! 点伤害 2 次。若处于魔法架势，则额外造成 3 次 ",
-    "UPGRADE_DESCRIPTION": "下一个你的回合开始时，对所有敌人造成 !D! 点伤害 2 次。若处于魔法架势，则额外造成 3 次 "
+    "DESCRIPTION": "下一个你的回合开始时，对所有敌人造成 !D! 点伤害 4 次。若处于魔法架势，则额外造成 2 次 ",
+    "UPGRADE_DESCRIPTION": "下一个你的回合开始时，对所有敌人造成 !D! 点伤害 4 次。若处于魔法架势，则额外造成 2 次 "
   },
   "basicmod:FlameStorm": {
     "NAME": "烈焰风暴",
@@ -320,8 +320,8 @@
   },
   "basicmod:StrategicReserve": {
     "NAME": "小卫戴",
-    "DESCRIPTION": "选择任意张手牌放入抽牌堆。 NL 每放入一张，获得 !M! 点 格挡 。",
-    "UPGRADE_DESCRIPTION": "选择任意张手牌放入抽牌堆。 NL 每放入一张，获得 !M! 点 格挡 。"
+    "DESCRIPTION": "选择任意张手牌放入抽牌堆。 NL 每放入一张，获得 !B! 点 格挡 。",
+    "UPGRADE_DESCRIPTION": "选择任意张手牌放入抽牌堆。 NL 每放入一张，获得 !B! 点 格挡 。"
   },
   "basicmod:SpiritSight": {
     "NAME": "灵视",
@@ -358,11 +358,6 @@
     "DESCRIPTION": "获得 !B! 点 格挡 ，将一张 虚空 加入弃牌堆 ",
     "UPGRADE_DESCRIPTION": "获得 !B! 点 格挡 ，将一张 虚空 加入弃牌堆 "
   },
-  "basicmod:DoubleDebuff": {
-    "NAME": "双倍负面",
-    "DESCRIPTION": "将敌人的所有负面效果翻倍 ",
-    "UPGRADE_DESCRIPTION": "将敌人的所有负面效果翻倍 "
-  },
   "basicmod:CursedStrike": {
     "NAME": "落井下石",
     "DESCRIPTION": "造成 !D! 点伤害，若敌方有负面buff，抽1张牌并获得 [E] 。",
@@ -378,15 +373,15 @@
     "DESCRIPTION": "回合结束时，对目标敌人造成 !D! 点伤害。 若处于 韧狗 架势，改为造成 当前格挡值 的伤害。",
     "UPGRADE_DESCRIPTION": "回合结束时，对 所有 敌人造成 !D! 点伤害。 NL 若处于 韧狗 架势，改为造成 当前格挡值 的伤害。"
   },
-  "basicmod:RepeatBCard": {
+  "soul-five:RepeatBCard": {
     "NAME": "复读b",
     "DESCRIPTION":"本回合下一张0费牌，将打出2次",
     "UPGRADE_DESCRIPTION": "本回合下两张0费牌，将打出2次"
   },
   "basicmod:PowerToIntellectCard": {
     "NAME": "转职",
-    "DESCRIPTION": "失去1点 力量 获得1点 basicmod:智力 。",
-    "UPGRADE_DESCRIPTION": "失去2点 力量 获得2点 basicmod:智力 。"
+    "DESCRIPTION": "失去1点 力量 获得1点 basicmod:智力 ，1点 敏捷 。",
+    "UPGRADE_DESCRIPTION": "失去2点 力量 获得2点 basicmod:智力 ，2点 敏捷 。"
   },
   "basicmod:IntellectShield": {
     "NAME": "泡泡盾",
@@ -395,13 +390,18 @@
   },
   "basicmod:LittleDragonMan": {
     "NAME": "小龙人",
-    "DESCRIPTION": "获得 !M! 点 力量  你无法再从卡牌中获得 格挡 。",
-    "UPGRADE_DESCRIPTION": "保留  获得 !M! 点 力量  你无法再从卡牌中获得 格挡"
+    "DESCRIPTION": "获得 !M! 点 力量  你无法再获得 格挡 。",
+    "UPGRADE_DESCRIPTION": "保留  获得 !M! 点 力量  你无法再获得 格挡"
   },
   "basicmod:RecklessSlash": {
     "NAME": "爆",
     "DESCRIPTION": "造成 !D! 点伤害。  自身获得 1 层 易伤 ",
     "UPGRADE_DESCRIPTION": "造成 !D! 点伤害。  自身获得 1 层 易伤 "
+  },
+  "basicmod:BloodEnchant": {
+    "NAME": "染血",
+    "DESCRIPTION": "本回合你下一张攻击牌每造成一次伤害施加 1 层 basicmod:出血 。",
+    "UPGRADE_DESCRIPTION": "本回合你下两张攻击牌每造成一次伤害施加 1 层 basicmod:出血 。"
   }
 }
 

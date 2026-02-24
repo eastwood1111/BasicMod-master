@@ -2,74 +2,91 @@ package basicmod.powers;
 
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.*;
+import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.helpers.ImageMaster;
 
 public class FlameStormPower extends AbstractPower implements CloneablePowerInterface {
 
+    private final String uniqueID;
+
     private final int hits;       // 随机伤害次数
-    private final int baseDamage; // 原始伤害
+    private final int baseDamage; // 永远保存基础伤害
     private final int ignite;     // 炎上层数
 
-    public static final String POWER_ID = "basicmod:FlameStormPower";
-
-    public FlameStormPower(AbstractCreature owner, int damage, int hits, int ignite) {
+    public FlameStormPower(AbstractCreature owner, int baseDamage, int hits, int ignite, String uniqueID) {
         this.owner = owner;
-        this.baseDamage = damage;
+        this.baseDamage = baseDamage;
         this.hits = hits;
         this.ignite = ignite;
-        int adjustedDamage = baseDamage;
-        if (owner.hasPower(MagicPower.POWER_ID)) {
-            adjustedDamage += owner.getPower(MagicPower.POWER_ID).amount;
-        }
-        this.amount = adjustedDamage;
-        this.ID = POWER_ID;
+        this.uniqueID = uniqueID;
+
+        this.ID = "basicmod:FlameStormPower_" + uniqueID;
         this.name = "烈焰风暴";
         this.type = PowerType.BUFF;
         this.isTurnBased = true;
 
         this.region128 = new TextureAtlas.AtlasRegion(
-                ImageMaster.loadImage("basicmod/images/powers/large/example.png"), 0, 0, 84, 84
+                ImageMaster.loadImage("basicmod/images/powers/large/FlameStorm.png"), 0, 0, 84, 84
         );
         this.region48 = new TextureAtlas.AtlasRegion(
-                ImageMaster.loadImage("basicmod/images/powers/example.png"), 0, 0, 32, 32
+                ImageMaster.loadImage("basicmod/images/powers/FlameStorm.png"), 0, 0, 32, 32
         );
 
-        updateAmount();       // 计算显示层数
-        updateDescription();  // 更新描述
+        updateDamageDisplay(); // 初始化显示
     }
 
-    // 每次显示或计算伤害前调用
-    private void updateAmount() {
-        int finalDamage = baseDamage;
-        if (owner.hasPower(MagicPower.POWER_ID)) {
-            finalDamage += owner.getPower(MagicPower.POWER_ID).amount; // 叠加智力
+    // ================================
+    // 每帧刷新显示数值
+    // ================================
+    @Override
+    public void update(int slot) {
+        super.update(slot);
+        updateDamageDisplay();
+    }
+
+    private void updateDamageDisplay() {
+        int intel = 0;
+        if (owner != null && owner.hasPower(MagicPower.POWER_ID)) {
+            intel = owner.getPower(MagicPower.POWER_ID).amount;
         }
-        this.amount = finalDamage; // Power 层数 = 最终伤害
+
+        // 显示最终伤害 = 基础 + 智力
+        this.amount = baseDamage + intel;
+
+        // 描述跟着刷新（和阳光枪一样在这里直接写死也最稳）
+        if (ignite > 0) {
+            this.description = "下回合随机对敌人造成 " + this.amount + " 点伤害 " + hits + " 次，每次赋予 " + ignite + " 层炎上。";
+        } else {
+            this.description = "下回合随机对敌人造成 " + this.amount + " 点伤害 " + hits + " 次。";
+        }
     }
 
+    // ================================
+    // 回合开始触发伤害
+    // ================================
     @Override
     public void atStartOfTurn() {
-        updateAmount(); // 确保伤害和显示正确
+        addToBot(new WaitAction(0.1f));
+
+        int finalDamage = this.amount; // 已经是最终伤害（基础+智力）
 
         for (int i = 0; i < hits; i++) {
             AbstractMonster target = AbstractDungeon.getMonsters().getRandomMonster(true);
             if (target == null) break;
 
-            // 随机造成伤害
             addToBot(new DamageAction(
                     target,
-                    new DamageInfo(owner, this.amount, DamageInfo.DamageType.THORNS),
+                    new DamageInfo(owner, finalDamage, DamageInfo.DamageType.THORNS),
                     AbstractGameAction.AttackEffect.FIRE
             ));
 
-            // 炎上效果
             if (ignite > 0) {
                 addToBot(new ApplyPowerAction(
                         target,
@@ -80,22 +97,12 @@ public class FlameStormPower extends AbstractPower implements CloneablePowerInte
             }
         }
 
-        // Power 触发后消失
+        // 触发后移除自己（用唯一ID）
         addToBot(new RemoveSpecificPowerAction(owner, owner, this.ID));
     }
 
     @Override
-    public void updateDescription() {
-        updateAmount(); // 保证显示层数 = baseDamage + 智力
-        if (ignite > 0) {
-            this.description = "下回合随机对敌人造成 " + amount + " 点伤害 " + hits + " 次，每次赋予 " + ignite + " 层炎上。";
-        } else {
-            this.description = "下回合随机对敌人造成 " + amount + " 点伤害 " + hits + " 次。";
-        }
-    }
-
-    @Override
     public AbstractPower makeCopy() {
-        return new FlameStormPower(owner, baseDamage, hits, ignite);
+        return new FlameStormPower(owner, this.baseDamage, this.hits, this.ignite, this.uniqueID);
     }
 }
