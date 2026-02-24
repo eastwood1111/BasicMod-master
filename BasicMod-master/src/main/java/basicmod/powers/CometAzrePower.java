@@ -25,7 +25,7 @@ public class CometAzrePower extends AbstractPower implements CloneablePowerInter
         this.uniqueID = uniqueID;
 
         // ✅ 独立ID，避免覆盖
-        this.ID = "basicmod:CometAzreNextTurnPower_" + uniqueID;
+        this.ID = "soul-five:CometAzreNextTurnPower_" + uniqueID;
 
         this.name = "彗星亚兹勒";
         this.type = PowerType.BUFF;

@@ -14,7 +14,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 
 public class StrategicReserve extends BaseCard {
-    public static final String ID = "basicmod:StrategicReserve";
+    public static final String ID = makeID(StrategicReserve.class.getSimpleName());
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
     private static final CardStats info = new CardStats(

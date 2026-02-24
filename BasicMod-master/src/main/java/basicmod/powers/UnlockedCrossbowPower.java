@@ -14,7 +14,7 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 
 public class UnlockedCrossbowPower extends AbstractPower implements CloneablePowerInterface {
 
-    public static final String POWER_ID = "basicmod:UnlockedCrossbowPower";
+    public static final String POWER_ID = "soul-five:UnlockedCrossbowPower";
     public static final String NAME = "无锁弩";
     public static final String[] DESCRIPTIONS = new String[]{
             "每打出一张攻击牌，给予敌方全体 !M! 层炎上。本回合结束移除。"

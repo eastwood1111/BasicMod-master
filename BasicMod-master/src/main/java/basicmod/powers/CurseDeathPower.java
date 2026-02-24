@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 
 public class CurseDeathPower extends AbstractPower implements CloneablePowerInterface {
 
-    public static final String POWER_ID = "basicmod:CurseDeathPower";
+    public static final String POWER_ID = "soul-five:CurseDeathPower";
     public static final String NAME = "咒死";
     public static final String[] DESCRIPTIONS = {
             "叠满10层后将受到等同于生命上限的伤害，然后移除所有咒死。每回合开始减少1层。"

@@ -1,6 +1,7 @@
 package basicmod.cards.attack;
 
 import basicmod.cards.BaseCard;
+import basicmod.cards.skill.AdorationRing;
 import basicmod.charater.MyCharacter;
 import basicmod.util.CardStats;
 import basicmod.powers.CurseDeathPower;
@@ -16,7 +17,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 
 public class CurseDagger extends BaseCard {
 
-    public static final String ID = "basicmod:CurseDagger";
+    public static final String ID = makeID(CurseDagger.class.getSimpleName());
     private static final CardStrings cardStrings =
             CardCrawlGame.languagePack.getCardStrings(ID);
 

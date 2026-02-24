@@ -13,7 +13,7 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
 public class DivineRacePower extends AbstractPower implements CloneablePowerInterface {
-    public static final String POWER_ID = "basicmod:DivineRacePower";
+    public static final String POWER_ID = "soul-five:DivineRacePower";
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
 
     public static final String NAME = "神族入侵";

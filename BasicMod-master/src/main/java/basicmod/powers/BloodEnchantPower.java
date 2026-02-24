@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
 public class BloodEnchantPower extends AbstractPower {
-    public static final String POWER_ID = "basicmod:BloodEnchantPower";
+    public static final String POWER_ID = "soul-five:BloodEnchantPower";
     private boolean isTriggering = false; // 记录当前正在打出的卡牌是否应该触发效果
 
     public BloodEnchantPower(AbstractCreature owner, int amount) {

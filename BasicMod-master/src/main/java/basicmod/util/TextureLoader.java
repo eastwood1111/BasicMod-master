@@ -5,40 +5,40 @@ import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.utils.GdxRuntimeException;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.HashMap;
 import java.util.Locale;
 
-import static basicmod.BasicMod.*;
-
 public class TextureLoader {
     private static final HashMap<String, Texture> textures = new HashMap<>();
+    public static final Logger logger = LogManager.getLogger(TextureLoader.class.getName());
 
-    /**
-     * @param filePath - String path to the texture you want to load relative to resources,
-     * Example: imagePath("missing.png")
-     * @return <b>com.badlogic.gdx.graphics.Texture</b> - The texture from the path provided, or a "missing image" texture if it doesn't exist.
-     */
+    // 定义资源根目录，确保这里是 "soul-five"
+    private static final String RES_PATH = "soul-five/";
+
+    // 手动实现路径方法，不再从 BasicMod 导入
+    private static String imagePath(String path) {
+        return RES_PATH + "images/" + path;
+    }
+
+    private static String powerPath(String path) {
+        return RES_PATH + "images/powers/" + path;
+    }
+
     public static Texture getTexture(final String filePath) {
         return getTexture(filePath, true);
     }
 
-    /**
-     * @param filePath - String path to the texture you want to load relative to resources,
-     * Example: imagePath("missing.png")
-     * @param linear - Whether the image should use a linear or nearest filter for scaling.
-     * @return <b>com.badlogic.gdx.graphics.Texture</b> - The texture from the path provided, or a "missing image" texture if it doesn't exist.
-     */
     public static Texture getTexture(final String filePath, boolean linear) {
         if (textures.get(filePath) == null) {
             try {
                 loadTexture(filePath, linear);
             } catch (GdxRuntimeException e) {
-                logger.info("Failed to find texture " + filePath, e);
+                logger.info("Failed to find texture " + filePath);
+                // 找不到时尝试加载 missing.png
                 Texture missing = getTextureNull(imagePath("missing.png"), false);
-                if (missing == null) {
-                    logger.info("missing.png is missing, should be at " + imagePath("missing.png"));
-                }
                 return missing;
             }
         }
@@ -50,21 +50,10 @@ public class TextureLoader {
         return t;
     }
 
-    /**
-     * @param filePath - String path to the texture you want to load relative to resources,
-     * Example: imagePath("missing.png")
-     * @return <b>com.badlogic.gdx.graphics.Texture</b> - The texture from the path provided, or null if it doesn't exist.
-     */
     public static Texture getTextureNull(final String filePath) {
         return getTextureNull(filePath, true);
     }
 
-    /**
-     * @param filePath - String path to the texture you want to load relative to resources,
-     * Example: imagePath("missing.png")
-     * @param linear - Whether the image should use a linear or nearest filter for scaling.
-     * @return <b>com.badlogic.gdx.graphics.Texture</b> - The texture from the path provided, or null if it doesn't exist.
-     */
     public static Texture getTextureNull(final String filePath, boolean linear) {
         if (!textures.containsKey(filePath)) {
             try {
@@ -100,36 +89,24 @@ public class TextureLoader {
                     break;
             }
         }
-
         return textureString;
-    }
-
-    private static void loadTexture(final String textureString) throws GdxRuntimeException {
-        loadTexture(textureString, false);
     }
 
     private static void loadTexture(final String textureString, boolean linearFilter) throws GdxRuntimeException {
         Texture texture = new Texture(textureString);
-        if (linearFilter)
-        {
+        if (linearFilter) {
             texture.setFilter(Texture.TextureFilter.Linear, Texture.TextureFilter.Linear);
-        }
-        else
-        {
+        } else {
             texture.setFilter(Texture.TextureFilter.Nearest, Texture.TextureFilter.Nearest);
         }
-        logger.info("Loaded texture " + textureString);
         textures.put(textureString, texture);
     }
 
-    public static Texture getPowerTexture(final String powerName)
-    {
-        String textureString = powerPath(powerName + ".png");
-        return getTexture(textureString);
+    public static Texture getPowerTexture(final String powerName) {
+        return getTexture(powerPath(powerName + ".png"));
     }
-    public static Texture getHiDefPowerTexture(final String powerName)
-    {
-        String textureString = powerPath("large/" + powerName + ".png");
-        return getTextureNull(textureString);
+
+    public static Texture getHiDefPowerTexture(final String powerName) {
+        return getTextureNull(powerPath("large/" + powerName + ".png"));
     }
 }

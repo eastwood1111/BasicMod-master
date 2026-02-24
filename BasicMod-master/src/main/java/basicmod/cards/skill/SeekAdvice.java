@@ -13,7 +13,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 public class SeekAdvice extends BaseCard {
-    public static final String ID = "basicmod:SeekAdvice";
+    public static final String ID = makeID(SeekAdvice.class.getSimpleName());
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
     private static final CardStats info = new CardStats(

@@ -13,7 +13,7 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 public class SeppukuPower extends AbstractPower implements CloneablePowerInterface {
-    public static final String POWER_ID = "basicmod:SeppukuPower";
+    public static final String POWER_ID = "soul-five:SeppukuPower";
     public static final String NAME = "切腹";
     public static final String[] DESCRIPTIONS = {"当你造成伤害时，对敌人施加出血，触发次数等于层数"};
 

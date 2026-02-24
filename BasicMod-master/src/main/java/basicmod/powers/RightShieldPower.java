@@ -13,7 +13,7 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
  * 每回合开始时，层数 +1，达到阈值时触发无实体并重置计数。
  */
 public class RightShieldPower extends AbstractPower implements CloneablePowerInterface {
-    public static final String POWER_ID = "basicmod:RightShieldPower";
+    public static final String POWER_ID = "soul-five:RightShieldPower";
     public static final String NAME = "右盾";
     public static final String[] DESCRIPTIONS = {
             "每回合获得 1 层计数，当计数达到 #b",

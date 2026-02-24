@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 
 public class Blood extends BaseCard {  // 卡牌名称为血
-    public static final String ID = "basicmod:Blood";  // 卡牌ID
+    public static final String ID = makeID(Blood.class.getSimpleName());
     private static final String IMG = "basicmod/images/cards/skill/default.png";  // 图片路径
 
     private static final CardStrings cardStrings =

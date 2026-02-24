@@ -1,6 +1,7 @@
 package basicmod.cards.attack;
 
 import basicmod.cards.BaseCard;
+import basicmod.cards.skill.AdorationRing;
 import basicmod.charater.MyCharacter;
 import basicmod.util.CardStats;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -11,7 +12,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class Road365 extends BaseCard {
-    public static final String ID = "basicmod:Road365";
+    public static final String ID = makeID(Road365.class.getSimpleName());
 
     private static final CardStats info = new CardStats(
             MyCharacter.Meta.CARD_COLOR,

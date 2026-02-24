@@ -14,7 +14,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 
 public class IntellectShield extends BaseCard {
     // 唯一ID
-    public static final String ID = "basicmod:IntellectShield";
+    public static final String ID = makeID(IntellectShield.class.getSimpleName());
 
     // 语言包
     private static final CardStrings cardStrings =

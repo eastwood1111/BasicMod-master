@@ -1,6 +1,7 @@
 package basicmod.cards.attack;
 
 import basicmod.cards.BaseCard;
+import basicmod.cards.skill.AdorationRing;
 import basicmod.charater.MyCharacter;
 import basicmod.powers.BleedPower;
 import basicmod.util.CardStats;
@@ -14,7 +15,7 @@ import com.megacrit.cardcrawl.localization.CardStrings; // 必须导入
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class TwinShortSword extends BaseCard {
-    public static final String ID = "basicmod:TwinShortSword";
+    public static final String ID = makeID(TwinShortSword.class.getSimpleName());
 
     // --- 补充：必须声明 cardStrings 否则 upgrade() 会报错 ---
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);

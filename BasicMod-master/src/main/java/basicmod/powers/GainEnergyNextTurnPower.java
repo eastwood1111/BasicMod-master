@@ -8,7 +8,7 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 
 public class GainEnergyNextTurnPower extends AbstractPower {
-    public static final String POWER_ID = "basicmod:GainEnergyNextTurnPower";
+    public static final String POWER_ID = "soul-five:GainEnergyNextTurnPower";
 
     public GainEnergyNextTurnPower(AbstractCreature owner, int amount) {
         this.name = "下回合获得能量";

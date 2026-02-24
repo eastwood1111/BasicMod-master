@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 
 public class LoseHpNextTurnPower extends AbstractPower implements CloneablePowerInterface {
-    public static final String POWER_ID = "basicmod:LoseHpNextTurnPower";
+    public static final String POWER_ID = "soul-five:LoseHpNextTurnPower";
     public static final String NAME = "延迟失去生命";
     public static final String[] DESCRIPTIONS = {
             "下回合开始失去 ", " 点生命。"

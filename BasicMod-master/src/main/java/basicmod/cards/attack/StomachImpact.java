@@ -1,6 +1,7 @@
 package basicmod.cards.attack;
 
 import basicmod.cards.BaseCard;
+import basicmod.cards.skill.AdorationRing;
 import basicmod.powers.StomachImpactPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -13,7 +14,7 @@ import basicmod.powers.CurrentStancePower; // 请确认你的Power类路径
 import basicmod.util.CardStats;
 
 public class StomachImpact extends BaseCard {  // 卡牌名称：胃袋冲击
-    public static final String ID = "basicmod:StomachImpact";
+    public static final String ID = makeID(StomachImpact.class.getSimpleName());
     private static final String IMG = "basicmod/images/cards/attack/default.png"; // 请替换图片
 
     private static final CardStrings cardStrings =

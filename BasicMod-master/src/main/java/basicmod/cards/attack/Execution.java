@@ -1,6 +1,7 @@
 package basicmod.cards.attack;
 
 import basicmod.cards.BaseCard;
+import basicmod.cards.skill.AdorationRing;
 import basicmod.charater.MyCharacter;
 import basicmod.util.CardStats;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -10,7 +11,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class Execution extends BaseCard {
-    public static final String ID = "basicmod:Execution";
+    public static final String ID = makeID(Execution.class.getSimpleName());
     private static final CardStats info = new CardStats(
             MyCharacter.Meta.CARD_COLOR,
             CardType.ATTACK,

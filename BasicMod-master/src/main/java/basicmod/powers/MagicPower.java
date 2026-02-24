@@ -8,7 +8,7 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 
 public class MagicPower extends AbstractPower implements CloneablePowerInterface {
 
-    public static final String POWER_ID = "basicmod:MagicPower";
+    public static final String POWER_ID = "soul-five:MagicPower";
 
     public MagicPower(AbstractCreature owner, int amount) {
         this.owner = owner;

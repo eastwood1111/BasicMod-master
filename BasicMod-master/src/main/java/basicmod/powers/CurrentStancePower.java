@@ -13,7 +13,7 @@ import java.util.LinkedList;
 import java.util.HashMap;
 
 public class CurrentStancePower extends AbstractPower implements CloneablePowerInterface {
-    public static final String POWER_ID = "basicmod:CurrentStancePower";
+    public static final String POWER_ID = "soul-five:CurrentStancePower";
     public static final String NAME = "当前架势";
     public static final String[] DESCRIPTIONS = {"当前架势："};
 

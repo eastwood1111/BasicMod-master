@@ -14,7 +14,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 
 public class UnlockedCrossbow extends BaseCard {
 
-    public static final String ID = "basicmod:UnlockedCrossbow";
+    public static final String ID = makeID(UnlockedCrossbow.class.getSimpleName());
     private static final CardStrings cardStrings =
             CardCrawlGame.languagePack.getCardStrings(ID);
 

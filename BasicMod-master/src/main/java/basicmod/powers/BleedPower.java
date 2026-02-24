@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower.PowerType;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 
 public class BleedPower extends AbstractPower implements CloneablePowerInterface {
-    public static final String POWER_ID = "basicmod:BleedPower";
+    public static final String POWER_ID = "soul-five:BleedPower";
     public static final String NAME = "出血";
     public static final String[] DESCRIPTIONS = {"每回合开始失去层数 × 2 点生命。"};
 

@@ -1,6 +1,7 @@
 package basicmod.cards.attack;
 
 import basicmod.cards.BaseCard;
+import basicmod.cards.skill.AdorationRing;
 import basicmod.charater.MyCharacter;
 import basicmod.util.CardStats;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -13,7 +14,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import basemod.ReflectionHacks;
 
 public class ReturnAttack extends BaseCard {
-    public static final String ID = "basicmod:ReturnAttack";
+    public static final String ID = makeID(ReturnAttack.class.getSimpleName());
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
     private static final CardStats info = new CardStats(

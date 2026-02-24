@@ -14,7 +14,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 
 public class GreenHerb extends BaseCard {
-    public static final String ID = "basicmod:GreenHerb";
+    public static final String ID = makeID(GreenHerb.class.getSimpleName());
     private static final CardStrings cardStrings =
             CardCrawlGame.languagePack.getCardStrings(ID);
 

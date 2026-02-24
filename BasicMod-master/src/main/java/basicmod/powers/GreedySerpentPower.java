@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.rooms.MonsterRoomElite;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
 public class GreedySerpentPower extends AbstractPower implements CloneablePowerInterface {
-    public static final String POWER_ID = "basicmod:GreedySerpentPower";
+    public static final String POWER_ID = "soul-five:GreedySerpentPower";
     public static final String NAME = "贪婪金蛇戒指";
     public static final String[] DESCRIPTIONS = new String[]{
             "掉落率增加"

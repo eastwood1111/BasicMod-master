@@ -8,7 +8,7 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
 public class DrawNextTurnPower extends AbstractPower {
-    public static final String POWER_ID = "basicmod:DrawNextTurnPower";
+    public static final String POWER_ID = "soul-five:DrawNextTurnPower";
 
     public DrawNextTurnPower(AbstractCreature owner, int drawAmount) {
         this.name = "下回合抽牌"; // 建议后续改为读取本地化文件

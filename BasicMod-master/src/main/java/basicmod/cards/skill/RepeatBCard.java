@@ -13,7 +13,7 @@ import basicmod.powers.RepeatNextCardPower;
 
 public class RepeatBCard extends BaseCard {
     // 唯一ID
-    public static final String ID = "basicmod:RepeatBCard";
+    public static final String ID = makeID(RepeatBCard.class.getSimpleName());
 
     // 语言包
     private static final CardStrings cardStrings =

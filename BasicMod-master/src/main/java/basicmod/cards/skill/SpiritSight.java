@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 
 public class SpiritSight extends BaseCard {  // 卡牌名称为灵视
-    public static final String ID = "basicmod:SpiritSight";  // 卡牌ID
+    public static final String ID = makeID(SpiritSight.class.getSimpleName());
     private static final String IMG = "basicmod/images/cards/skill/default.png";  // 图片路径
 
     private static final CardStrings cardStrings =

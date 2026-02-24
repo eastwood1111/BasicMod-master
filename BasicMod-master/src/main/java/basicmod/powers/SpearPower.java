@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 
 public class SpearPower extends AbstractPower implements CloneablePowerInterface {
-    public static final String POWER_ID = "basicmod:SpearPower";
+    public static final String POWER_ID = "soul-five:SpearPower";
     public static final String NAME = "矛";
 
     // 修改描述：不再包含伤害数值，只描述移除格挡的效果

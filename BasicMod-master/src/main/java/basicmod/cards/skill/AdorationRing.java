@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 
 public class AdorationRing extends BaseCard {
-    public static final String ID = "basicmod:AdorationRing";
+    public static final String ID = makeID(AdorationRing.class.getSimpleName());
     private static final CardStrings cardStrings =
             CardCrawlGame.languagePack.getCardStrings(ID);
 

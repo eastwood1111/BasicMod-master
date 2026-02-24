@@ -1,6 +1,7 @@
 package basicmod.cards.power;
 
 import basicmod.cards.BaseCard;
+import basicmod.cards.skill.AdorationRing;
 import basicmod.charater.MyCharacter;
 import basicmod.util.CardStats;
 import basicmod.powers.AttackWeakPower;

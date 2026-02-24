@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 
 public class BloodKingPleasurePower extends AbstractPower implements CloneablePowerInterface {
 
-    public static final String POWER_ID = "basicmod:BloodKingPleasurePower";
+    public static final String POWER_ID = "soul-five:BloodKingPleasurePower";
     public static final String NAME = "鲜血君王的欢愉";
 
     public BloodKingPleasurePower(AbstractCreature owner, int amount) {

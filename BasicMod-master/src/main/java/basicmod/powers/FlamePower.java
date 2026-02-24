@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 
 public class FlamePower extends AbstractPower implements CloneablePowerInterface {
 
-    public static final String POWER_ID = "basicmod:FlamePower";
+    public static final String POWER_ID = "soul-five:FlamePower";
     public static final String NAME = "炎上";
     public static final String[] DESCRIPTIONS = new String[]{
             "每回合开始时受到伤害，然后移除。"

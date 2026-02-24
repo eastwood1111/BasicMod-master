@@ -13,7 +13,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class IronBody extends BaseCard {
-    public static final String ID = "basicmod:IronBody";
+    public static final String ID = makeID(IronBody.class.getSimpleName());
     private static final String IMG = "basicmod/images/cards/skill/default.png";
 
     private static final CardStrings cardStrings =

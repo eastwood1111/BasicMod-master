@@ -10,7 +10,7 @@ import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import basicmod.BasicMod;
 
 public class TwoHandsPower extends AbstractPower implements CloneablePowerInterface {
-    public static final String POWER_ID = BasicMod.makeID("TwoHandsPower");
+    public static final String POWER_ID = "soul-five:TwoHandsCard";
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;

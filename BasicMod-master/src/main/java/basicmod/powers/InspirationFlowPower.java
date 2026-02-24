@@ -9,7 +9,7 @@ import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 
 public class InspirationFlowPower extends AbstractPower {
-    public static final String POWER_ID = "basicmod:InspirationFlowPower";
+    public static final String POWER_ID = "soul-five:InspirationFlowPower";
 
     private int drawAmount;
 

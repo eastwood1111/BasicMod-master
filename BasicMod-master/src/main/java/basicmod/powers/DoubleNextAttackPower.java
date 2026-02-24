@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 
 public class DoubleNextAttackPower extends AbstractPower implements CloneablePowerInterface {
-    public static final String POWER_ID = "basicmod:DoubleNextAttackPower";
+    public static final String POWER_ID = "soul-five:DoubleNextAttackPower";
     public static final String NAME = "准备";
     public static final String[] DESCRIPTIONS = {"本回合内，下一张攻击牌造成双倍伤害。"};
 

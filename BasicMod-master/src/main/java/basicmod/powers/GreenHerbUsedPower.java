@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 
 public class GreenHerbUsedPower extends AbstractPower implements CloneablePowerInterface {
-    public static final String POWER_ID = "basicmod:GreenHerbUsedPower";
+    public static final String POWER_ID = "soul-five:GreenHerbUsedPower";
     public static final String NAME = "绿花草使用限制";
     public static final String[] DESCRIPTIONS = {
             "本回合已使用过绿花草，无法再次使用。"

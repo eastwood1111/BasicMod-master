@@ -1,6 +1,7 @@
 package basicmod.cards.power;
 
 import basicmod.cards.BaseCard;
+import basicmod.cards.skill.AdorationRing;
 import basicmod.charater.MyCharacter;
 import basicmod.powers.NoBlockPower;
 import basicmod.util.CardStats;
@@ -13,7 +14,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 
 public class LittleDragonMan extends BaseCard {
-    public static final String ID = "basicmod:LittleDragonMan";
+    public static final String ID = makeID(LittleDragonMan.class.getSimpleName());
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
     private static final CardStats info = new CardStats(

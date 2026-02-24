@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 
 public class AdviseCard extends BaseCard {
 
-    public static final String ID = "basicmod:AdviseCard";
+    public static final String ID = makeID(AdviseCard.class.getSimpleName());
     private static final CardStrings cardStrings =
             CardCrawlGame.languagePack.getCardStrings(ID);
 

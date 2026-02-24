@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
 public class NoBlockPower extends AbstractPower {
-    public static final String POWER_ID = "basicmod:NoBlockPower";
+    public static final String POWER_ID = "soul-five:NoBlockPower";
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
 

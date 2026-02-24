@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 
 public class InnerPotentialPower extends AbstractPower implements CloneablePowerInterface {
 
-    public static final String POWER_ID = "basicmod:InnerPotentialPower";
+    public static final String POWER_ID = "soul-five:InnerPotentialPower";
     private final int hpLossPerTurn;
 
     public InnerPotentialPower(AbstractCreature owner, int hpLossPerTurn) {

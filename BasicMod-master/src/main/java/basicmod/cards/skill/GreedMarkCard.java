@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class GreedMarkCard extends BaseCard {
 
-    public static final String ID = "basicmod:GreedMarkCard";
+    public static final String ID = makeID(GreedMarkCard.class.getSimpleName());
     private static final CardStats info = new CardStats(
             MyCharacter.Meta.CARD_COLOR,
             CardType.SKILL,

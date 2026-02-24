@@ -18,7 +18,7 @@ import com.megacrit.cardcrawl.vfx.combat.SmokeBombEffect;
 
 public class EscapeB extends BaseCard {
 
-    public static final String ID = "basicmod:EscapeB";
+    public static final String ID = makeID(EscapeB.class.getSimpleName());
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final CardStats info = new CardStats(
             MyCharacter.Meta.CARD_COLOR,

@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.powers.IntangiblePower;  // 使用内建的无实�
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 
 public class InvisibilityPower extends AbstractPower implements CloneablePowerInterface {
-    public static final String POWER_ID = "basicmod:InvisibilityPower";
+    public static final String POWER_ID = "soul-five:InvisibilityPower";
     public static final String NAME = "隐形身躯";
     public static final String[] DESCRIPTIONS = {
             "下回合开始时，获得 1 层无实体。"

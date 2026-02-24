@@ -8,7 +8,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 
 public class StanceDefendPower extends AbstractPower implements CloneablePowerInterface {
-    public static final String POWER_ID = "basicmod:StanceDefendPower";
+    public static final String POWER_ID = "soul-five:StanceDefendPower";
     public static final String NAME = "架势防御";
 
     public StanceDefendPower(AbstractCreature owner, int amount) {

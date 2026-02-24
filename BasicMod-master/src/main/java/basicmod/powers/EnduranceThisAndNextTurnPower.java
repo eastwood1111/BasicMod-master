@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 
 public class EnduranceThisAndNextTurnPower extends AbstractPower implements CloneablePowerInterface {
-    public static final String POWER_ID = "basicmod:EnduranceThisAndNextTurnPower";
+    public static final String POWER_ID = "soul-five:EnduranceThisAndNextTurnPower";
     public static final String NAME = "忍耐";
 
     public EnduranceThisAndNextTurnPower(AbstractCreature owner, int amount) {

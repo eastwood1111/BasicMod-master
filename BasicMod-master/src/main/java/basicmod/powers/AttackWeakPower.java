@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 
 public class AttackWeakPower extends AbstractPower implements CloneablePowerInterface {
-    public static final String POWER_ID = "basicmod:AttackWeakPower";
+    public static final String POWER_ID = "soul-five:AttackWeakPower";
     public static final String NAME = "攻击虚弱";
     public static final String[] DESCRIPTIONS = {
             "每次打出攻击牌，赋予敌人 #b 层虚弱。"

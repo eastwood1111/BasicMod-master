@@ -25,7 +25,7 @@ public class MeteorNextTurnPower extends AbstractPower implements CloneablePower
         this.uniqueID = uniqueID;
 
         // ✅ 独立ID，避免覆盖
-        this.ID = "basicmod:MeteorNextTurnPower_" + uniqueID;
+        this.ID = "soul-five:MeteorNextTurnPower_" + uniqueID;
 
         this.name = "毁灭流星";
         this.type = PowerType.BUFF;

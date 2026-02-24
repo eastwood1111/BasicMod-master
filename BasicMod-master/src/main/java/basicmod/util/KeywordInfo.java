@@ -14,9 +14,23 @@ public class KeywordInfo {
     }
 
     public void prep() {
-        for (int i = 0; i < NAMES.length; ++i)
-        {
-            NAMES[i] = NAMES[i].toLowerCase();
+        if (NAMES == null) return;
+
+        for (int i = 0; i < NAMES.length; i++) {
+            if (NAMES[i] == null) continue;
+
+            // 只对包含英文字母的名字做 lower-case，避免影响中文/特殊字符
+            boolean hasAsciiLetter = false;
+            for (int j = 0; j < NAMES[i].length(); j++) {
+                char c = NAMES[i].charAt(j);
+                if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z')) {
+                    hasAsciiLetter = true;
+                    break;
+                }
+            }
+            if (hasAsciiLetter) {
+                NAMES[i] = NAMES[i].toLowerCase(java.util.Locale.ROOT);
+            }
         }
     }
 }

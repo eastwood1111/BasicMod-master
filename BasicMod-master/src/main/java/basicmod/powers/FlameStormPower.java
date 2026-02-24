@@ -27,7 +27,7 @@ public class FlameStormPower extends AbstractPower implements CloneablePowerInte
         this.ignite = ignite;
         this.uniqueID = uniqueID;
 
-        this.ID = "basicmod:FlameStormPower_" + uniqueID;
+        this.ID = "soul-five:FlameStormPower_" + uniqueID;
         this.name = "烈焰风暴";
         this.type = PowerType.BUFF;
         this.isTurnBased = true;

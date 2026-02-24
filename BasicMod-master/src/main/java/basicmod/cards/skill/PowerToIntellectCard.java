@@ -14,7 +14,7 @@ import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.powers.DexterityPower; // 1. 导入敏捷能力类
 
 public class PowerToIntellectCard extends BaseCard {
-    public static final String ID = "basicmod:PowerToIntellectCard";
+    public static final String ID = makeID(PowerToIntellectCard.class.getSimpleName());
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
     private static final CardStats info = new CardStats(

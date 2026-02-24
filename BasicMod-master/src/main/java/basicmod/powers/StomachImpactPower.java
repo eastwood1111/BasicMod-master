@@ -19,7 +19,7 @@ import basicmod.powers.CurrentStancePower; // 你的架势Power路径
 import java.util.ArrayList;
 
 public class StomachImpactPower extends AbstractPower {
-    public static final String POWER_ID = "basicmod:StomachImpactPower";
+    public static final String POWER_ID = "soul-five:StomachImpactPower";
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;

@@ -25,7 +25,7 @@ public class ChaosPotion extends BasePotion {
         // ID, 效力(3), 稀有度(UNCOMMON), 形状(SPHERE), 液体颜色, 混合液颜色, 斑点颜色
         super(POTION_ID, 3, PotionRarity.UNCOMMON, PotionSize.SPHERE, Color.CHARTREUSE.cpy(), Color.BLACK.cpy(), Color.PURPLE.cpy());
 
-        this.playerClass = MyCharacter.Meta.soulfive;
+        this.playerClass = MyCharacter.Meta.SOUL_FIVE_CLASS;
         this.isThrown = true;
         this.targetRequired = false;
     }

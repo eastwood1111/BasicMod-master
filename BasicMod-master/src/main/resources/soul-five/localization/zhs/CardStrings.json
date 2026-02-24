@@ -1,5 +1,5 @@
 {
-  "basicmod:Strike": {
+  "soul-five:Strike": {
     "NAME": "打击",
     "DESCRIPTION": "造成 !D! 点伤害.",
     "UPGRADE_DESCRIPTION": "造成 !D! 点伤害.",
@@ -8,7 +8,7 @@
       "Good for attacking enemies early in combat."
     ]
   },
-  "basicmod:Defend": {
+  "soul-five:Defend": {
     "NAME": "防御",
     "DESCRIPTION": "获得 !B! 点 格挡 .",
     "UPGRADE_DESCRIPTION": "获得 !B! 点 格挡 .",
@@ -17,7 +17,7 @@
       "Use to block incoming damage."
     ]
   },
-  "basicmod:Fireball": {
+  "soul-five:Fireball": {
     "NAME": "巨大宝箱",
     "DESCRIPTION": "对敌方全体造成 !D! 点伤害 消耗",
     "UPGRADE_DESCRIPTION": "对敌方全体造成 !D! 点伤害 消耗",
@@ -27,348 +27,348 @@
       "Upgraded damage: 20."
     ]
   },
-  "basicmod:SwordStanceCard": {
+  "soul-five:SwordStanceCard": {
     "NAME": "剑",
-    "DESCRIPTION": "保留 ， basicmod:剑 获得 !M! 点 力量 ",
-    "UPGRADE_DESCRIPTION": "保留 ， basicmod:剑 获得 !M! 点 力量 "
+    "DESCRIPTION": "保留 ， soul-five:剑 获得 !M! 点 力量 ",
+    "UPGRADE_DESCRIPTION": "保留 ， soul-five:剑 获得 !M! 点 力量 "
   },
-  "basicmod:ShieldStanceCard": {
+  "soul-five:ShieldStanceCard": {
     "NAME": "盾",
-    "DESCRIPTION": "保留 ， basicmod:盾 获得 !M! 点 敏捷 ",
-    "UPGRADE_DESCRIPTION": "保留 ， basicmod:盾 获得 !M! 点 敏捷 "
+    "DESCRIPTION": "保留 ， soul-five:盾 获得 !M! 点 敏捷 ",
+    "UPGRADE_DESCRIPTION": "保留 ， soul-five:盾 获得 !M! 点 敏捷 "
   },
-  "basicmod:GreatSwordStanceCard": {
+  "soul-five:GreatSwordStanceCard": {
     "NAME": "大剑",
     "DESCRIPTION": "进入大剑架势，获得 !M! 点 力量 。",
     "UPGRADE_DESCRIPTION": "进入大剑架势，获得 !M! 点 力量 。"
   },
-  "basicmod:TwoHandsCard": {
+  "soul-five:TwoHandsCard": {
     "NAME": "双手各持",
     "DESCRIPTION": "你可以同时拥有两个架势",
     "UPGRADE_DESCRIPTION": "固有。你可以同时拥有两个架势"
   },
-  "basicmod:TwoHandsModeCard": {
+  "soul-five:TwoHandsModeCard": {
     "NAME": "双手共持",
     "DESCRIPTION": "获得3点力量 不可升级",
     "UPGRADE_DESCRIPTION": "获得3点力量 不可升级"
   },
-  "basicmod:StanceTriggerCard": {
+  "soul-five:StanceTriggerCard": {
     "NAME": "骑士之魂",
     "DESCRIPTION": "切换架势时抽一张牌",
     "UPGRADE_DESCRIPTION": "切换架势时抽一张牌"
   },
-  "basicmod:StanceDefendCard": {
+  "soul-five:StanceDefendCard": {
     "NAME": "君子六艺",
     "DESCRIPTION": "切换架势后获得 !M! 点 格挡 。",
     "UPGRADE_DESCRIPTION": "切换架势后获得 !M! 点 格挡 。"
   },
-  "basicmod:AttackWeakPowerCard": {
+  "soul-five:AttackWeakPowerCard": {
     "NAME": "燃脂",
     "DESCRIPTION": "打出一张攻击牌后随机对敌人赋予一层 虚弱 。",
     "UPGRADE_DESCRIPTION": "打出一张攻击牌后对全体敌人赋予一层 虚弱 。"
   },
-  "basicmod:SpearCard": {
+  "soul-five:SpearCard": {
     "NAME": "矛",
     "DESCRIPTION": "打出单体攻击牌时移除敌方的 格挡 。",
     "UPGRADE_DESCRIPTION": "打出单体攻击牌时移除敌方的 格挡 。"
   },
-  "basicmod:GunCard": {
+  "soul-five:GunCard": {
     "NAME": "枪反",
-    "DESCRIPTION": "若敌方为攻击意图造成 !D! 点伤害，1层 basicmod:击晕 ,1层 易伤 ，否则造成1点伤害。 消耗 ",
-    "UPGRADE_DESCRIPTION": "若敌方为攻击意图造成 !D! 点伤害，1层 basicmod:击晕 ,3层 易伤 ，否则造成1点伤害。 消耗 "
+    "DESCRIPTION": "若敌方为攻击意图造成 !D! 点伤害，1层 soul-five:击晕 ,1层 易伤 ，否则造成1点伤害。 消耗 ",
+    "UPGRADE_DESCRIPTION": "若敌方为攻击意图造成 !D! 点伤害，1层 soul-five:击晕 ,3层 易伤 ，否则造成1点伤害。 消耗 "
   },
-  "basicmod:RightShieldCard": {
+  "soul-five:RightShieldCard": {
     "NAME": "右盾",
     "DESCRIPTION": "每五回合获得一层 无实体 。",
     "UPGRADE_DESCRIPTION": "每四回合获得一层 无实体 。"
   },
-  "basicmod:IronStanceCard": {
+  "soul-five:IronStanceCard": {
     "NAME": "韧构",
     "DESCRIPTION": "获得6层 金属化 。",
     "UPGRADE_DESCRIPTION": "获得9层 金属化 。"
   },
-  "basicmod:GreedySerpentCard": {
+  "soul-five:GreedySerpentCard": {
     "NAME": "贪婪金蛇",
     "DESCRIPTION": "若本回合为精英关卡，额外掉落一个 遗物 。",
     "UPGRADE_DESCRIPTION": "若本回合为精英关卡，额外掉落一个 遗物 。"
   },
-  "basicmod:DivineRaceCard": {
+  "soul-five:DivineRaceCard": {
     "NAME": "神族",
     "DESCRIPTION": "当前手牌费用变为0，下回合死亡 本回合仅能打出10张牌 消耗。",
     "UPGRADE_DESCRIPTION": "保留 当前手牌费用变为0，下回合死亡 本回合仅能打出15张牌 消耗。"
   },
-  "basicmod:MagicPrayerStanceCard": {
+  "soul-five:MagicPrayerStanceCard": {
     "NAME": "魔法/祷告",
     "DESCRIPTION": "你可以强化咏唱魔法/祷告 抽1张牌",
     "UPGRADE_DESCRIPTION": "你可以强化咏唱魔法/祷告 抽2张牌"
   },
-  "basicmod:SoulFiveFormCard": {
+  "soul-five:SoulFiveFormCard": {
     "NAME": "魂5形态",
     "DESCRIPTION": "获得1点 力量,1点 敏捷,1层 无实体,1层 缓冲,每回合额外抽1张牌,额外获得1点 能量,每回合结束失去2点 生命 虚无",
     "UPGRADE_DESCRIPTION": "获得1点 力量,1点 敏捷,1层 无实体,1层 缓冲,每回合额外抽1张牌,额外获得1点 能量,每回合结束失去2点 生命"
   },
-  "basicmod:AttackWeakCard": {
+  "soul-five:AttackWeakCard": {
     "NAME": "燃脂",
     "DESCRIPTION": "每打出一张攻击牌赋予敌方一层 虚弱 。",
     "UPGRADE_DESCRIPTION": "每打出一张攻击牌赋予全体敌方一层 虚弱 。"
   },
-  "basicmod:SeppukuCard": {
+  "soul-five:SeppukuCard": {
     "NAME": "切腹",
-    "DESCRIPTION": "造成没有被格挡的伤害时给予一层 basicmod:出血 。",
-    "UPGRADE_DESCRIPTION": "造成没有被格挡的伤害时给予一层 basicmod:出血 。"
+    "DESCRIPTION": "造成没有被格挡的伤害时给予一层 soul-five:出血 。",
+    "UPGRADE_DESCRIPTION": "造成没有被格挡的伤害时给予一层  soul-five:出血 。"
   },
-  "basicmod:KnockdownCard": {
+  "soul-five:KnockdownCard": {
     "NAME": "击倒",
     "DESCRIPTION": "造成 !D! 点伤害，若处于大剑架势给予一层 击晕 。",
     "UPGRADE_DESCRIPTION": "造成 !D! 点伤害，若处于大剑架势给予一层 击晕 。"
   },
-  "basicmod:SunGun": {
+  "soul-five:SunGun": {
     "NAME": "阳光枪",
     "DESCRIPTION": "下回合随机对敌方造成 !D! 点伤害，若处于魔法/祷告，额外造成 !D! 点伤害",
     "UPGRADE_DESCRIPTION": "下回合随机对敌方造成 !D! 点伤害，若处于魔法/祷告，额外造成 !D! 点伤害"
   },
-  "basicmod:YuanQu": {
+  "soul-five:YuanQu": {
     "NAME": "原取",
     "DESCRIPTION": "回复4点 生命，下回合失去4点 生命 消耗 ",
     "UPGRADE_DESCRIPTION": "回复6点 生命，下回合失去6点 生命 消耗 "
   },
-  "basicmod:Prepare": {
+  "soul-five:Prepare": {
     "NAME": "准备",
     "DESCRIPTION": "下一张攻击牌造成双倍伤害",
     "UPGRADE_DESCRIPTION": "下一张攻击牌造成双倍伤害"
   },
-  "basicmod:DragonHelm": {
+  "soul-five:DragonHelm": {
     "NAME": "猎龙头",
     "DESCRIPTION": "获得1层 人工制品 ，!B! 点 格挡 消耗 ",
     "UPGRADE_DESCRIPTION": "获得1层 人工制品 ，!B! 点 格挡 消耗 "
   },
-  "basicmod:BigStomach": {
+  "soul-five:BigStomach": {
     "NAME": "大卫戴",
     "DESCRIPTION": "获得你牌库数量的 格挡 。",
     "UPGRADE_DESCRIPTION": "获得你牌库数量的 格挡 。"
   },
-  "basicmod:MarathonB": {
+  "soul-five:MarathonB": {
     "NAME": "马拉松b",
     "DESCRIPTION": "获得 !B! 点 格挡。 NL 给予自身 1 层 缠身。",
     "UPGRADE_DESCRIPTION": "获得 !B! 点 格挡。 NL 给予自身 1 层 缠身。"
   },
-  "basicmod:Endurance": {
+  "soul-five:Endurance": {
     "NAME": "忍耐",
     "DESCRIPTION": "本回合受到伤害减半 消耗 。",
     "UPGRADE_DESCRIPTION": "本回合受到伤害减半。"
   },
-  "basicmod:GreenHerb": {
+  "soul-five:GreenHerb": {
     "NAME": "绿花草",
     "DESCRIPTION": "获得 [E] ，下回合获得 [E] ，本回合不能再使用绿花草 ",
     "UPGRADE_DESCRIPTION": "获得 [E] [E] ，下回合获得 [E] [E] ，本回合不能再使用绿花草 "
   },
-  "basicmod:AdorationRing": {
+  "soul-five:AdorationRing": {
     "NAME": "宠爱戒指",
     "DESCRIPTION": "抽到这张牌时获得 [E] [E]  ，消耗",
     "UPGRADE_DESCRIPTION": "抽到这张牌时获得 [E] [E] [E] ，消耗 "
   },
-  "basicmod:CurseDagger": {
+  "soul-five:CurseDagger": {
     "NAME": "咒死飞刀",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 给予 !M! 层 basicmod:咒死 ",
-    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害。 NL 给予 !M! 层 basicmod:咒死 "
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 给予 !M! 层 soul-five:咒死 ",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害。 NL 给予 !M! 层 soul-five:咒死 "
   },
-  "basicmod:TeachSong": {
+  "soul-five:TeachSong": {
     "NAME": "教曲",
     "DESCRIPTION": "造成 !D! 点伤害 X+1 次",
     "UPGRADE_DESCRIPTION": "造成 !D! 点伤害 X+2 次"
   },
-  "basicmod:ReturnAttack": {
+  "soul-five:ReturnAttack": {
     "NAME": "奉还",
     "DESCRIPTION": "造成 !D! 点伤害（等同于目标敌人的意图总伤害）。",
     "UPGRADE_DESCRIPTION": "造成 !D! 点伤害（等同于目标敌人的意图总伤害）。"
   },
-  "basicmod:Execution": {
+  "soul-five:Execution": {
     "NAME": "处决",
     "DESCRIPTION": "造成敌人生命上限8%的伤害，若其处于击晕状态则造成16%的伤害",
     "UPGRADE_DESCRIPTION": "造成敌人生命上限10%的伤害，若其处于击晕状态则造成20%的伤害"
   },
-  "basicmod:Road365": {
+  "soul-five:Road365": {
     "NAME": "365里路",
     "DESCRIPTION": "造成 !D! 点伤害，每有一个遗物增加1点伤害",
     "UPGRADE_DESCRIPTION": "造成 !D! 点伤害，每有一个遗物增加2点伤害"
   },
-  "basicmod:UnlockedCrossbow": {
+  "soul-five:UnlockedCrossbow": {
     "NAME": "无锁弩",
-    "DESCRIPTION": "打出此牌后，每打出 1 张攻击牌给予敌方全体 2 层 basicmod:炎上 。",
-    "UPGRADE_DESCRIPTION": "打出此牌后，每打出 1 张攻击牌给予敌方全体 3 层 basicmod:炎上 。"
+    "DESCRIPTION": "打出此牌后，每打出 1 张攻击牌给予敌方全体 2 层 soul-five:炎上 。",
+    "UPGRADE_DESCRIPTION": "打出此牌后，每打出 1 张攻击牌给予敌方全体 3 层 soul-five:炎上 。"
   },
-  "basicmod:FirePot": {
+  "soul-five:FirePot": {
     "NAME": "火焰壶",
-    "DESCRIPTION": "造成 !D! 点伤害，给予敌方全体3层 basicmod:炎上 。",
-    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害，给予敌方全体3层 basicmod:炎上 。"
+    "DESCRIPTION": "造成 !D! 点伤害，给予敌方全体3层 soul-five:炎上 。",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害，给予敌方全体3层 soul-five:炎上 。"
   },
-  "basicmod:EscapeB": {
+  "soul-five:EscapeB": {
     "NAME": "拔线b",
     "DESCRIPTION": "失去6点 生命 ，从本关逃脱",
     "UPGRADE_DESCRIPTION": "失去4点 生命 ，从本关逃脱"
   },
-  "basicmod:NotNot": {
+  "soul-five:NotNot": {
     "NAME": "并非并非",
     "DESCRIPTION": "随机 3 次：造成 !D! 点伤害或获得 !B! 点 格挡 。",
     "UPGRADE_DESCRIPTION": "随机 3 次：造成 !D! 点伤害或获得 !B! 点 格挡 。"
   },
-  "basicmod:BloodKingPleasureCard": {
+  "soul-five:BloodKingPleasureCard": {
     "NAME": "鲜血君王的欢愉",
     "DESCRIPTION": "当有人受到出血伤害时，获得 1 点 力量 ",
     "UPGRADE_DESCRIPTION": "当有人受到出血伤害时，获得 2 点 力量 "
   },
-  "basicmod:ShieldStab": {
+  "soul-five:ShieldStab": {
     "NAME": "盾戳",
-    "DESCRIPTION": "造成 !D! 点伤害，获得 !B! 点格挡，给予 !M! 层 basicmod:出血",
-    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害，获得 !B! 点格挡，给予 !M! 层 basicmod:出血"
+    "DESCRIPTION": "造成 !D! 点伤害，获得 !B! 点格挡，给予 !M! 层 soul-five:出血",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害，获得 !B! 点格挡，给予 !M! 层 soul-five:出血"
   },
-  "basicmod:ZombifyCard": {
+  "soul-five:ZombifyCard": {
     "NAME": "活尸化",
     "DESCRIPTION": "失去 5 点 最大生命，回复 8 点 生命。NL 消耗",
     "UPGRADE_DESCRIPTION": "失去 4 点 最大生命，回复 10 点 生命。NL 消耗",
     "EXTENDED_DESCRIPTION": []
   },
-  "basicmod:GreedMarkCard": {
+  "soul-five:GreedMarkCard": {
     "NAME": "贪欲者的烙印",
     "DESCRIPTION": "失去4点 生命 获得15 金币 消耗 ",
     "UPGRADE_DESCRIPTION": "失去4点 生命 获得20 金币 消耗 "
   },
-  "basicmod:LittleSnack": {
+  "soul-five:LittleSnack": {
     "NAME": "小零食",
     "DESCRIPTION": "给予 !M! 层 中毒 与 !M! 层 虚弱 ",
     "UPGRADE_DESCRIPTION": "给予 !M! 层 中毒 与 !M! 层 虚弱 "
   },
-  "basicmod:SpiralPointDown": {
+  "soul-five:SpiralPointDown": {
     "NAME": "螺旋下指",
     "DESCRIPTION": "给予 !M! 层 易伤 。",
     "UPGRADE_DESCRIPTION": "给予 !M! 层 易伤 。"
   },
-  "basicmod:FireStraightSword": {
+  "soul-five:FireStraightSword": {
     "NAME": "会冒火的直剑",
     "DESCRIPTION": "造成 !D! 点伤害  打出后回到手牌 ",
     "UPGRADE_DESCRIPTION": "造成 !D! 点伤害  打出后回到手牌 "
   },
-  "basicmod:SmallScythe": {
+  "soul-five:SmallScythe": {
     "NAME": "小镰刀",
     "DESCRIPTION": "造成 !D! 点伤害。给予 缓慢 。",
     "UPGRADE_DESCRIPTION": "造成 !D! 点伤害。给予 缓慢 。"
   },
-  "basicmod:FireKingFiveCombo": {
+  "soul-five:FireKingFiveCombo": {
     "NAME": "薪王五连",
     "DESCRIPTION": "随机对敌方造成 !D! 点伤害 5 次",
     "UPGRADE_DESCRIPTION": "随机对敌方造成 !D! 点伤害 5 次"
   },
-  "basicmod:WarmFireCard": {
+  "soul-five:WarmFireCard": {
     "NAME": "温暖的火",
     "DESCRIPTION": "获得 3 层 再生 消耗",
     "UPGRADE_DESCRIPTION": "获得 4 层 再生 消耗 "
   },
-  "basicmod:LeftBowB": {
+  "soul-five:LeftBowB": {
     "NAME": "左弓B",
     "DESCRIPTION": "对敌方造成 !D! 点伤害 8 次 消耗 ",
     "UPGRADE_DESCRIPTION": "对敌方造成 !D! 点伤害 8 次 消耗 "
   },
-  "basicmod:LiSkillCard": {
+  "soul-five:LiSkillCard": {
     "NAME": "里技",
     "DESCRIPTION": "若上一张牌为攻击牌 可打出 随机对敌方造成 !D! 点伤害 8 次",
     "UPGRADE_DESCRIPTION": "若上一张牌为攻击牌 可打出，随机对敌方造成 !D! 点伤害 10 次"
   },
-  "basicmod:ExecuteCardV2": {
+  "soul-five:ExecuteCardV2": {
     "NAME": "半叶无限连",
     "DESCRIPTION": "造成 !D! 点伤害。若敌方当前血量 ≤ 20，再造成 !D! 点伤害。",
     "UPGRADE_DESCRIPTION": "造成 !D! 点伤害。若敌方当前血量 ≤ 25，再造成 !D! 点伤害。"
   },
-  "basicmod:ManaDrain": {
+  "soul-five:ManaDrain": {
     "NAME": "魔力汲取",
     "DESCRIPTION": "根据战场上敌人的数量获得能量。消耗。",
     "UPGRADE_DESCRIPTION": "固有。根据战场上敌人的数量获得能量。消耗。"
   },
-  "basicmod:DestructionMeteorCard": {
+  "soul-five:DestructionMeteorCard": {
     "NAME": "毁灭流星",
     "DESCRIPTION": "下一个你的回合开始时，对所有敌人造成 !D! 点伤害 4 次。若处于魔法架势，则额外造成 2 次 ",
     "UPGRADE_DESCRIPTION": "下一个你的回合开始时，对所有敌人造成 !D! 点伤害 4 次。若处于魔法架势，则额外造成 2 次 "
   },
-  "basicmod:FlameStorm": {
+  "soul-five:FlameStorm": {
     "NAME": "烈焰风暴",
-    "DESCRIPTION": "下回合随机对敌人造成 !D! 点伤害 3 次，每次赋予 5 层 basicmod:炎上 ",
-    "UPGRADE_DESCRIPTION": "下回合随机对敌人造成 !D! 点伤害 4 次，每次赋予 5 层 basicmod:炎上 "
+    "DESCRIPTION": "下回合随机对敌人造成 !D! 点伤害 3 次，每次赋予 5 层 #y炎上 ",
+    "UPGRADE_DESCRIPTION": "下回合随机对敌人造成 !D! 点伤害 4 次，每次赋予 5 层 soul-five:炎上 "
   },
-  "basicmod:InnerPotentialCard": {
+  "soul-five:InnerPotentialCard": {
     "NAME": "内在潜力",
-    "DESCRIPTION": "获得 3 点 力量 3 点 basicmod:智力 ，每回合失去2点 生命 ",
-    "UPGRADE_DESCRIPTION": "获得 3 点 力量 3 点 basicmod:智力 ，每回合失去2点 生命 "
+    "DESCRIPTION": "获得 3 点 力量 3 点 soul-five:智力 ，每回合失去2点 生命 ",
+    "UPGRADE_DESCRIPTION": "获得 3 点 力量 3 点 soul-five:智力 ，每回合失去2点 生命 "
   },
-  "basicmod:CometAzre": {
+  "soul-five:CometAzre": {
     "NAME": "彗星亚兹勒",
     "DESCRIPTION": "下个回合开始时，对所有敌人造成 !D! 点伤害 X 次 若处于魔法，则伤害增加 4 点",
     "UPGRADE_DESCRIPTION": "下个回合开始时，对所有敌人造成 !D! 点伤害 X 次 若处于魔法，则伤害增加 5 点伤害 "
   },
-  "basicmod:Invisibility": {
+  "soul-five:Invisibility": {
     "NAME": "隐形身躯",
     "DESCRIPTION": "获得 !B! 点格挡 若为魔法架势，下个回合开始时获得 1 层 无实体 。 消耗 ",
     "UPGRADE_DESCRIPTION": "获得 !B! 点格挡 下个回合开始时获得 1 层 无实体 。"
   },
-  "basicmod:SeekAdvice": {
+  "soul-five:SeekAdvice": {
     "NAME": "寻求谏言",
     "DESCRIPTION": "抽 2 张牌，将一张 谏言 加入抽牌堆 ",
     "UPGRADE_DESCRIPTION": "抽 2 张牌，将一张 谏言+ 加入抽牌堆  "
   },
-  "basicmod:AdviseCard": {
+  "soul-five:AdviseCard": {
     "NAME": "谏言",
     "DESCRIPTION": "保留 抽 2 张牌 消耗 ",
     "UPGRADE_DESCRIPTION": "保留 抽 3 张牌 消耗  "
   },
-  "basicmod:StrategicReserve": {
+  "soul-five:StrategicReserve": {
     "NAME": "小卫戴",
     "DESCRIPTION": "选择任意张手牌放入抽牌堆。 NL 每放入一张，获得 !B! 点 格挡 。",
     "UPGRADE_DESCRIPTION": "选择任意张手牌放入抽牌堆。 NL 每放入一张，获得 !B! 点 格挡 。"
   },
-  "basicmod:SpiritSight": {
+  "soul-five:SpiritSight": {
     "NAME": "灵视",
     "DESCRIPTION": "下回合多抽2张牌",
     "UPGRADE_DESCRIPTION": "下回合多抽3张牌"
   },
-  "basicmod:DragonSpear": {
+  "soul-five:DragonSpear": {
     "NAME": "猎龙草叉",
     "DESCRIPTION": "对敌方全体造成 !D! 点伤害，若斩杀敌方则再造成一次伤害 ",
     "UPGRADE_DESCRIPTION": "对敌方全体造成 !D! 点伤害，若斩杀敌方则再造成一次伤害"
   },
-  "basicmod:GudaSpear": {
+  "soul-five:GudaSpear": {
     "NAME": "古达戟",
     "DESCRIPTION": "对敌方全体造成 !D! 点伤害3次 ",
     "UPGRADE_DESCRIPTION": "对敌方全体造成 !D! 点伤害3次 "
   },
-  "basicmod:ReversalSword": {
+  "soul-five:ReversalSword": {
     "NAME": "反手剑",
-    "DESCRIPTION": "若上一张打出的牌为攻击牌可打出，造成 !D! 点伤害，给予敌方2层 basicmod:出血 。",
-    "UPGRADE_DESCRIPTION": "若上一张打出的牌为攻击牌可打出，造成 !D! 点伤害，给予敌方2层 basicmod:出血 。"
+    "DESCRIPTION": "若上一张打出的牌为攻击牌可打出，造成 !D! 点伤害，给予敌方2层 soul-five:出血 。",
+    "UPGRADE_DESCRIPTION": "若上一张打出的牌为攻击牌可打出，造成 !D! 点伤害，给予敌方2层 soul-five:出血 。"
   },
-  "basicmod:TwinShortSword": {
+  "soul-five:TwinShortSword": {
     "NAME": "双小曲",
-    "DESCRIPTION": "造成 !D! 点伤害 4 次，给予敌方2层 basicmod:出血 。",
-    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害 4 次，给予敌方2层 basicmod:出血 。"
+    "DESCRIPTION": "造成 !D! 点伤害 4 次，给予敌方2层 soul-five:出血 。",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害 4 次，给予敌方2层 soul-five:出血 。"
   },
-  "basicmod:Blood": {
+  "soul-five:Blood": {
     "NAME": "血",
-    "DESCRIPTION": "给予敌方 3 层 basicmod:出血 。",
-    "UPGRADE_DESCRIPTION": "给予敌方 5 层 basicmod:出血 。"
+    "DESCRIPTION": "给予敌方 3 层 soul-five:出血 。",
+    "UPGRADE_DESCRIPTION": "给予敌方 5 层 soul-five:出血 。"
   },
-  "basicmod:IronBody": {
+  "soul-five:IronBody": {
     "NAME": "铁身躯",
     "DESCRIPTION": "获得 !B! 点 格挡 ，将一张 虚空 加入弃牌堆 ",
     "UPGRADE_DESCRIPTION": "获得 !B! 点 格挡 ，将一张 虚空 加入弃牌堆 "
   },
-  "basicmod:CursedStrike": {
+  "soul-five:CursedStrike": {
     "NAME": "落井下石",
     "DESCRIPTION": "造成 !D! 点伤害，若敌方有负面buff，抽1张牌并获得 [E] 。",
     "UPGRADE_DESCRIPTION": "造成 !D! 点伤害，若敌方有负面buff，抽1张牌并获得 [E] 。"
   },
-  "basicmod:ControlOffset": {
+  "soul-five:ControlOffset": {
     "NAME": "控制抵消",
     "DESCRIPTION": "造成 !D! 点伤害，若处于韧狗架势，额外获得一层 人工制品 。",
     "UPGRADE_DESCRIPTION": "造成 !D! 点伤害，若处于韧狗架势，额外获得一层 人工制品 。"
   },
-  "basicmod:StomachImpact": {
+  "soul-five:StomachImpact": {
     "NAME": "原力",
     "DESCRIPTION": "回合结束时，对目标敌人造成 !D! 点伤害。 若处于 韧狗 架势，改为造成 当前格挡值 的伤害。",
     "UPGRADE_DESCRIPTION": "回合结束时，对 所有 敌人造成 !D! 点伤害。 NL 若处于 韧狗 架势，改为造成 当前格挡值 的伤害。"
@@ -378,31 +378,30 @@
     "DESCRIPTION":"本回合下一张0费牌，将打出2次",
     "UPGRADE_DESCRIPTION": "本回合下两张0费牌，将打出2次"
   },
-  "basicmod:PowerToIntellectCard": {
+  "soul-five:PowerToIntellectCard": {
     "NAME": "转职",
-    "DESCRIPTION": "失去1点 力量 获得1点 basicmod:智力 ，1点 敏捷 。",
-    "UPGRADE_DESCRIPTION": "失去2点 力量 获得2点 basicmod:智力 ，2点 敏捷 。"
+    "DESCRIPTION": "失去1点 力量 获得1点 soul-five:智力 ，1点 敏捷 。",
+    "UPGRADE_DESCRIPTION": "失去2点 力量 获得2点 soul-five:智力 ，2点 敏捷 。"
   },
-  "basicmod:IntellectShield": {
+  "soul-five:IntellectShield": {
     "NAME": "泡泡盾",
-    "DESCRIPTION": "保留。  获得 !B! 点 格挡 。  每有1点 basicmod:智力 ，额外获得 !M! 点 格挡 。",
-    "UPGRADE_DESCRIPTION": "保留。  获得 !B! 点 格挡 。  每有1点 basicmod:智力 ，额外获得 !M! 点 格挡 。"
+    "DESCRIPTION": "保留。  获得 !B! 点 格挡 。  每有1点 soul-five:智力 ，额外获得 !M! 点 格挡 。",
+    "UPGRADE_DESCRIPTION": "保留。  获得 !B! 点 格挡 。  每有1点 soul-five:智力 ，额外获得 !M! 点 格挡 。"
   },
-  "basicmod:LittleDragonMan": {
+  "soul-five:LittleDragonMan": {
     "NAME": "小龙人",
     "DESCRIPTION": "获得 !M! 点 力量  你无法再获得 格挡 。",
     "UPGRADE_DESCRIPTION": "保留  获得 !M! 点 力量  你无法再获得 格挡"
   },
-  "basicmod:RecklessSlash": {
+  "soul-five:RecklessSlash": {
     "NAME": "爆",
     "DESCRIPTION": "造成 !D! 点伤害。  自身获得 1 层 易伤 ",
     "UPGRADE_DESCRIPTION": "造成 !D! 点伤害。  自身获得 1 层 易伤 "
   },
-  "basicmod:BloodEnchant": {
+  "soul-five:BloodEnchant": {
     "NAME": "染血",
-    "DESCRIPTION": "本回合你下一张攻击牌每造成一次伤害施加 1 层 basicmod:出血 。",
-    "UPGRADE_DESCRIPTION": "本回合你下两张攻击牌每造成一次伤害施加 1 层 basicmod:出血 。"
+    "DESCRIPTION": "本回合你下一张攻击牌每造成一次伤害施加 1 层 soul-five:出血 。",
+    "UPGRADE_DESCRIPTION": "本回合你下两张攻击牌每造成一次伤害施加 1 层 soul-five:出血 。"
   }
 }
-
 

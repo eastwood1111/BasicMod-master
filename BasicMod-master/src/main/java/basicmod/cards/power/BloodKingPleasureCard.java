@@ -1,6 +1,7 @@
 package basicmod.cards.power;
 
 import basicmod.cards.BaseCard;
+import basicmod.cards.skill.AdorationRing;
 import basicmod.charater.MyCharacter;
 import basicmod.powers.BloodKingPleasurePower;
 import basicmod.util.CardStats;
@@ -11,7 +12,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class BloodKingPleasureCard extends BaseCard {
 
-    public static final String ID = "basicmod:BloodKingPleasureCard";
+    public static final String ID = makeID(BloodKingPleasureCard.class.getSimpleName());
     private static final CardStats info = new CardStats(
             MyCharacter.Meta.CARD_COLOR,
             CardType.POWER,

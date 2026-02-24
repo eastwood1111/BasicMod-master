@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
 public class ExtraDrawNextTurnPower extends AbstractPower {
-    public static final String POWER_ID = "basicmod:ExtraDrawNextTurn";
+    public static final String POWER_ID = "soul-five:ExtraDrawNextTurn";
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
 
     public ExtraDrawNextTurnPower(AbstractCreature owner, int amount) {

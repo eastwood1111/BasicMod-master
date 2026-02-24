@@ -13,7 +13,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 
 public class MarathonB extends BaseCard {
 
-    public static final String ID = "basicmod:MarathonB";
+    public static final String ID = makeID(MarathonB.class.getSimpleName());
     private static final CardStats stats = new CardStats(
             MyCharacter.Meta.CARD_COLOR,
             CardType.SKILL,

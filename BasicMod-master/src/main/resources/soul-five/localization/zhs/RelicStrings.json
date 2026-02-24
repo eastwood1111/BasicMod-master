@@ -1,52 +1,61 @@
 {
-  "basicmod:MyRelic": {
+  "soul-five:MyRelic": {
     "NAME": "架势",
-    "FLAVOR": "高墙的薪王啊苏醒起来吧",
+    "FLAVOR": "高墙的薪王啊苏醒起来吧。",
     "DESCRIPTIONS": [
-      "每回合第一次使用架势牌时抽1张牌 "
-
+      "每回合第 #b1 次使用 #y架势 牌时， #y抽 #b1 张牌。"
     ]
   },
-  "basicmod:StanceEnergyBossRelic": {
+  "soul-five:StanceEnergyBossRelic": {
     "NAME": "百般五艺",
     "FLAVOR": "无论何种姿态，都能从呼吸中汲取力量。",
     "DESCRIPTIONS": [
-      "每回合当你第一次打出 架势 牌时，获得 [E] 。"
+      "每回合当你第 #b1 次打出 #y架势 牌时，获得 [E] 。"
     ]
   },
-  "basicmod:MyRelicUpgrade": {
+  "soul-five:MyRelicUpgrade": {
     "NAME": "老狼",
     "FLAVOR": "有无老狼？",
-    "DESCRIPTIONS": ["每回合第一次使用 #y架势 牌时，抽 #b2 张牌。"]
+    "DESCRIPTIONS": [
+      "每回合第 #b1 次使用 #y架势 牌时， #y抽 #b2 张牌。"
+    ]
   },
-  "basicmod:DebuffBlockRelic": {
+  "soul-five:DebuffBlockRelic": {
     "NAME": "折磨纹章",
     "FLAVOR": "敌人的痛苦是你最坚实的护甲。",
-    "DESCRIPTIONS": ["每当你赋予敌人 #b1 层 #y负面状态 ，获得 #b1 点 #y格挡 。"]
+    "DESCRIPTIONS": [
+      "每当你赋予敌人 #b1 层 #y负面状态 ，获得 #b1 点 #y格挡 。"
+    ]
   },
-  "basicmod:CardHpLossReductionRelic": {
+  "soul-five:CardHpLossReductionRelic": {
     "NAME": "凝血护符",
     "FLAVOR": "这张护符能让你在施展禁术时，血液流失得慢一些。",
-    "DESCRIPTIONS": ["你回合内失去的 #y生命值 减少 #b1 。"]
+    "DESCRIPTIONS": [
+      "你在自己回合内失去的 #y生命值 减少 #b1 。"
+    ]
   },
-  "basicmod:NobleAshesRelic": {
+  "soul-five:NobleAshesRelic": {
     "NAME": "贵人骨灰",
     "FLAVOR": "这位权贵生前享尽荣华，死后其余韵竟也能滋养肉身。",
-    "DESCRIPTIONS": ["你的所有生命回复效果提升 #b25% 。"]
+    "DESCRIPTIONS": [
+      "你的所有生命回复效果提升 #b25% 。"
+    ]
   },
-  "basicmod:LowHpDiscountRelic": {
+  "soul-five:LowHpDiscountRelic": {
     "NAME": "残损古币",
     "FLAVOR": "虽然已经破损，但其中残留的某种执念会在你虚弱时提供援助。",
-    "DESCRIPTIONS": ["若你的生命值低于 #b50% ，每回合打出的第 #b1 张牌耗能为 #b0 。"]
+    "DESCRIPTIONS": [
+      "若你的生命值低于 #b50% ，每回合打出的第 #b1 张牌耗能变为 #b0 。"
+    ]
   },
-  "basicmod:RenGouRelic": {
+  "soul-five:RenGouRelic": {
     "NAME": "韧狗护符",
     "FLAVOR": "保持姿态，坚不可摧。",
     "DESCRIPTIONS": [
       "战斗开始时，进入 #y韧狗架势 。"
     ]
   },
-  "basicmod:VoidPrismRelic": {
+  "soul-five:VoidPrismRelic": {
     "NAME": "虚空棱镜",
     "FLAVOR": "这块晶体脉动着不属于这个世界的光芒。它在提供能量的同时，也在缓慢地吞噬现实。",
     "DESCRIPTIONS": [

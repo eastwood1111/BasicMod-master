@@ -8,7 +8,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 
 public class StanceDrawPower extends AbstractPower implements CloneablePowerInterface {
-    public static final String POWER_ID = "basicmod:StanceDrawPower";
+    public static final String POWER_ID = "soul-five:StanceDrawPower";
     public static final String NAME = "架势抽牌";
     public static final String[] DESCRIPTIONS = { "每次进入架势时，抽 #b 张牌。" };
 

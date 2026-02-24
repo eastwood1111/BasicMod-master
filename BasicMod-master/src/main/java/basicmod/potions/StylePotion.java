@@ -19,7 +19,7 @@ public class StylePotion extends BasePotion {
 
     public StylePotion() {
         super(POTION_ID, 1, PotionRarity.RARE, PotionSize.BOTTLE, Color.PURPLE.cpy(), Color.GOLD.cpy(), null);
-        this.playerClass = MyCharacter.Meta.soulfive;
+        this.playerClass = MyCharacter.Meta.SOUL_FIVE_CLASS;
         this.isThrown = false;
     }
 

@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
 public class StunPower extends AbstractPower implements CloneablePowerInterface {
-    public static final String POWER_ID = "basicmod:StunPower";
+    public static final String POWER_ID = "soul-five:StunPower";
     public static final String NAME = "击晕";
 
     // 保存怪物原本准备好的动作（用于解除后继续原招）

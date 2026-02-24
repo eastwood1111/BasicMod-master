@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.powers.EntanglePower;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 
 public class MarathonBDelayedEntanglePower extends AbstractPower implements CloneablePowerInterface {
-    public static final String POWER_ID = "basicmod:MarathonBDelayedEntanglePower";
+    public static final String POWER_ID = "soul-five:MarathonBDelayedEntanglePower";
     public static final String NAME = "延迟缠身";
     public static final String[] DESCRIPTIONS = {
             "下回合开始获得一层缠身。"

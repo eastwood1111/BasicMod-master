@@ -1,6 +1,7 @@
 package basicmod.cards.attack;
 
 import basicmod.cards.BaseCard;
+import basicmod.cards.skill.AdorationRing;
 import basicmod.charater.MyCharacter;
 import basicmod.util.CardStats;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -16,7 +17,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
 public class CursedStrike extends BaseCard {
-    public static final String ID = "basicmod:CursedStrike";
+    public static final String ID = makeID(CursedStrike.class.getSimpleName());
     private static final String IMG = "basicmod/images/cards/attack/default.png";
 
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);

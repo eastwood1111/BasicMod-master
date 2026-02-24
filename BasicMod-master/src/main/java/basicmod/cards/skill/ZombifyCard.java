@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class ZombifyCard extends BaseCard {
 
-    public static final String ID = "basicmod:ZombifyCard";
+    public static final String ID = makeID(ZombifyCard.class.getSimpleName());
     private static final CardStats info = new CardStats(
             MyCharacter.Meta.CARD_COLOR,   // 颜色
             CardType.SKILL,                // 技能

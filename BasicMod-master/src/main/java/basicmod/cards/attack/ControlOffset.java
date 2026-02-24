@@ -1,6 +1,7 @@
 package basicmod.cards.attack; // 请修改为你的包名
 
 import basicmod.cards.BaseCard;
+import basicmod.cards.skill.AdorationRing;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -17,7 +18,7 @@ import basicmod.powers.CurrentStancePower; // 请确认你的Power类路径
 import basicmod.util.CardStats; // 请确认你的CardStats类路径
 
 public class ControlOffset extends BaseCard {  // 卡牌名称为控制抵消
-    public static final String ID = "basicmod:ControlOffset";  // 卡牌ID，请确保前缀正确
+    public static final String ID = makeID(ControlOffset.class.getSimpleName());  // 卡牌ID，请确保前缀正确
     private static final String IMG = "basicmod/images/cards/attack/default.png"; // 建议替换为实际图片路径
 
     private static final CardStrings cardStrings =
